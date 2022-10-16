@@ -73,13 +73,13 @@ git-lfs install
 nvm use
 
 yarn install --frozen-lockfile --arch=arm64 --network-timeout 600000
-
-#Seems to be a few ways to finish up (TODO!), for now I did this (uncommented). To build .deb instead add "deb" after "--linux" but I got error on this!
+ 
+#Seems to be a few ways to finish up (TODO!), for now I did this (uncommented parts). To build .deb instead add "deb" after "--linux " but I got error on this right now!
 yarn generate
-#yarn run-s --print-label build:grunt build:typed-scss build:webpack #didn't work, ok whatever ignore
+#yarn run-s --print-label build:grunt build:typed-scss build:webpack #didn't work, ok whatever ignore (TODO)
 SIGNAL_ENV=production yarn build:electron --arm64 --linux --dir --config.directories.output=release
+#or replace last command above with: `yarn build-release --arm64 --linux`
 
-#or: yarn build-release --arm64 --linux deb
 #Optionally, can sign release e.g. https://github.com/0mniteck/Signal-Desktop-Builder/blob/master/signal-buildscript.sh
 
 #Binary if .deb: release/*.deb
@@ -126,7 +126,6 @@ function build_extras_one {
         git clone https://github.com/signalapp/ringrtc || echo
         #(need to have Rust and other dependencies to build ringrtc, just some standard stuff)
         cd ringrtc
-
 
         # for cross compile
         export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER=aarch64-linux-gnu-gcc
