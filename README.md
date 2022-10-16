@@ -75,6 +75,7 @@ nvm use
 yarn install --frozen-lockfile --arch=arm64 --network-timeout 600000
  
 #Seems to be a few ways to finish up (TODO!), for now I did this (uncommented parts). To build .deb instead add "deb" after "--linux " but I got error on this right now!
+#These build steps are stolen from https://forums.puri.sm/t/building-and-running-signal-desktop-on-the-librem-5/14999 are they good?
 yarn generate
 #yarn run-s --print-label build:grunt build:typed-scss build:webpack #didn't work, ok whatever ignore (TODO)
 SIGNAL_ENV=production yarn build:electron --arm64 --linux --dir --config.directories.output=release
