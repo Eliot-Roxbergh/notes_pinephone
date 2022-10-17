@@ -7,6 +7,8 @@ Here I used Mobian (Bookworm) with Phosh since most things just worked (like sms
 
 Note possible differences between releases HW https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions, e.g. v1.1 discharges even when turned off (https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix)
 
+Development status of Pinephone etc. https://xnux.eu/devices/pine64-pinephone.html
+
 # Install OS and bootloader
 
 Mobian (Bookworm) with Phosh (wayland), https://wiki.mobian-project.org/doku.php?id=install-linux
@@ -46,6 +48,14 @@ IDK! Not checked. Long battery as long as it is in suspend (=no internet but wil
 
 custom kernel https://forum.pine64.org/showthread.php?tid=17339
 
+## Camera
+
+Photos works OK. Front camera is not very good and very yellow hue. Back camera is OK/good if you compare to a phone from 2012, so it is acceptable perhaps (flash works). AFAIK taking videos is not supported!
+
+## Flashlight
+Part of system UI, works.
+
+
 ## Internet, texts, calls, mms
 
 Sms, calls, and 4G worked out of the box for me. I think I tried with Tre and Telia carrier networks in Sweden. MMS needed manual configuration and didn't work when tested, at least for Telia.
@@ -79,7 +89,7 @@ systemctl --user start mmsd-tng
 
 ## Alarm app (that works in suspend)
 
-Default alarm app does not work in suspend (lol!), so try this one instead.
+Default alarm app does not work in suspend (lol!), so use this one instead. It did work when I tried it, but UI is slow.
 
 Birdie: Go here on phone and just build: https://github.com/Dejvino/birdie (https://wiki.mobian.org/doku.php?id=birdie).
 
@@ -167,4 +177,18 @@ sudo apt install -y telegram-desktop
 
 ### Browsing
 
-Firefox is good, but takes like 5 seconds to start. Video performance is bad, if you're lucky you can run 360p video smoothly. HW acceleration working?
+Firefox is OK, but takes like 5 seconds to start. Video performance is bad, if you're lucky you can run 360p video smoothly. HW acceleration working?
+Sometimes menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies etc.
+
+# Security
+
+Pinephone has hw switches to disable mic / camera 1 / camera 2 / wifi / cellular.
+
+I do not think firmware and required apps is 100% open-source (cellular is not ofc but more?). And for instance, regarding Pinephone Pro "_ppp-cam app itself will stay closed source_" (https://xnux.eu/log/#toc-2022-06-23-further-pinephone-pro-camera-development)
+
+Note that, in general, stock Linux does not have the same application sandboxing as e.g. Android. 
+
+"_USB-OTG is very permissive . The MTP service currently has no security whatsoever; if the phone is plugged into a computer, even with disk encryption, the computer will have full R/W access to your /home dir, and full read access to /. See Services on how to disable and enable only when needed._" - https://wiki.mobian-project.org/doku.php?id=pinephone
+
+Offtopic: it is possible to change phone IMEI apparently, https://forum.pine64.org/showthread.php?tid=14743
+
