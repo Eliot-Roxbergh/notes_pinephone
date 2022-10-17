@@ -136,7 +136,7 @@ To wake phone up periodically try some 'sleepwalk' script, like https://github.c
 Signal-desktop works ok, but not made for small screen: so zoom out in the menu and it _should_ be possible to contract the contact menu by dragging (maybe if you plug in mouse, it's literally 1 px).
 
 Build from source, can be difficult to compile, but latest beta (2022-10-11) was easy to build (I built on another arm64 device).
-Still I did NOT manage to build a .deb file, only the binary directly (TODO) ... but it works (need to create shortcut manually TODO).
+Still I did NOT manage to build a .deb file, only the binary directly (TODO) ... but it works (need to create shortcut manually TODO). TODO try if it's easier on x86 (might not be though), considering build .deb file uses x86_32 dependency for some reason (First Docker link gave some sort of .deb, so should work on arm64!) .
 
 NOTE: if Signal-desktop crashes on your device make sure that you have an updated system. It failed to launch on my older, outdated, Mobian Bullseye.
 
