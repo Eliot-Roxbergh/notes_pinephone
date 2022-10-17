@@ -41,7 +41,7 @@ This might be unnecessary, because first I also built ringrtc (i.e. which depend
 sudo apt install -y git git-lfs npm curl build-essential gcc make
 
 
-# Install NPM (don't trust me that this is secure, but seems to be how you do it)
+# Install NVM (don't trust me that this is secure, but seems to be how you do it)
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.bashrc
 nvm install 16.15.0 #this might change ofc, otherwise run nvm use in signal-desktop
