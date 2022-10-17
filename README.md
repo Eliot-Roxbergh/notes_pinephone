@@ -50,7 +50,9 @@ custom kernel https://forum.pine64.org/showthread.php?tid=17339
 
 ## Camera
 
-Photos works OK. Front camera is not very good and very yellow hue. Back camera is OK/good if you compare to a phone from 2012, so it is acceptable perhaps (flash works). AFAIK taking videos is not supported!
+Photos works OK. Front camera is not very good and very yellow hue. Back camera is good if you compare to a phone from like 2012 (I would say it's better than Samsung S3 for instance), so it is acceptable perhaps (and flash works). However, AFAIK taking videos is not supported!!
+
+Signal-desktop did not find the camera at all (but it seems like camera starts focus considering the sound? idk).
 
 ## Flashlight
 Part of system UI, works.
@@ -65,7 +67,7 @@ Sms, calls, and 2G 3G 4G worked out of the box for me. I (quickly) tried with Tr
 Telia and Tre carriers (although Tre has no 2G support on their side ofc);
 Everything seems to work with the carriers tested, with three exceptions. 1. Calls doesn't work on 4G. 2. 2G coverage is much worse than other phones it looks like (2G calls and data is supported). 3. MMS works, except for Telia which had two APNs (no support!).
 
-Compared to other phones, 2G 3G coverage is equivalent it looks like, however 2G coverage is quite a bit worse.
+Compared to other phones, 4G 3G coverage is equivalent it looks like, however 2G coverage is quite a bit worse.
 
 (TODO fill in new carriers on wiki pages)
 
@@ -79,8 +81,7 @@ https://wiki.pine64.org/wiki/PinePhone_APN_Settings
 tl;dr When tested, calls works on 2G and 3G. Texing works on all networks.
 
 Applies to carriers Tre (altough they have no 2G ofc) and Telia:
-Calls work very well on 3G. But it seems like it doesn't want to connect on 4G (peculiar considering data works), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre). 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe at random in some situations?) there might be bad interference getting transmitted to the other party.
-
+Calls work very well on 3G. But it seems like it doesn't want to connect on 4G (peculiar considering data works), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre). 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe it was a coincidence?) there might be bad interference getting transmitted to the other party.
 
 Comment: When I tested 2G, hot swapping headset, I managed to crash mic? Regardless it did not work in calls, with headset or not before restart.
 
