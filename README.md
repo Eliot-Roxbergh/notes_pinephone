@@ -58,24 +58,55 @@ Part of system UI, works.
 
 ## Internet, texts, calls, mms
 
-Sms, calls, and 4G worked out of the box for me. I think I tried with Tre and Telia carrier networks in Sweden. MMS needed manual configuration and didn't work when tested, at least for Telia.
+Sms, calls, and 2G 3G 4G worked out of the box for me. I think I tried with Tre and Telia carrier networks in Sweden. MMS needed manual configuration and data/MMS APN needs to be the same (so e.g. Telia doesn't work), MMS worked on Tre carrier.
+
+Telia and Tre carriers (although Tre has no 2G support on their side ofc);
+
+Everything seems to work with the carriers tested, with three exceptions. 1. Calls doesn't work on 4G. 2. 2G coverage is much worse than other phones it looks like (2G calls and data is supported). 3. MMS works, except for Telia which had two APNs (no support!).
 
 ### Calls and SMS
 
-Absolutely no complains, or issues, the few times I tested on 4G
+tl;dr When tested, calls works on 2G and 3G. Texing works on all networks.
+
+Applies to carriers Tre (altough they have no 2G ofc) and Telia:
+Calls work very well on 3G. But it seems like it doesn't want to connect on 4G (peculiar considering data works), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre). 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe at random in some situations?) there might be bad interference getting transmitted to the other party.
+
+Compared to other phones, 2G 3G coverage is equivalent it looks like, however 2G coverage is quite a bit worse.
+
+Comment: When I tested 2G, hot swapping headset, I managed to crash mic? Regardless it did not work in calls, with headset or not before restart.
+
+Received and transmitted sound is generally good.
+It is possible to plug-in and remove headset during conversation, etc. All working well, (except for that one time during call that all mics stopped working... remained even after connecting a headset and also after redialing).
+
+(TODO fill in new carriers on wiki pages)
+
+https://wiki.pine64.org/wiki/PinePhone_Carrier_Support
+
+https://wiki.pine64.org/wiki/PinePhone_APN_Settings
+
+
+#### Firmware
+
+For custom modem firmware look here, https://github.com/the-modem-distro/pinephone_modem_sdk
 
 #### Audio
 To increase call receive volume, /usr/share/alsa/ucm2/PinePhone/VoiceCall.conf
 
 ### MMS
 
-Edit:  "Currently there is no easy solution for sending or receiving MMS if carrier has two APNs (one for data and for MMS). There are some workarounds but most likely best one is to not use MMS at all before things get"
+tl;dr In general is supported, go to chatty (default sms app phosh) and set settings manually. If it doesn't work make sure Mobile Data APN is same as MMS APN (and supported by carrier).
+
+Works on most carriers, but need to set settings manually. For instance, works in Sweden with Tre, does not work with Telia.
+
+Telia does not work, why? Well because -> _"Currently there is no easy solution for sending or receiving MMS if carrier has two APNs (one for data and for MMS). There are some workarounds but most likely best one is to not use MMS at all before things get"_
         The issue is here https://gitlab.com/kop316/mmsd/-/issues/5
 
 General: https://wiki.mobian-project.org/doku.php?id=mms https://forum.pine64.org/showthread.php?tid=16754
 
-In general is supported, go to chatty (default sms app phosh) and set settings e.g. (Telia which doesnt work due to different APNs, APN: mms.telia.se MMSC: http://mmss
-MMS-proxy: 193.209.134.132:80)
+
+Swedish Tre-based carriers does work, data APN (add in settings->Mobile Network->Access Point Names) is same as mms. In case of Tre, APN in both cases is data.tre.se.
+Tre MMS settings -> APN: data.tre.se, MMSC: http://mms.tre.se, MMS proxy: mmsproxy.tre.se:8799
+
 
 ```
 ### Debug
