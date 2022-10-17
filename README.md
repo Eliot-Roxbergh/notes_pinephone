@@ -109,6 +109,9 @@ scale-to-fit gnome-screenshot
 
 TODO how to add as a reasonable shortcut?
 
+## Terminal
+
+System comes with Console (terminal app). It works. To paste text, long press (on touch screen) and _at the same time_, with the other hand, press 'paste' on the menu that appears. Ctrl+v on virtual keyboard doesn't seem to work for some reason, maybe it wants ctrl+shift+v which keyboard doesn't want to send?
 
 
 
@@ -119,6 +122,8 @@ To wake phone up periodically try some 'sleepwalk' script, like https://github.c
 
 
 ### Signal-desktop
+
+Signal-desktop works ok, but not made for small screen: so zoom out in the menu and it _should_ be possible to contract the contact menu by dragging (maybe if you plug in mouse, it's literally 1 px).
 
 Build from source, can be difficult to compile, but latest beta (2022-10-11) was easy to build (I built on another arm64 device).
 Still I did NOT manage to build a .deb file, only the binary directly (TODO) ... but it works (need to create shortcut manually TODO).
@@ -154,4 +159,12 @@ SIGNAL_ENV=production yarn build:electron --arm64 --linux --dir --config.directo
 
 ### Telegram-desktop
 
-sudo apt install telegram-desktop
+Telegram works well, no complains after quick test.
+
+```
+sudo apt install -y telegram-desktop
+```
+
+### Browsing
+
+Firefox is good, but takes like 5 seconds to start. Video performance is bad, if you're lucky you can run 360p video smoothly. HW acceleration working?
