@@ -114,7 +114,7 @@ TODO how to add as a reasonable shortcut?
 
 ## Apps
 
-Note that nothing will be sent or receive when phone is in suspend (default after 5min). This greatly increases battery life however.
+Note that nothing (except sms, mms?, and phone calls) will be sent or received when phone is in suspend (default after 5min). This greatly increases battery life however.
 To wake phone up periodically try some 'sleepwalk' script, like https://github.com/milky-sway/pinephone-scripts, and that way get any notifications.
 
 
@@ -123,7 +123,7 @@ To wake phone up periodically try some 'sleepwalk' script, like https://github.c
 Build from source, can be difficult to compile, but latest beta (2022-10-11) was easy to build (I built on another arm64 device).
 Still I did NOT manage to build a .deb file, only the binary directly (TODO) ... but it works (need to create shortcut manually TODO).
 
-NOTE: if Signal-desktop crashes on your device make sure that you have an updated system. It failed to launch on older, outdated, Mobian Bullseye.
+NOTE: if Signal-desktop crashes on your device make sure that you have an updated system. It failed to launch on my older, outdated, Mobian Bullseye.
 
 NOTE: if installation does not work have a look on my complete notes <https://github.com/Eliot-Roxbergh/pinephone_notes/blob/main/extras_build_signal-desktop.md>
  
