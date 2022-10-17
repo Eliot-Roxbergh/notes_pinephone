@@ -5,6 +5,8 @@ Example Pinephone install, apps and usage.
 There are of course many distributions and desktop environments to choose from.
 Here I used Mobian (Bookworm) with Phosh since most things just worked (like sms, camera), I had some problems with other distros but was a while ago now.
 
+Note possible differences between releases HW https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions, e.g. v1.1 discharges even when turned off (https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix)
+
 # Install OS and bootloader
 
 Mobian (Bookworm) with Phosh (wayland), https://wiki.mobian-project.org/doku.php?id=install-linux
@@ -69,8 +71,10 @@ MMS-proxy: 193.209.134.132:80)
 ### Debug
 systemctl --user status mmsd-tng
 
+### Modify settings (or do it directly in Chatty)
+systemctl --user stop mmsd-tng
 vim $HOME/.mms/modemmanager/mms
-systemctl --user restart mmsd-tng
+systemctl --user start mmsd-tng
 ```
 
 ## Alarm app (that works in suspend)
