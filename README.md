@@ -58,11 +58,21 @@ Part of system UI, works.
 
 ## Internet, texts, calls, mms
 
-Sms, calls, and 2G 3G 4G worked out of the box for me. I think I tried with Tre and Telia carrier networks in Sweden. MMS needed manual configuration and data/MMS APN needs to be the same (so e.g. Telia doesn't work), MMS worked on Tre carrier.
+Sms, calls, and 2G 3G 4G worked out of the box for me. I (quickly) tried with Tre and Telia carrier networks in Sweden (2022-10). MMS needed manual configuration and data/MMS APN needs to be the same (so e.g. Telia doesn't work), MMS worked on Tre carrier.
+
+### General 
 
 Telia and Tre carriers (although Tre has no 2G support on their side ofc);
-
 Everything seems to work with the carriers tested, with three exceptions. 1. Calls doesn't work on 4G. 2. 2G coverage is much worse than other phones it looks like (2G calls and data is supported). 3. MMS works, except for Telia which had two APNs (no support!).
+
+Compared to other phones, 2G 3G coverage is equivalent it looks like, however 2G coverage is quite a bit worse.
+
+(TODO fill in new carriers on wiki pages)
+
+https://wiki.pine64.org/wiki/PinePhone_Carrier_Support
+
+https://wiki.pine64.org/wiki/PinePhone_APN_Settings
+
 
 ### Calls and SMS
 
@@ -71,18 +81,11 @@ tl;dr When tested, calls works on 2G and 3G. Texing works on all networks.
 Applies to carriers Tre (altough they have no 2G ofc) and Telia:
 Calls work very well on 3G. But it seems like it doesn't want to connect on 4G (peculiar considering data works), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre). 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe at random in some situations?) there might be bad interference getting transmitted to the other party.
 
-Compared to other phones, 2G 3G coverage is equivalent it looks like, however 2G coverage is quite a bit worse.
 
 Comment: When I tested 2G, hot swapping headset, I managed to crash mic? Regardless it did not work in calls, with headset or not before restart.
 
 Received and transmitted sound is generally good.
 It is possible to plug-in and remove headset during conversation, etc. All working well, (except for that one time during call that all mics stopped working... remained even after connecting a headset and also after redialing).
-
-(TODO fill in new carriers on wiki pages)
-
-https://wiki.pine64.org/wiki/PinePhone_Carrier_Support
-
-https://wiki.pine64.org/wiki/PinePhone_APN_Settings
 
 
 #### Firmware
