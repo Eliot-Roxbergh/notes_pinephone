@@ -17,7 +17,7 @@ There is also a more powerful version Pinephone Pro, however now ~Q4 2022 it is 
 
 **How to buy**
 
-The phone works and only costs 199$ (quad core, 3GB ram) [1]. There are also accessories like an attachable keyboard [2] as well as replacement parts and batteries.
+The phone works and only costs 199$ (total to Sweden 270$ incl. VAT) (quad core, 3GB ram) [1]. There are also accessories like an attachable keyboard [2] as well as replacement parts and batteries.
 
 Only purchase if you have some Linux experience.
 
