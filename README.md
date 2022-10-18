@@ -5,11 +5,57 @@ Example Pinephone install, apps and usage.
 There are of course many distributions and desktop environments to choose from.
 Here I used Mobian (Bookworm) with Phosh since most things just worked (like sms, camera), I had some problems with other distros but was a while ago now.
 
-Note possible differences between releases HW https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions, e.g. v1.1 discharges even when turned off (https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix). Probably you want to buy the most recent mainboard in the pine64 store to get rid of most of the problems and get 3GB ram.
+Note possible differences between releases HW https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions, e.g. v1.1 discharges even when turned off (https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix) and I think it cannot use USB-C hubs? Probably you want to buy the most recent mainboard in the pine64 store to get rid of these problems and get 3GB ram (from 2GB).
 
 Development status of Pinephone etc. https://xnux.eu/devices/pine64-pinephone.html
 
 There is also a more powerful version Pinephone Pro, however now ~Q4 2022 it is not usable as a daily phone.
+
+## TL;DR
+
+**How to buy**
+
+The phone works and only costs 199$ (quad core, 3GB ram) [1].
+
+Only purchase if you have some Linux experience.
+
+If you buy used or on sale, make sure to get the latest board revision (currently 1.2b), earlier has some issues [2].
+
+[1] - https://pine64.com/product/pinephone-beta-edition-with-convergence-package/ \
+[2] - https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions
+
+-----
+
+**Does it work as a phone**
+
+For me it worked with SMS, MMS, calls with minor configuration. (MMS only works with carriers who has same the data APN and MMS APN.)
+
+Battery time is good in suspend mode, and can take calls.
+
+It is nice with hardware switches if one wishes to turn off mic, back or front camera, etc.
+
+-----
+
+**Does it work as a smartphone**
+
+(Desktop) Apps often work OK but of course it is a bit cumbersome compared to a smartphone, most apps are not made for a phone.
+It might be possible to run Android apps via software such as Anbox, I guess.
+
+It is slow! Let's say performance similar to Samsung S3, with the downside that apps are not optimized for it. Still it works for most regular browsing, chat apps, etc. Video streaming is VERY SLOW however, fullscreen 360p Youtube videos in Firefox is lagging but playable (I'm not sure if this can be improved with HW acceleration or something). The successor, Pinephone Pro, has much better performance, which might be a good upgrade once it has matured.
+
+Camera is badish and cannot take videos (?). Still it works as a camera.
+
+Battery time is very bad (max 1-2h of heavy use?), but is quite good in suspend mode: in which it turns off data and only wakes on calls or sms/mms. So battery time is quite good if you utilize suspend and use it as a phone, but during suspend you won't get any other notifications, nor able play music etc.
+
+
+-----
+
+**Does it work as a computer**
+
+TODO. It should work to directly attach (USB-C hub) keyboard, mouse, and even HDMI screen, to utilize the phone as a desktop computer as well. Might be sufficient for lite work, browsing, reading, and coding.
+
+
+-----
 
 # Install OS and bootloader
 
@@ -20,12 +66,12 @@ Boot options, something like this (?);
 ```
 power+volume up -> bootloader
 power+volume down -> SD card
-power -> eMMC
+power -> eMMC (sometimes SD card)
 ```
 
 1. Flash bootloader if not present, Tow-boot: https://wiki.mobian-project.org/doku.php?id=tow-boot
 
-2. Flash OS. I think this is the best way;
+2. Flash OS. I think this is the best method;
 
 Flash OS image onto SD card. Then boot SD card with power+volume down. This will boot installation image from SD card, with presents different options and e.g. possiblity of disk encryption.
 
@@ -52,7 +98,7 @@ custom kernel https://forum.pine64.org/showthread.php?tid=17339
 
 ## Camera
 
-Photos works OK. Front camera is not very good and very yellow hue. Back camera is good if you compare to a phone from like 2012 (I would say it's better than Samsung S3 for instance), so it is acceptable perhaps (and flash works). However, AFAIK taking videos is not supported!!
+Photos works OK. Front camera is not very good and very yellow hue. Back camera is good if you compare to a phone from like 2012 (I would say it's maaybe better than Samsung S3 for instance), so it is acceptable perhaps (and flash works). However, AFAIK taking videos is not supported!!
 
 Signal-desktop did not find the camera at all (but it seems like camera starts focus considering the sound? idk).
 
@@ -70,6 +116,8 @@ Telia and Tre carriers (although Tre has no 2G support on their side ofc);
 Everything seems to work with the carriers tested, with three exceptions. 1. Calls doesn't work on 4G. 2. 2G coverage is much worse than other phones it looks like (2G calls and data is supported). 3. MMS works, except for Telia which had two APNs (no support!).
 
 Compared to other phones, 4G 3G coverage is equivalent it looks like, however 2G coverage is quite a bit worse.
+
+Quick speedtest on 4G with moderate/poor coverage, 8mbit/s.
 
 (TODO fill in new carriers on wiki pages)
 
@@ -89,7 +137,6 @@ Comment: When I tested 2G, hot swapping headset, I managed to crash mic? Regardl
 
 Received and transmitted sound is generally good.
 It is possible to plug-in and remove headset during conversation, etc. All working well, (except for that one time during call that all mics stopped working... remained even after connecting a headset and also after redialing).
-
 
 #### Firmware
 
