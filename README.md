@@ -1,28 +1,35 @@
 # Pinephone
 
-Example Pinephone install, apps and usage.
+Example of Pinephone installation, apps and use.
 
 There are of course many distributions and desktop environments to choose from.
-Here I used Mobian (Bookworm) with Phosh since most things just worked (like sms, camera), I had some problems with other distros but was a while ago now.
+Here I used Mobian (Bookworm) with Phosh since most things just worked (like sms and camera), I had some problems with other distros but was a while ago now.
 
-Note possible differences between releases HW https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions, e.g. v1.1 discharges even when turned off (https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix) and I think it cannot use USB-C hubs? Probably you want to buy the most recent mainboard in the pine64 store to get rid of these problems and get 3GB ram (from 2GB).
+For development status of Pinephone etc. see [1]
 
-Development status of Pinephone etc. https://xnux.eu/devices/pine64-pinephone.html
+There is also a more powerful version Pinephone Pro, however now ~Q4 2022 it is not usable as a daily phone [2].
 
-There is also a more powerful version Pinephone Pro, however now ~Q4 2022 it is not usable as a daily phone.
+
+[1] - https://xnux.eu/devices/pine64-pinephone.html \
+[2] - https://wiki.pine64.org/wiki/PinePhone_Pro#State_of_the_software 
 
 ## TL;DR
 
 **How to buy**
 
-The phone works and only costs 199$ (quad core, 3GB ram) [1].
+The phone works and only costs 199$ (quad core, 3GB ram) [1]. There are also accessories like an attachable keyboard [2] as well as replacement parts and batteries.
 
 Only purchase if you have some Linux experience.
 
-If you buy used or on sale, make sure to get the latest board revision (currently 1.2b), earlier has some issues [2].
+If you buy used or on sale, make sure to get the latest board revision (currently 1.2b).
+Note the differences between releases HW [3], e.g. v1.1 discharges even when turned off ([4]) and I think it cannot use USB-C hubs? In case you have an older version you probably want to buy the most recent mainboard in the pine64 store [5], to replace it and get rid of these problems (and to get 3GB ram from 2GB).
 
 [1] - https://pine64.com/product/pinephone-beta-edition-with-convergence-package/ \
-[2] - https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions
+[2] - https://pine64.com/product/pinephone-pinephone-pro-keyboard-case/ \
+[3] - https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions \
+[4] - https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix
+[5] - https://pine64.com/product/pinephone-community-edition-3gb-32gb-mainboard/ \
+
 
 -----
 
@@ -59,7 +66,7 @@ TODO. It should work to directly attach (USB-C hub) keyboard, mouse, and even HD
 
 # Install OS and bootloader
 
-Mobian (Bookworm) with Phosh (wayland), https://wiki.mobian-project.org/doku.php?id=install-linux
+Mobian (Bookworm) with Phosh (wayland), [1].
 
 Boot options, something like this (?);
 
@@ -69,32 +76,37 @@ power+volume down -> SD card
 power -> eMMC (sometimes SD card)
 ```
 
-1. Flash bootloader if not present, Tow-boot: https://wiki.mobian-project.org/doku.php?id=tow-boot
+1. Flash bootloader if not present, Tow-boot [2]
 
 2. Flash OS. I think this is the best method;
 
 Flash OS image onto SD card. Then boot SD card with power+volume down. This will boot installation image from SD card, with presents different options and e.g. possiblity of disk encryption.
 
-OS Image, https://images.mobian-project.org/pinephone/installer/weekly/
-Some images where broken for me, so I decided on this https://images.mobian-project.org/pinephone/installer/weekly/mobian-installer-pinephone-phosh-20220522.img.gz
+OS Image, [3]
+Some images where broken for me, so I decided on this for now [4].
 (Still, on this image release gpg key is outdated and need to be updated to be able to run apt update in OS. Do a simple search on the error when it comes.)
 
 Remember to apt update and upgrade!
 
-
+[1] - https://wiki.mobian-project.org/doku.php?id=install-linux \
+[2] - https://wiki.mobian-project.org/doku.php?id=tow-boot \
+[3] - https://images.mobian-project.org/pinephone/installer/weekly/ \
+[4] - https://images.mobian-project.org/pinephone/installer/weekly/mobian-installer-pinephone-phosh-20220522.img.gz
 
 # System apps
 
 ## General tips
 
-https://forum.pine64.org/showthread.php?tid=13861
+https://forum.pine64.org/showthread.php?tid=13861 
 
 
 ## Powersave
 
 IDK! Not checked. Long battery as long as it is in suspend (=no internet but will wake on sms and phone calls)
 
-custom kernel https://forum.pine64.org/showthread.php?tid=17339
+custom kernel [1].
+
+[1] - https://forum.pine64.org/showthread.php?tid=17339 
 
 ## Camera
 
@@ -140,7 +152,9 @@ It is possible to plug-in and remove headset during conversation, etc. All worki
 
 #### Firmware
 
-For custom modem firmware look here, https://github.com/the-modem-distro/pinephone_modem_sdk
+For custom modem firmware look here, [1].
+
+[1] - https://github.com/the-modem-distro/pinephone_modem_sdk 
 
 #### Audio
 To increase call receive volume, /usr/share/alsa/ucm2/PinePhone/VoiceCall.conf
@@ -154,12 +168,12 @@ Works on most carriers, but need to set settings manually. For instance, works i
 Telia does not work, why? Well because -> _"Currently there is no easy solution for sending or receiving MMS if carrier has two APNs (one for data and for MMS). There are some workarounds but most likely best one is to not use MMS at all before things get"_
         The issue is here https://gitlab.com/kop316/mmsd/-/issues/5
 
-General: https://wiki.mobian-project.org/doku.php?id=mms https://forum.pine64.org/showthread.php?tid=16754
-
 
 Swedish Tre-based carriers does work, data APN (add in settings->Mobile Network->Access Point Names) is same as mms. In case of Tre, APN in both cases is data.tre.se.
 Tre MMS settings -> APN: data.tre.se, MMSC: http://mms.tre.se, MMS proxy: mmsproxy.tre.se:8799
 
+
+MMS general links: https://wiki.mobian-project.org/doku.php?id=mms https://forum.pine64.org/showthread.php?tid=16754
 
 ```
 ### Debug
@@ -175,7 +189,7 @@ systemctl --user start mmsd-tng
 
 Default alarm app does not work in suspend (lol!), so use this one instead. It did work when I tried it, but UI is slow.
 
-Birdie: Go here on phone and just build: https://github.com/Dejvino/birdie (https://wiki.mobian.org/doku.php?id=birdie).
+Birdie: Go here on phone and just build: https://github.com/Dejvino/birdie [1].
 
 (At least it seems to be a popular app for Pinephone, sudo install and hope I won't get hacked :P)
 
@@ -190,9 +204,11 @@ sudo make install-deb
 # Now launchable via desktop shortcut
 ```
 
+[1] - https://wiki.mobian.org/doku.php?id=birdie 
+
 ## Screenshot
 
-Need to install appropriate app and fix key binding or whatever. https://wiki.mobian-project.org/doku.php?id=tweaks#taking-screenshots
+Need to install appropriate app and fix key binding or whatever. [1]
 
 scrot did not work for me (black image), a similar suggestion is gnome-screenshot
 
@@ -203,6 +219,8 @@ scale-to-fit gnome-screenshot
 
 TODO how to add as a reasonable shortcut?
 
+[1] - https://wiki.mobian-project.org/doku.php?id=tweaks#taking-screenshots 
+
 ## Terminal
 
 System comes with Console (terminal app). It works. To paste text, long press (on touch screen) and _at the same time_, with the other hand, press 'paste' on the menu that appears. Ctrl+v on virtual keyboard doesn't seem to work for some reason, maybe it wants ctrl+shift+v which keyboard doesn't want to send?
@@ -212,8 +230,9 @@ System comes with Console (terminal app). It works. To paste text, long press (o
 ## Apps
 
 Note that nothing (except sms, mms?, and phone calls) will be sent or received when phone is in suspend (default after 5min). This greatly increases battery life however.
-To wake phone up periodically try some 'sleepwalk' script, like https://github.com/milky-sway/pinephone-scripts, and that way get any notifications.
+To wake phone up periodically try some 'sleepwalk' script, like [1], and that way get any notifications.
 
+[1] - https://github.com/milky-sway/pinephone-scripts 
 
 ### Signal-desktop
 
@@ -268,11 +287,14 @@ Sometimes menus don't show and only flicker, but generally it is usable and e.g.
 
 Pinephone has hw switches to disable mic / camera 1 / camera 2 / wifi / cellular.
 
-I do not think firmware and required apps is 100% open-source (cellular is not ofc but more?). And for instance, regarding Pinephone Pro "_ppp-cam app itself will stay closed source_" (https://xnux.eu/log/#toc-2022-06-23-further-pinephone-pro-camera-development)
+I do not think firmware and required apps is 100% open-source (cellular is not ofc but more?). And for instance, regarding Pinephone Pro "_ppp-cam app itself will stay closed source_" [1]
 
 Note that, in general, stock Linux does not have the same application sandboxing as e.g. Android. 
 
-"_USB-OTG is very permissive . The MTP service currently has no security whatsoever; if the phone is plugged into a computer, even with disk encryption, the computer will have full R/W access to your /home dir, and full read access to /. See Services on how to disable and enable only when needed._" - https://wiki.mobian-project.org/doku.php?id=pinephone
+"_USB-OTG is very permissive . The MTP service currently has no security whatsoever; if the phone is plugged into a computer, even with disk encryption, the computer will have full R/W access to your /home dir, and full read access to /. See Services on how to disable and enable only when needed._" [2].
 
-Offtopic: it is possible to change phone IMEI apparently, https://forum.pine64.org/showthread.php?tid=14743
+Offtopic: it is possible to change phone IMEI apparently [3].
 
+[1] - https://xnux.eu/log/#toc-2022-06-23-further-pinephone-pro-camera-development \
+[2] - https://wiki.mobian-project.org/doku.php?id=pinephone \
+[3] - https://forum.pine64.org/showthread.php?tid=14743 
