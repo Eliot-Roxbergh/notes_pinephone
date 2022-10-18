@@ -5,9 +5,11 @@ Example Pinephone install, apps and usage.
 There are of course many distributions and desktop environments to choose from.
 Here I used Mobian (Bookworm) with Phosh since most things just worked (like sms, camera), I had some problems with other distros but was a while ago now.
 
-Note possible differences between releases HW https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions, e.g. v1.1 discharges even when turned off (https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix)
+Note possible differences between releases HW https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions, e.g. v1.1 discharges even when turned off (https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix). Probably you want to buy the most recent mainboard in the pine64 store to get rid of most of the problems and get 3GB ram.
 
 Development status of Pinephone etc. https://xnux.eu/devices/pine64-pinephone.html
+
+There is also a more powerful version Pinephone Pro, however now ~Q4 2022 it is not usable as a daily phone.
 
 # Install OS and bootloader
 
@@ -204,7 +206,7 @@ SIGNAL_ENV=production yarn build:electron --arm64 --linux --dir --config.directo
 
 ### Telegram-desktop
 
-Telegram works well, no complains after quick test.
+Telegram works well, no complains after quick test. Note, this is desktop app so no possibility for end-to-end encryption (Telegram sucks)!!
 
 ```
 sudo apt install -y telegram-desktop
@@ -213,7 +215,7 @@ sudo apt install -y telegram-desktop
 ### Browsing
 
 Firefox is OK, but takes like 5 seconds to start. Video performance is bad, if you're lucky you can run 360p video smoothly. HW acceleration working?
-Sometimes menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies etc.
+Sometimes menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies, install addons etc.
 
 # Security
 
