@@ -66,11 +66,6 @@ git clone https://github.com/signalapp/Signal-Desktop.git || echo
 cd Signal-Desktop
 git checkout v5.63.0-beta.3
 
-#Some old fixes that aren't necessary?:
-#  optional: Replace in package.json with own signal-ringrtc-node path (grep 'ringrtc') (built this on other machine)
-#  optional: Replace in package.json with own better-sqlite3 path (grep 'better-sqlite3'), only difference is that they patch so it uses dynamically linked crypto lib instead of static (is this recommended to do?? Mentioned in other guide)
-#  optional: patch to change node abi such as https://github.com/BernardoGiordano/signal-desktop-pi4/blob/master/yarn.lock.patch
-
 git-lfs install
 nvm use
 
@@ -98,15 +93,23 @@ Some steps if build complains on sqlite or ringrtc. Hopefully not required on ne
 
 Inspired from guides mentioned at start. First part is built on x86 (electron build is better supported) and second part on arm64 (some minor preparation of dependencies, and use binary from part 1).
 
-NOTE! After these steps are finished, remember to change 'Signal-Desktop/package.json' to point to those dirs (briefly mentioned above in that step)
-e.g.
+#### Use new binaries / patches
+After these steps (below) are finished, remember to change 'Signal-Desktop/package.json' to point to those dirs e.g.;
 ```
+#To apply these fixes, try this..
+
+#  optional: Replace in Signal-Desktop/package.json with own signal-ringrtc-node path (grep 'ringrtc') (built this on other machine)
 -    "ringrtc": "https://github.com/signalapp/signal-ringrtc-node.git#7e1b508953b4f322f56fb4411da47a23eb115eb6",
 +    "ringrtc": "~/ringrtc/signal-ringrtc-node/",
+
+#  optional: Replace in Signal-Desktop/package.json with own better-sqlite3 path (grep 'better-sqlite3'), only difference is that they patch so it uses dynamically linked crypto lib instead of static (is this recommended to do?? Mentioned in other guide)
 -    "better-sqlite3": "https://github.com/signalapp/better-sqlite3#a92f637708b41a478601c388f5a66223f766021b",
 +    "better-sqlite3": "~/signal-ringrtc-node/better-sqlite3",
+
+#  optional: Patch Signal-Desktop/yarn.lock to change node abi such as https://github.com/BernardoGiordano/signal-desktop-pi4/blob/master/yarn.lock.patch
 ```
 
+#### Get new binaries and/or apply patches
 ```
 #part two, now do this on x86
 function build_extras_one {
