@@ -1,6 +1,10 @@
 # build_signal-desktop
 
-Build Signal Desktop for arm64
+Build Signal Desktop for arm64.
+
+I really don't know anything about these build systems, but tried a few things looking at guides (see below). In the end I managed to build the latest Signal beta, basically directly. It seems like earlier stable versions required more manual fixing. I chose not use any of the two Docker builds since they did not work that well and I don't really trust them without further investigation, but sure they are probably fine!
+
+**Status:** It is very easy to build Signal-Desktop v5.63.0-beta.3 binary (but .deb packaging failed). See below.
 
 ## Other guides / inspiration
 
@@ -35,8 +39,6 @@ Note: If signal-desktop crashes when launched, make sure to have updated system.
 
 # Prereqs
 
-This might be unnecessary, because first I also built ringrtc (i.e. which dependencies goes where).
-
 ```
 sudo apt install -y git git-lfs npm curl build-essential gcc make
 
@@ -53,9 +55,9 @@ sudo npm install --global yarn --arch=arm64
 
 # Build Signal-Desktop
 
-TODO: Although the binary build works (so you can use Signal-Desktop), I didn't manage to build .deb out of the box (which could make life easier). (Get error for 'fpm-..-linux-x86' which gives 'errorOut=i386-binfmt-P: .. '/lib/ld-linux.so.2': No such file or directory"'. ??? Try building on x86 or what?)
+TODO: Although the binary build works (so you can use Signal-Desktop), I didn't manage to build .deb out of the box (which could make life easier). (Get error for 'fpm-..-linux-x86' which gives 'errorOut=i386-binfmt-P: .. '/lib/ld-linux.so.2': No such file or directory"'. ??? Try building on x86 or what? Try and compare with Docker builds?)
 
-We will use, at time of writing latest beta v5.63.0-beta.3. I tried a few stable versions prior without luck, also a few bugs were fixed in these latest betas (mainly, earlier had issues related to better_sqlite3 "error 'is_lvalue_reference_v' is not a member of 'std':" ... see electron issue 35193). 
+We will use, at time of writing latest beta v5.63.0-beta.3. I tried a few stable versions prior without luck, also a few (build) bugs were fixed in these latest betas (mainly, earlier had issues related to better_sqlite3 "error 'is_lvalue_reference_v' is not a member of 'std':" ... see electron issue 35193). 
 
 I did not manage to fix build error for "mac-screen-capture-permissions" regarding unknown abi, even after trying to bump version in yarn.lock or "npm i node-abi" in the build directory. But then again IDK how it works. Well it seems to work regardless, ignore for now.
 
@@ -92,7 +94,9 @@ SIGNAL_ENV=production yarn build:electron --arm64 --linux --dir --config.directo
 
 # Optional build steps (mainly ringrtc)
 
-Hopefully not required on newest Signal versions. Inspired from guides mentioned at start. First part is built on x86 (electron build is better supported) and second part on arm64 (some minor preparation of dependencies, and use binary from part 1).
+Some steps if build complains on sqlite or ringrtc. Hopefully not required on newest Signal versions.
+
+Inspired from guides mentioned at start. First part is built on x86 (electron build is better supported) and second part on arm64 (some minor preparation of dependencies, and use binary from part 1).
 
 NOTE! After these steps are finished, remember to change 'Signal-Desktop/package.json' to point to those dirs (briefly mentioned above in that step)
 e.g.
