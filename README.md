@@ -27,8 +27,8 @@ Note the differences between releases HW [3], e.g. v1.1 discharges even when tur
 [1] - https://pine64.com/product/pinephone-beta-edition-with-convergence-package/ \
 [2] - https://pine64.com/product/pinephone-pinephone-pro-keyboard-case/ \
 [3] - https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions \
-[4] - https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix
-[5] - https://pine64.com/product/pinephone-community-edition-3gb-32gb-mainboard/ \
+[4] - https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix \
+[5] - https://pine64.com/product/pinephone-community-edition-3gb-32gb-mainboard/
 
 
 -----
