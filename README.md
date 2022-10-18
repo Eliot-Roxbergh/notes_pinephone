@@ -1,6 +1,6 @@
 # Pinephone
 
-Example of Pinephone installation, apps and use.
+Some notes on Pinephone installation, apps and use. But I have not used this device a lot!
 
 There are of course many distributions and desktop environments to choose from.
 Here I used Mobian (Bookworm) with Phosh since most things just worked (like sms and camera), I had some problems with other distros but was a while ago now.
