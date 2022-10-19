@@ -236,6 +236,7 @@ TODO test
 ## Alarm app (that works in suspend)
 
 Default alarm app does not work in suspend (lol!), so use this one instead. It did work when I tried it, but UI is slow.
+Remember to increase the volume so you can actually hear it, and wake up!
 
 Birdie: Go here on phone and just build: https://github.com/Dejvino/birdie [1].
 
