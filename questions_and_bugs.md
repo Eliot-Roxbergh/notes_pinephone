@@ -14,3 +14,7 @@ After a while the setting option disappears, and reappear, probably restarting s
 4. Watch videos in browser without lag, HW acceleration?
 5. Record videos at all? Have video calls?
 6. Does GPS work? (TODO test me)
+
+Apps:
+
+1. Fix Signal-Desktop build so it is packaged as .deb instead of binary. Or at least add a shortcut so it is easy to launch said binary (how?). (See seprate file on building signal)
