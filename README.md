@@ -271,7 +271,9 @@ To wake phone up periodically try some 'sleepwalk' script, like [1], and that wa
 
 ### Signal-desktop
 
+Signal-desktop does not have official arm64 support, but you can build it from source (see below).
 Signal-desktop works ok, but not made for small screen: so zoom out in the menu and it _should_ be possible to contract the contact menu by dragging (maybe if you plug in mouse, it's literally 1 px).
+Voice calls on signal work, but it did not detect the camera. If the phone is in suspend, Signal messages or calls will not be received (of course) until phone wakes up again.
 
 Build from source, can be difficult to compile, but latest beta (2022-10-11) was easy to build (I built on another arm64 device).
 Still I did NOT manage to build a .deb file, only the binary directly (TODO) ... but it works (need to create shortcut manually TODO). TODO try if it's easier on x86 (might not be though), considering build .deb file uses x86_32 dependency for some reason (First Docker link gave some sort of .deb, so should work on arm64!) .
