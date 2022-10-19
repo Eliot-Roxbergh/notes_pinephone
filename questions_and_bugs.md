@@ -1,6 +1,6 @@
 # Bugs:
 
-0. Sometimes sound stops working (both speakers and headphones). Why? Reboot fixes it, sometimes.
+0. Sometimes sound stops working (both speakers and headphones). Why? I just rebooted and the issue remained, but fixed by issuing `systemctl --user restart pulseaudio`
 
 1. Sometimes on new boot the top drag-down menu doesn't work. Fixed by locking phone.
 
