@@ -138,9 +138,13 @@ By the way, _"You can use PinePhone without the battery inserted if you can prov
 
 I have not looked into custom powersaving hacks. Out of the box it does have long battery life as long as it is in suspend (=no internet but will wake on sms and phone calls), otherwise during heavy use maybe 1-3h.
 
-Battery example: \
-Used it 2h on 4G (wifi hw switch off). Normal light use and a few reboots (which could draw more?), with at most 30min screen time but not much time in suspend -> 39% lost (100->61 %). \
-Used it 1h on wifi (and 4G). Normal use, browsing/chatting, 30min playing music, 30min screen on. 30% battery lost (~51->21 %).
+**Battery example** (lasted 5h)
+
+5h battery life from 100% to 0; \
+i) Used it 2h on 4G (wifi hw switch off). Normal light use and a few reboots (which could draw more?), with at most 30min screen time but not much time in suspend -> 39% lost (100->61 %). \
+ii) Used it 1h on wifi (and 4G). Normal use, browsing/chatting, 30min playing music, 30min screen on. 30% battery lost (~51->21 %). But I'm not sure since it has been stuck on 21% for the last 30 minutes. :P \
+iii) 2h with wifi and 4G, screen off. Half the time listening to music. Suspend disabled! \
+The phone hung at 3% battery.
 
 custom kernel [2].
 
@@ -158,7 +162,7 @@ Signal-desktop did not find the camera at all (but it seems like camera starts f
 Part of system UI, works.
 
 ## Wifi
-Wifi is moderately fast at 4-5 MB/s, works. However, wifi is not automatically discovered after toggling HW switch while running.
+Wifi was moderately fast at 4-5 MB/s, works. However, wifi is not automatically discovered after toggling HW switch while phone is running.
 
 ## Internet, texts, calls, mms
 
