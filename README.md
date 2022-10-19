@@ -16,7 +16,7 @@ I still have some questions and issues, see [questions_and_bugs.md](questions_an
 
 ## TL;DR
 
-**Why?**
+**Why Pinephone?**
 
 - It should work as a phone (calls, sms, mms). Also internet, wifi, and a poor camera. Maybe even GPS works.
 
