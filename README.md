@@ -134,7 +134,7 @@ I would say that the most convenient way of charging is to put the phone in susp
 
 By the way, _"You can use PinePhone without the battery inserted if you can provide enough power over USB port. Modem and WiFi and flash light are connected to the battery directly (almost) so these will not work without the battery inserted."_ [1]
 
-#### Powersaving
+#### Battery life
 
 I have not looked into custom powersaving hacks. Out of the box it does have long battery life as long as it is in suspend (=no internet but will wake on sms and phone calls), otherwise during heavy use maybe 1-3h.
 
@@ -146,7 +146,9 @@ ii) Used it 1h on wifi (and 4G). Normal use, browsing/chatting, 30min playing mu
 iii) 2h with wifi and 4G, screen off. Half the time listening to music. Suspend disabled! \
 The phone hung at 3% battery.
 
-custom kernel [2].
+#### Powersave
+
+Can try custom kernel [2].
 
 [1] - https://xnux.eu/howtos/pine64-pinephone-getting-started.html \
 [2] - https://forum.pine64.org/showthread.php?tid=17339 
@@ -162,7 +164,7 @@ Signal-desktop did not find the camera at all (but it seems like camera starts f
 Part of system UI, works.
 
 ## Wifi
-Wifi was moderately fast at 4-5 MB/s, works. However, wifi is not automatically discovered after toggling HW switch while phone is running.
+Wifi was moderately fast at 4-5 MB/s, it works. However, wifi does not seem to be automatically discovered after toggling wifi HW switch while phone is running.
 
 ## Internet, texts, calls, mms
 
