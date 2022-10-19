@@ -35,7 +35,7 @@ Note the differences between releases HW [3], e.g. v1.1 discharges even when tur
 
 **Does it work as a phone**
 
-For me it worked with SMS, MMS, calls with minor configuration. (MMS only works with carriers who has same the data APN and MMS APN.)
+For me it worked with SMS, MMS, calls with minor configuration. (MMS only works with carriers who has same the data APN and MMS APN).
 
 Battery time is good in suspend mode, and can take calls.
 
@@ -46,7 +46,7 @@ It is nice with hardware switches if one wishes to turn off mic, back or front c
 **Does it work as a smartphone**
 
 (Desktop) Apps often work OK but of course it is a bit cumbersome compared to a smartphone, most apps are not made for a phone.
-It might be possible to run Android apps via software such as Anbox, I guess.
+It might be possible to run Android apps via software such as Waydroid or Anbox, I guess.
 
 It is slow! Let's say performance similar to Samsung S3, with the downside that apps are not optimized for it. Still it works for most regular browsing, chat apps, etc. Video streaming is VERY SLOW however, fullscreen 360p Youtube videos in Firefox is lagging but playable (I'm not sure if this can be improved with HW acceleration or something). The successor, Pinephone Pro, has much better performance, which might be a good upgrade once it has matured.
 
@@ -97,16 +97,28 @@ Remember to apt update and upgrade!
 
 ## General tips
 
-https://forum.pine64.org/showthread.php?tid=13861 
+General: https://forum.pine64.org/showthread.php?tid=13861 
 
 
-## Powersave
+## Powersave and Charging
 
-IDK! Not checked. Long battery as long as it is in suspend (=no internet but will wake on sms and phone calls)
+Contrary to popular belief, you can charge the phone while it's turned off; When plugged in the phone will automatically boot, but turn it off again and it will remain off and charging.
 
-custom kernel [1].
+When on, the phone charges somewhat slowly. Get a poweful charger, _"The PinePhone should be charged using a 15W (5V 3A) USB -PD power adapter"_ (citation needed). Some comments on phone charging hardware here, [1].
 
-[1] - https://forum.pine64.org/showthread.php?tid=17339 
+I would say that the most convenient way of charging is to put the phone in suspend mode. That way you can still receive calls/sms and set alarms, while charing much faster (by using less power). Suspend when charging must be enabled in settings.
+
+By the way, _"You can use PinePhone without the battery inserted if you can provide enough power over USB port. Modem and WiFi and flash light are connected to the battery directly (almost) so these will not work without the battery inserted."_ [1]
+
+#### Powersaving
+
+I have not looked into custom powersaving hacks. Out of the box it does have long battery life as long as it is in suspend (=no internet but will wake on sms and phone calls), otherwise during heavy use maybe 1-3h.
+
+custom kernel [2].
+
+[1] - https://xnux.eu/howtos/pine64-pinephone-getting-started.html \
+[2] - https://forum.pine64.org/showthread.php?tid=17339 
+
 
 ## Camera
 
@@ -121,6 +133,7 @@ Part of system UI, works.
 ## Internet, texts, calls, mms
 
 Sms, calls, and 2G 3G 4G worked out of the box for me. I (quickly) tried with Tre and Telia carrier networks in Sweden (2022-10). MMS needed manual configuration and data/MMS APN needs to be the same (so e.g. Telia doesn't work), MMS worked on Tre carrier.
+Calls over 4G (i.e. VoLTE) did not work out of the box for me, is there manual configuration for this needed?
 
 ### General 
 
@@ -143,12 +156,16 @@ https://wiki.pine64.org/wiki/PinePhone_APN_Settings
 tl;dr When tested, calls works on 2G and 3G. Texing works on all networks.
 
 Applies to carriers Tre (altough they have no 2G ofc) and Telia:
-Calls work very well on 3G. But it seems like it doesn't want to connect on 4G (peculiar considering data works), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre). 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe it was a coincidence?) there might be bad interference getting transmitted to the other party.
+Calls work very well on 3G. But it seems like it doesn't want to connect calls on 4G (VoLTE should, in general, be possible but might need to explore.. see [1] [2]), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre). 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe it was a coincidence?) there might be bad interference getting transmitted to the other party.
+
 
 Comment: When I tested 2G, hot swapping headset, I managed to crash mic? Regardless it did not work in calls, with headset or not before restart.
 
 Received and transmitted sound is generally good.
 It is possible to plug-in and remove headset during conversation, etc. All working well, (except for that one time during call that all mics stopped working... remained even after connecting a headset and also after redialing).
+
+[1] - https://wiki.postmarketos.org/wiki/PINE64_PinePhone_(pine64-pinephone)#VoLTE \
+[2] - https://wiki.mobian-project.org/doku.php?id=pinephone
 
 #### Firmware
 
@@ -280,7 +297,8 @@ sudo apt install -y telegram-desktop
 
 ### Browsing
 
-Firefox is OK, but takes like 5 seconds to start. Video performance is bad, if you're lucky you can run 360p video smoothly. HW acceleration working?
+Firefox is OK, but takes like 5 seconds to start. Video performance is bad, if you're lucky you can run 360p video smoothly. Is HW acceleration available or working? Heard here that video is currently done in SW (2020-08-20 https://youtu.be/jdl1x3DkMEg?t=1256).
+
 Sometimes menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies, install addons etc.
 
 # Security
