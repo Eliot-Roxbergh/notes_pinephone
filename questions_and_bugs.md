@@ -12,8 +12,7 @@ After a while the setting option disappears, and reappear, probably restarting s
 
 # Feature Questions/Requests
 
-0. WHY IS THE BLUE LED BLINKING? And how can I configure it?
-
+0. Sometimes blue light is blinking but I'm not sure why (could be some random system notification or whatever)? And how can I configure it? Still it works, including for Signal-desktop notifications.
 1. Import/export contacts from SIM card? (contacts can be handled via .vcf file instead)
 2. How to get VoLTE to work, if it doesn't out of the box?
 3. Add shortcut / key combination for screenshot?
@@ -21,11 +20,18 @@ After a while the setting option disappears, and reappear, probably restarting s
 5. Record videos at all? Have video calls?
 6. Does GPS work? (TODO test me)
 7. Is it possible to turn on wifi HW switch during runtime and connect to wifi without reboot? Restart network service or something maybe? Can it be made convenient?
+8. How to reliably listen to music, especially while not draining battery too much? Playing in VLC and pausing via lockscreen almost works (not too reliable?).
 
 ## Apps:
 
+#### VLC
+Works to play music while phone is locked/screen off. Controlling music via lockscreen works as well. Although the VLC UI in the background completely froze while I did this.
+
+1. Bad UI
+
 #### Signal-desktop
 
+0. Very often (when adding attachments?) the keyboard no long writes into signal text box, restart the app fixes it.
 1. Fix build so it is packaged as .deb instead of binary. Or at least add a shortcut so it is easy to launch said binary (how?). (See seprate file on building signal)
 2. TODO try to collapse side menu with mouse?
 3. Sometimes keyboard stops working in app, and need to restart it.
