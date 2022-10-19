@@ -1,6 +1,8 @@
 # Bugs:
 
-1. Sometimes on new boot the top drag-down menu doesn't work. Fixed by locking phone
+0. Sometimes sound stops working (both speakers and headphones). Why? Reboot fixes it, sometimes.
+
+1. Sometimes on new boot the top drag-down menu doesn't work. Fixed by locking phone.
 
 2. Sometimes when wake from suspend? And if you manually turn off mobile data or mobile network, when turned on internet does not work (only cellular no data)?
 After a while the setting option disappears, and reappear, probably restarting service, but still no internet.
