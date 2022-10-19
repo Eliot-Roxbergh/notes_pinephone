@@ -25,9 +25,9 @@ After a while the setting option disappears, and reappear, probably restarting s
 ## Apps:
 
 #### VLC
-Works to play music while phone is locked/screen off. Controlling music via lockscreen works as well. Although the VLC UI in the background completely froze while I did this.
+Works to play music, even while phone is locked/screen off, and controlling music via lockscreen works as well. 
 
-1. Bad UI
+1. Bad UI, the media keys like play button doesn't work?
 
 #### Signal-desktop
 
