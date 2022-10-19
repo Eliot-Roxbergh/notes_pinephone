@@ -339,18 +339,28 @@ Telegram works well, no complains after quick test. Note, this is desktop app so
 sudo apt install -y telegram-desktop
 ```
 
-### Browsing
+### Music
 
-Firefox is OK, but takes like 5 seconds to start. Video performance is bad, if you're lucky you can run 360p video moderately smoothly. Is HW acceleration available or working? Heard here that video is currently done in SW [1].
+Playing music works OK (I only tried VLC, although its UI is half frozen), can pause etc. on lock screen. Not sure how to achieve very long battery time (like more than 4-5h?) while using it as music player, as it then must not enter suspend mode.
 
-Some menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies, install addons etc.
-How to handle bookmarks though?
+### Video
+
+HW acceleration not available in _any_ browser afaik. In general video decoding is done in SW [1], the issue (I think) is that Mali400 MP2 only supports GLES 2.0.
+It could be that video works better with 3GB ram, as I notice now firefox watching Youtube takes almost all 2GB. Moreover, someone said that maybe video works better after you've installed mpv (more likely from some gstreamer dependency), I'm not sure. I think that for video watching in browser, best I have seen is (almost smooth) 30fps@480p, which was on Angelbrowser (firefox might be on par if you have enough ram).
+
+However! mpv has hardware acceleration, I guess, as you can e.g. save/stream videos with yt-dlp with good performance. Specifically, with mpv, 30fps@1080p (VP9 encoding) video is OK and I got only ~8% dropped frames!
 
 [1] - Lecture: Is there hope for Linux on smartphones?, 2020-08-20, https://youtu.be/jdl1x3DkMEg?t=1256
 
-### Music
 
-Playing music works OK (I only tried VLC, although its UI is half frozen), can pause etc. on lock screen. Not sure how to achieve very long battery time while using it as music player, as it then must not enter suspend mode.
+### Browsing
+
+tl;dr video is laggy, stream and play locally if possible. Desktop browsers such as firefox are of course clunky to use.
+
+**Firefox** is "OK", but takes like 5 seconds to start. Video performance is bad, but you can run 360-480p moderately smoothly (maybe? check again with 3GB ram system). Some menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies, install addons etc. Firefox is too hungry to run videos effectively on 2GB system, might be better on 3GB version.
+How to handle bookmarks though, hard to understand/navigate?
+
+**Angelbrowser** (`sudo apt install angelbrowser`), worked better in videos and works well on small screen. Video almost worked OK on 480p. Seems good, but I'm not too familiar with this browser.
 
 # Security
 
@@ -359,6 +369,8 @@ Pinephone has hw switches to disable mic / headphones / camera 1 / camera 2 / wi
 I do not think firmware and required apps are 100% open-source? And for instance, regarding Pinephone Pro "_ppp-cam app itself will stay closed source_" [1]
 
 Note that, in general, stock Linux does not have the same application sandboxing as e.g. Android. 
+
+If you have the pin code, you're root... ops!
 
 "_USB-OTG is very permissive . The MTP service currently has no security whatsoever; if the phone is plugged into a computer, even with disk encryption, the computer will have full R/W access to your /home dir, and full read access to /. See Services on how to disable and enable only when needed._" [2].
 
