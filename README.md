@@ -70,14 +70,14 @@ It is slow! Let's say performance similar to Samsung S3, with the downside that 
 
 Camera is badish and cannot take videos (?). Still it works as a camera.
 
-Battery time is very bad (max 1-2h of heavy use?), but is quite good in suspend mode: in which it turns off data and only wakes on calls or sms/mms. So battery time is quite good if you utilize suspend and use it as a phone, but during suspend you won't get any other notifications, nor able play music etc.
+Battery time is bad (1-2h of heavy use, 4-5h moderate use or listening to music), but is quite good in suspend mode: in which it turns off data and only wakes on calls or sms/mms. So battery time is quite good if you utilize suspend and use it as a phone, but during suspend you won't get any other notifications, nor able play music etc.
 
 
 -----
 
 **Does it work as a computer**
 
-TODO. It should work to directly attach (USB-C hub) keyboard, mouse, and even HDMI screen, to utilize the phone as a desktop computer as well. Might be sufficient for lite work, browsing, reading, and coding.
+Probably (TODO). It should work to directly attach (USB-C hub) keyboard, mouse, and even HDMI screen, to utilize the phone as a desktop computer as well. Might be sufficient for lite work, browsing, reading, and coding.
 
 
 -----
@@ -156,7 +156,7 @@ Can try custom kernel [2].
 
 ## Camera
 
-Photos works OK. Front camera is not very good and very yellow hue. Back camera is good if you compare to a phone from like 2012 (I would say it's maaybe better than Samsung S3 for instance), so it is acceptable perhaps (and flash works). However, AFAIK taking videos is not supported!!
+Photos works OK. Front camera is not very good and very yellow hue. Back camera is decent if you compare to a phone from like 2012 (I would say it's on par with Samsung S3 for instance. It is better in bad lighting, but minus points for being hard to focus and no zoom, also the photo is slightly bigger than the camera app lets on), so it is acceptable perhaps (and the flash works). However, AFAIK taking videos is not supported!!
 
 Signal-desktop did not find the camera at all (but it seems like camera starts focus considering the sound? idk).
 
@@ -164,7 +164,7 @@ Signal-desktop did not find the camera at all (but it seems like camera starts f
 Part of system UI, works.
 
 ## Wifi
-Wifi was moderately fast at 4-5 MB/s, it works. However, wifi does not seem to be automatically discovered after toggling wifi HW switch while phone is running.
+Wifi was moderately fast at 4-5 MB/s (quick test), it works. However, wifi does not seem to be automatically discovered after toggling wifi HW switch while phone is running.
 
 ## Internet, texts, calls, mms
 
@@ -174,7 +174,7 @@ Calls over 4G (i.e. VoLTE) did not work out of the box for me, is there manual c
 ### General 
 
 Telia and Tre carriers (although Tre has no 2G support on their side ofc);
-Everything seems to work with the carriers tested, with three exceptions. 1. Calls doesn't work on 4G. 2. 2G coverage is much worse than other phones it looks like (2G calls and data is supported). 3. MMS works, except for Telia which had two APNs (no support!).
+Everything seems to work with the carriers tested, with three exceptions. 1. Calls doesn't work on 4G (see VoLTE). 2. 2G coverage is much worse than other phones it looks like (but 2G calls and data is supported). 3. MMS works, except for Telia which had two APNs (i.e. no support!).
 
 Compared to other phones, 4G 3G coverage is equivalent it looks like, however 2G coverage is quite a bit worse.
 
@@ -244,8 +244,8 @@ TODO test
 
 ## Alarm app (that works in suspend)
 
-Default alarm app does not work in suspend (lol!), so use this one instead. It did work when I tried it, but UI is slow.
-Remember to increase the volume so you can actually hear it, and wake up!
+Default alarm app does not work in suspend (lol!), so use this one instead. It did work when I tried it, but setting alarm takes a few seconds (have patience).
+Remember to increase the volume so you can actually hear it and wake up!
 
 Birdie: Go here on phone and just build: https://github.com/Dejvino/birdie [1].
 
@@ -284,7 +284,6 @@ TODO how to add as a reasonable shortcut?
 System comes with Console (terminal app). It works. To paste text, long press (on touch screen) and _at the same time_, with the other hand, press 'paste' on the menu that appears. Ctrl+v on virtual keyboard doesn't seem to work for some reason, maybe it wants ctrl+shift+v which keyboard doesn't want to send?
 
 
-
 ## Apps
 
 Note that nothing (except sms, mms?, and phone calls) will be sent or received when phone is in suspend (default after 5min). This greatly increases battery life however.
@@ -295,7 +294,7 @@ To wake phone up periodically try some 'sleepwalk' script, like [1], and that wa
 ### Signal-desktop
 
 Signal-desktop does not have official arm64 support, but you can build it from source (see below).
-Signal-desktop works ok, but not made for small screen: so zoom out in the menu and it _should_ be possible to contract the contact menu by dragging (maybe if you plug in mouse, it's literally 1 px). 
+Signal-desktop works ok, but not made for small screen: so zoom out via the menu and it _should_ be possible to contract the contact menu by dragging (maybe if you plug in mouse, it's literally 1 px). 
 Voice calls on signal work, but it did not detect the camera. If the phone is in suspend, Signal messages or calls will not be received (of course) until phone wakes up again. 
 
 Signal alerts are shown on lock screen, blue led flashing correctly.
@@ -344,19 +343,20 @@ sudo apt install -y telegram-desktop
 
 Firefox is OK, but takes like 5 seconds to start. Video performance is bad, if you're lucky you can run 360p video moderately smoothly. Is HW acceleration available or working? Heard here that video is currently done in SW [1].
 
-Sometimes menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies, install addons etc.
+Some menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies, install addons etc.
+How to handle bookmarks though?
 
 [1] - Lecture: Is there hope for Linux on smartphones?, 2020-08-20, https://youtu.be/jdl1x3DkMEg?t=1256
 
 ### Music
 
-Playing music works OK (I only tried VLC), can pause etc. on lock screen. Not sure how to achieve very long battery time while using it as music player, as it then must not enter suspend mode.
+Playing music works OK (I only tried VLC, although its UI is half frozen), can pause etc. on lock screen. Not sure how to achieve very long battery time while using it as music player, as it then must not enter suspend mode.
 
 # Security
 
-Pinephone has hw switches to disable mic / camera 1 / camera 2 / wifi / cellular.
+Pinephone has hw switches to disable mic / headphones / camera 1 / camera 2 / wifi / cellular modem.
 
-I do not think firmware and required apps is 100% open-source (cellular is not ofc but more?). And for instance, regarding Pinephone Pro "_ppp-cam app itself will stay closed source_" [1]
+I do not think firmware and required apps are 100% open-source? And for instance, regarding Pinephone Pro "_ppp-cam app itself will stay closed source_" [1]
 
 Note that, in general, stock Linux does not have the same application sandboxing as e.g. Android. 
 
