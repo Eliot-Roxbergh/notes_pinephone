@@ -80,7 +80,11 @@ TODO. It should work to directly attach (USB-C hub) keyboard, mouse, and even HD
 
 -----
 
-Mobian FAQ https://wiki.mobian.org/doku.php?id=faq
+**Links**
+
+Mobian FAQ, https://wiki.mobian.org/doku.php?id=faq \
+Resources on Linux phones and software/distributions, https://linmob.net/resources/ \
+Linux phone apps (with rating how well they fit on phone), https://linuxphoneapps.org/
 
 # Install OS and bootloader
 
@@ -219,6 +223,10 @@ systemctl --user stop mmsd-tng
 vim $HOME/.mms/modemmanager/mms
 systemctl --user start mmsd-tng
 ```
+
+## GPS
+
+TODO test
 
 ## Alarm app (that works in suspend)
 
