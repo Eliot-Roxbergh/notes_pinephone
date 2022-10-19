@@ -22,6 +22,15 @@ After a while the setting option disappears, and reappear, probably restarting s
 6. Does GPS work? (TODO test me)
 7. Is it possible to turn on wifi HW switch during runtime and connect to wifi without reboot? Restart network service or something maybe? Can it be made convenient?
 
-Apps:
+## Apps:
 
-1. Fix Signal-Desktop build so it is packaged as .deb instead of binary. Or at least add a shortcut so it is easy to launch said binary (how?). (See seprate file on building signal)
+#### Signal-desktop
+
+1. Fix build so it is packaged as .deb instead of binary. Or at least add a shortcut so it is easy to launch said binary (how?). (See seprate file on building signal)
+2. TODO try to collapse side menu with mouse?
+3. Sometimes keyboard stops working in app, and need to restart it.
+4. It is possible to send pictures etc, but they are very small and blurry. Need to save them on disk to see clearly.
+
+#### Firefox
+
+1. How to change or list bookmarks? Such things are very unclear.
