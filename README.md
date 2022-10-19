@@ -9,6 +9,7 @@ For development status of Pinephone etc. see [1]
 
 There is also a more powerful version Pinephone Pro, however now ~Q4 2022 it is not usable as a daily phone [2].
 
+I still have some questions and issues, see [questions_and_bugs.md](questions_and_bugs.md)
 
 [1] - https://xnux.eu/devices/pine64-pinephone.html \
 [2] - https://wiki.pine64.org/wiki/PinePhone_Pro#State_of_the_software 
@@ -63,6 +64,8 @@ TODO. It should work to directly attach (USB-C hub) keyboard, mouse, and even HD
 
 
 -----
+
+Mobian FAQ https://wiki.mobian.org/doku.php?id=faq
 
 # Install OS and bootloader
 
@@ -297,9 +300,11 @@ sudo apt install -y telegram-desktop
 
 ### Browsing
 
-Firefox is OK, but takes like 5 seconds to start. Video performance is bad, if you're lucky you can run 360p video smoothly. Is HW acceleration available or working? Heard here that video is currently done in SW (2020-08-20 https://youtu.be/jdl1x3DkMEg?t=1256).
+Firefox is OK, but takes like 5 seconds to start. Video performance is bad, if you're lucky you can run 360p video moderately smoothly. Is HW acceleration available or working? Heard here that video is currently done in SW [1].
 
 Sometimes menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies, install addons etc.
+
+[1] - Lecture: Is there hope for Linux on smartphones?, 2020-08-20, https://youtu.be/jdl1x3DkMEg?t=1256
 
 # Security
 
