@@ -156,6 +156,8 @@ Signal-desktop did not find the camera at all (but it seems like camera starts f
 ## Flashlight
 Part of system UI, works.
 
+## Wifi
+Wifi is moderately fast at 4-5 MB/s, works. However, wifi is not automatically discovered after toggling HW switch while running.
 
 ## Internet, texts, calls, mms
 
