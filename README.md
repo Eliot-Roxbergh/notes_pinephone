@@ -341,14 +341,18 @@ sudo apt install -y telegram-desktop
 
 ### Music
 
-Playing music works OK (I only tried VLC, although its UI is half frozen), can pause etc. on lock screen. Not sure how to achieve very long battery time (like more than 4-5h?) while using it as music player, as it then must not enter suspend mode.
+Playing music works OK, can pause etc. on lock screen. Not sure how to achieve very long battery time (like more than 4-5h?) while using it as music player, as it then must not enter suspend mode.
+
+**VLC** works but half the UI frozen, not made for phone.
+
+The distro comes with **Lollypop** which at first didn't find any music, but seems to work now. No complaints.
 
 ### Video
 
 HW acceleration not available in _any_ browser afaik. In general video decoding is done in SW [1], the issue (I think) is that Mali400 MP2 only supports GLES 2.0.
-It could be that video works better with 3GB ram, as I notice now firefox watching Youtube takes almost all 2GB. Moreover, someone said that maybe video works better after you've installed mpv (more likely from some gstreamer dependency), I'm not sure. I think that for video watching in browser, best I have seen is (almost smooth) 30fps@480p, which was on Angelbrowser (firefox might be on par if you have enough ram).
+It could be that video works better with 3GB ram, as I notice now **Firefox** watching Youtube takes almost all 2GB. Moreover, someone said that maybe video works better after you've installed mpv (more likely from some gstreamer dependency), I'm not sure. I think that for video watching in browser, best I have seen is (almost smooth) 30fps@480p, which was on **Angelbrowser** (firefox might be on par if you have enough ram).
 
-However! mpv has hardware acceleration, I guess, as you can e.g. save/stream videos with yt-dlp with good performance. Specifically, with mpv, 30fps@1080p (VP9 encoding) video is OK and I got only ~8% dropped frames!
+However! **mpv** has hardware acceleration, I guess, as you can e.g. save/stream videos with yt-dlp with good performance. Specifically, with mpv, 30fps@1080p (VP9 encoding) video is OK and I got only ~8% dropped frames!
 
 [1] - Lecture: Is there hope for Linux on smartphones?, 2020-08-20, https://youtu.be/jdl1x3DkMEg?t=1256
 
