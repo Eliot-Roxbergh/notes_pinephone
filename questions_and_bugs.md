@@ -16,16 +16,19 @@ After a while the setting option disappears, and reappear, probably restarting s
 1. Import/export contacts from SIM card? (contacts can be handled via .vcf file instead)
 2. How to get VoLTE to work, if it doesn't out of the box?
 3. Add shortcut / key combination for screenshot?
-4. Watch videos in browser without lag, HW acceleration?
+4. Watch videos in browser without lag, HW acceleration? [4]
 5. Record videos at all? Have video calls?
 6. Does GPS work? (TODO test me)
 7. Is it possible to turn on wifi HW switch during runtime and connect to wifi without reboot? Restart network service or something maybe? Can it be made convenient?
 8. How to reliably listen to music, especially while not draining battery too much? Playing in VLC and pausing via lockscreen almost works (not too reliable?).
 
-## Apps:
+[4] - I think no hw acceleration in browsers since Mali400 MP2 only supports GLES 2.0? Use local players if possible, like MPV.
+
+## Apps (that have issues)
 
 #### VLC
 Works to play music, even while phone is locked/screen off, and controlling music via lockscreen works as well. 
+Probably give up and try to use "native" apps like Lollypop.
 
 1. Bad UI, the media keys like play button doesn't work?
 
@@ -38,5 +41,7 @@ Works to play music, even while phone is locked/screen off, and controlling musi
 4. It is possible to send pictures etc, but they are very small and blurry. Need to save them on disk to see clearly.
 
 #### Firefox
+
+Bad UI for small screens, might reconsider.
 
 1. How to change or list bookmarks? Such things are very unclear.
