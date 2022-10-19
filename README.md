@@ -16,9 +16,24 @@ I still have some questions and issues, see [questions_and_bugs.md](questions_an
 
 ## TL;DR
 
+**Why?**
+
+- It should work as a phone (calls, sms, mms). Also internet, wifi, and a poor camera. Maybe even GPS works.
+
+- Regular free software, such as GNU/Linux on a phone. Easy to use with the same programs as on desktop Linux. You are root and have full control. Easy to script and customize (if you have time), make changes and push patches upstream. Regular features, such as full disk encryption is available.
+
+- With USB-C it can be attached to external peripherals (e.g. keyboard, mouse), ethernet, and screen - making the phone also usable as a slower desktop, laptop or tablet computer. In this manner (or via SSH) you can also more easily configure and debug the phone.
+
+- Kill switches.
+
+- Moderately cheap at 199$.
+
+- It shows promise; Slow HW but future releases (such as Pinephone Pro) will be faster.
+Except for the basic apps, the software is badly optimized for such a small screen. But maybe future software releases will be better (it has visably improved between 2020 and 2022).
+
 **How to buy**
 
-The phone works and only costs 199$ (total to Sweden 270$ incl. VAT) (quad core, 3GB ram) [1]. There are also accessories like an attachable keyboard [2] as well as replacement parts and batteries.
+The phone works and only costs 199$ (total to Sweden 270$, incl. VAT and shipping) (quad core, 3GB ram) [1]. There are also accessories like an attachable keyboard [2] as well as replacement parts and batteries.
 
 Only purchase if you have some Linux experience.
 
@@ -47,7 +62,7 @@ It is nice with hardware switches if one wishes to turn off mic, back or front c
 **Does it work as a smartphone**
 
 (Desktop) Apps often work OK but of course it is a bit cumbersome compared to a smartphone, most apps are not made for a phone.
-It might be possible to run Android apps via software such as Waydroid or Anbox, I guess.
+It might be possible to run Android apps (but probably too bothersome and slow!) via software such as Waydroid or Anbox.
 
 It is slow! Let's say performance similar to Samsung S3, with the downside that apps are not optimized for it. Still it works for most regular browsing, chat apps, etc. Video streaming is VERY SLOW however, fullscreen 360p Youtube videos in Firefox is lagging but playable (I'm not sure if this can be improved with HW acceleration or something). The successor, Pinephone Pro, has much better performance, which might be a good upgrade once it has matured.
 
