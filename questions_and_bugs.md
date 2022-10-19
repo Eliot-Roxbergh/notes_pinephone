@@ -13,3 +13,4 @@ After a while the setting option disappears, and reappear, probably restarting s
 3. Add shortcut / key combination for screenshot?
 4. Watch videos in browser without lag, HW acceleration?
 5. Record videos at all? Have video calls?
+6. Does GPS work? (TODO test me)
