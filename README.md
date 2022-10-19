@@ -139,7 +139,8 @@ By the way, _"You can use PinePhone without the battery inserted if you can prov
 I have not looked into custom powersaving hacks. Out of the box it does have long battery life as long as it is in suspend (=no internet but will wake on sms and phone calls), otherwise during heavy use maybe 1-3h.
 
 Battery example: \
-Used it 2h on 4G (wifi hw switch off). Normal light use and a few reboots (which could draw more?), with at most 30min screen time but not much time in suspend -> 39% lost (100->61 %).
+Used it 2h on 4G (wifi hw switch off). Normal light use and a few reboots (which could draw more?), with at most 30min screen time but not much time in suspend -> 39% lost (100->61 %). \
+Used it 1h on wifi (and 4G). Normal use, browsing/chatting, 30min playing music, 30min screen on. 30% battery lost (~51->21 %).
 
 custom kernel [2].
 
@@ -288,8 +289,10 @@ To wake phone up periodically try some 'sleepwalk' script, like [1], and that wa
 ### Signal-desktop
 
 Signal-desktop does not have official arm64 support, but you can build it from source (see below).
-Signal-desktop works ok, but not made for small screen: so zoom out in the menu and it _should_ be possible to contract the contact menu by dragging (maybe if you plug in mouse, it's literally 1 px).
-Voice calls on signal work, but it did not detect the camera. If the phone is in suspend, Signal messages or calls will not be received (of course) until phone wakes up again.
+Signal-desktop works ok, but not made for small screen: so zoom out in the menu and it _should_ be possible to contract the contact menu by dragging (maybe if you plug in mouse, it's literally 1 px). 
+Voice calls on signal work, but it did not detect the camera. If the phone is in suspend, Signal messages or calls will not be received (of course) until phone wakes up again. 
+
+Signal alerts are shown on lock screen, blue led flashing correctly.
 
 Build from source, can be difficult to compile, but latest beta (2022-10-11) was easy to build (I built on another arm64 device).
 Still I did NOT manage to build a .deb file, only the binary directly (TODO) ... but it works (need to create shortcut manually TODO). TODO try if it's easier on x86 (might not be though), considering build .deb file uses x86_32 dependency for some reason (First Docker link gave some sort of .deb, so should work on arm64!) .
@@ -311,7 +314,7 @@ nvm install 16.15.0 #this might change ofc, otherwise run nvm use in signal-desk
 ```
 git clone https://github.com/signalapp/Signal-Desktop.git 
 cd Signal-Desktop
-git checkout v5.63.0-beta.3 #lastest beta
+git checkout v5.63.0-beta.3 #I just took the latest beta 2022-10-11
 git-lfs install
 nvm use
 
@@ -338,6 +341,10 @@ Firefox is OK, but takes like 5 seconds to start. Video performance is bad, if y
 Sometimes menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies, install addons etc.
 
 [1] - Lecture: Is there hope for Linux on smartphones?, 2020-08-20, https://youtu.be/jdl1x3DkMEg?t=1256
+
+### Music
+
+Playing music works OK (I only tried VLC), can pause etc. on lock screen. Not sure how to achieve very long battery time while using it as music player, as it then must not enter suspend mode.
 
 # Security
 
