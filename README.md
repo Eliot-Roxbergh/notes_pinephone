@@ -26,6 +26,8 @@ I still have some questions and issues, see [questions_and_bugs.md](questions_an
 
 - Kill switches.
 
+- It has 3.5mm jack
+
 - Moderately cheap at 199$.
 
 - It shows promise; Slow HW but future releases (such as Pinephone Pro) will be faster.
@@ -135,6 +137,9 @@ By the way, _"You can use PinePhone without the battery inserted if you can prov
 #### Powersaving
 
 I have not looked into custom powersaving hacks. Out of the box it does have long battery life as long as it is in suspend (=no internet but will wake on sms and phone calls), otherwise during heavy use maybe 1-3h.
+
+Battery example: \
+Used it 2h on 4G (wifi hw switch off). Normal light use and a few reboots (which could draw more?), with at most 30min screen time but not much time in suspend -> 39% lost (100->61 %).
 
 custom kernel [2].
 
