@@ -8,7 +8,7 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 At least once, the Mobile Network menu disappeared, and reappeared, in settings probably restarting service, but still no internet.
 2b. (related or not?) Usually you can force 2G/3G/4G instead of using default, but sometimes not with error: "Setting allowed modes not supported.".
 
-3.Wifi off switch doesn't _really_ work (pinephone rev 1.1)! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) \
+3. Wifi off switch doesn't _really_ work (pinephone rev 1.1)! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) \
 ![Switches off internet 1](pics/wifi_switch_off.jpg)![Switches off internet 1](pics/wifi_switch_off_internet.jpg)
 
 ## Rare bugs
