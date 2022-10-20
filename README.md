@@ -30,8 +30,12 @@ I still have some questions and issues, see [questions_and_bugs.md](questions_an
 
 - Moderately cheap at 199$.
 
+- _Mostly_ free-software system and drivers [1].
+
 - It shows promise; Slow HW but future releases (such as Pinephone Pro) will be faster.
 Except for the basic apps, the software is badly optimized for such a small screen. But maybe future software releases will be better (it has visably improved between 2020 and 2022).
+
+[1] - https://www.pine64.org/2020/01/24/setting-the-record-straight-pinephone-misconceptions
 
 **How to buy**
 
@@ -403,8 +407,6 @@ How to handle bookmarks though, hard to understand/navigate?
 
 Pinephone has hw switches to disable mic / headphones / camera 1 / camera 2 / wifi / cellular modem.
 
-I do not think firmware and required apps are 100% open-source? And for instance, regarding Pinephone Pro "_ppp-cam app itself will stay closed source_" [1]
-
 Note that, in general, stock Linux does not have the same application sandboxing as e.g. Android. 
 
 If you have the pin code, you're root... ops!
@@ -413,6 +415,13 @@ If you have the pin code, you're root... ops!
 
 Offtopic: it is possible to change phone IMEI apparently [3].
 
+## Components and Firmware
+
+Firmware and required apps are 100% open-source? And for instance, regarding Pinephone Pro, "_ppp-cam app itself will stay closed source_" [1]
+
+To quote Wikipedia, "_The PinePhone aims to be fully open source in its drivers and bootloader. Despite this, due to the scarcity of open source components for cellular and wireless connectivity, the firmware for the Realtek RTL8723CS WiFi/Bluetooth, as well as the optional auto-focus firmware for the OmniVision OV5640 back camera, remain proprietary software. In order to mitigate potential threats to privacy, these components communicate with the rest of the system only over serial protocols, such as USB 2.0, I2S and SDIO, which do not allow direct memory access (DMA). Use of these protocols also permits them to be physically disconnected via kill switches_ [4]"
+
 [1] - https://xnux.eu/log/#toc-2022-06-23-further-pinephone-pro-camera-development \
 [2] - https://wiki.mobian-project.org/doku.php?id=pinephone \
-[3] - https://forum.pine64.org/showthread.php?tid=14743 
+[3] - https://forum.pine64.org/showthread.php?tid=14743 \
+[4] - original source: https://www.pine64.org/2020/01/24/setting-the-record-straight-pinephone-misconceptions
