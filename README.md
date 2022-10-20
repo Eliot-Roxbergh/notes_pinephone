@@ -169,7 +169,7 @@ Can try custom kernel [2].
 ## Camera
 
 #### Photos
-Taking photos works OK. Front camera is bad and very yellow hue. Back camera is decent if you compare to a phone from like 2012 (I would say it's maybe on par with Samsung S3 for instance. It is better in bad lighting, but sometimes it cannot focus at all also no zoom. And the resulting photo is slightly bigger than the default camera app lets on), so it is almost acceptable perhaps (and the flash works).
+Taking photos works OK. Front camera is OK, but has a _very_ yellow hue. Back camera is decent if you compare to a phone from like 2012 (I would say it's maybe on par with Samsung S3 for instance. It is better in bad lighting, _but_ sometimes it cannot focus at all also no zoom. And the resulting photo is slightly bigger than the default camera app lets on), so it is almost acceptable perhaps (and the flash works). For back camera, the image in camera app looks very unsaturated (weak colors) but the resulting photo is OK.
 
 #### Videos
 Taking videos is basically _not_ supported in software.
