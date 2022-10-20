@@ -8,6 +8,8 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 At least once, the Mobile Network menu disappeared, and reappeared, in settings probably restarting service, but still no internet.
 2b. (related or not?) Usually you can force 2G/3G/4G instead of using default, but sometimes not with error: "Setting allowed modes not supported.".
 
+3. Wifi off switch doesn't _really_ work?! _Once_ when I turned it off when running, I still had internet (yes it was routing via wifi). ![Switches off internet 1](pics/wifi_switch_off.jpg)![Switches off internet 1](pics/wifi_switch_off_internet.jpg)
+
 ## Rare bugs
 
 1. Very rarely on new boot the top drag-down menu doesn't work. Fixed by locking phone.
