@@ -18,7 +18,7 @@ I still have some questions and issues, see [questions_and_bugs.md](questions_an
 
 **Why Pinephone?**
 
-- It should work as a phone (calls, sms, mms). Also internet, wifi, and a poor camera. Maybe even GPS works.
+- It should work as a phone (calls, sms, mms). Also internet, wifi, and a poor camera. Maybe even GPS works (no promises!).
 
 - Regular free software, such as GNU/Linux on a phone. Easy to use with the same programs as on desktop Linux. You are root and have full control. Easy to script and customize (if you have time), make changes and push patches upstream. Regular features, such as full disk encryption is available.
 
@@ -148,6 +148,18 @@ The phone hung at 3% battery.
 
 #### Powersave
 
+To decrease power use;
+
+- Turn off wifi (if possible also turn off kill switch)
+- Minimize screen brightness
+
+- Disable man-db and apt timers (see: sudo systemctl list-timers)
+
+- Enabling suspend makes huge difference (but while in suspend it works like a dump phone)
+- It is possible to turn on powersave in power options (I guess it just lowers CPU clock?)
+
+CPU frequency is automatically governed by schedutil in the kernel.
+
 Can try custom kernel [2].
 
 [1] - https://xnux.eu/howtos/pine64-pinephone-getting-started.html \
@@ -156,9 +168,18 @@ Can try custom kernel [2].
 
 ## Camera
 
-Photos works OK. Front camera is not very good and very yellow hue. Back camera is decent if you compare to a phone from like 2012 (I would say it's on par with Samsung S3 for instance. It is better in bad lighting, but minus points for being hard to focus and no zoom, also the photo is slightly bigger than the camera app lets on), so it is acceptable perhaps (and the flash works). However, AFAIK taking videos is not supported!!
+#### Photos
+Taking photos works OK. Front camera is bad and very yellow hue. Back camera is decent if you compare to a phone from like 2012 (I would say it's maybe on par with Samsung S3 for instance. It is better in bad lighting, but sometimes it cannot focus at all also no zoom. And the resulting photo is slightly bigger than the default camera app lets on), so it is almost acceptable perhaps (and the flash works).
+
+#### Videos
+Taking videos is basically _not_ supported in software.
+What I've heard is that you can record videos in **ffmpeg** (terminal program).
+
+They ([1]) mention streaming video in firefox is possible (although it is very slow with no hw video acc.).
 
 Signal-desktop did not find the camera at all (but it seems like camera starts focus considering the sound? idk).
+
+[1] - https://communityblog.fedoraproject.org/matrix-video-calls-pinephone/, 2021-03-11 
 
 ## Flashlight
 Part of system UI, works.
@@ -240,11 +261,11 @@ systemctl --user start mmsd-tng
 
 ## GPS
 
-TODO test
+It started of being 50m wrong then it was 200m, 10km and now it's in dead. It does give some kind of location in apps and firefox, but not sure how to fix.
 
 ## Alarm app (that works in suspend)
 
-Default alarm app does not work in suspend (lol!), so use this one instead. It did work when I tried it, but setting alarm takes a few seconds (have patience).
+Default alarm app does not work in suspend (lol!), so use this one instead. It did work when I tried it, but setting alarm takes a few seconds (have patience). The alarmed seemed to go off 5min early when I tried, some drift?
 Remember to increase the volume so you can actually hear it and wake up!
 
 Birdie: Go here on phone and just build: https://github.com/Dejvino/birdie [1].
@@ -339,27 +360,39 @@ Telegram works well, no complains after quick test. Note, this is desktop app so
 sudo apt install -y telegram-desktop
 ```
 
-### Music
+### Music / Sound
 
 Playing music works OK, can pause etc. on lock screen. Not sure how to achieve very long battery time (like more than 4-5h?) while using it as music player, as it then must not enter suspend mode.
+
 
 **VLC** works but half the UI frozen, not made for phone.
 
 The distro comes with **Lollypop** which at first didn't find any music, but seems to work now. No complaints.
 
+If sound latency problems, maybe try: https://pipewire.org/
+
 ### Video
 
-HW acceleration not available in _any_ browser afaik. In general video decoding is done in SW [1], the issue (I think) is that Mali400 MP2 only supports GLES 2.0.
-It could be that video works better with 3GB ram, as I notice now **Firefox** watching Youtube takes almost all 2GB. Moreover, someone said that maybe video works better after you've installed mpv (more likely from some gstreamer dependency), I'm not sure. I think that for video watching in browser, best I have seen is (almost smooth) 30fps@480p, which was on **Angelbrowser** (firefox might be on par if you have enough ram).
+Hardware video acceleration not available in _any_ browser afaik. In general video decoding is done in SW [1], the issue (I think) is that Mali400 MP2 only supports GLES 2.0. More on HW acceleration see [2] [3].
 
-However! **mpv** has hardware acceleration, I guess, as you can e.g. save/stream videos with yt-dlp with good performance. Specifically, with mpv, 30fps@1080p (VP9 encoding) video is OK and I got only ~8% dropped frames!
+I think that for video watching in browser, best I have seen is (almost smooth) 30fps@480p, which was on **Angelbrowser** (firefox might be on par if you have enough ram). Outside the browser, mpv was able basically handle 30fps@1080p.
+ 
+For **Firefox** it will probably work better with 3GB ram instead of 2GB, as Firefox watching Youtube takes almost all 2GB I had on system. Moreover, someone said that maybe video works better after you've installed mpv (more likely from some gstreamer dependency), I'm not sure.
 
-[1] - Lecture: Is there hope for Linux on smartphones?, 2020-08-20, https://youtu.be/jdl1x3DkMEg?t=1256
+However! **mpv** has hardware acceleration [2], so you can e.g. stream/download Youtube videos with yt-dlp with good performance. Specifically, with mpv, 30fps@1080p (VP9 encoding) video is OK and I got only ~8% dropped frames! \
+mpv: _"libva driver for the Allwinner system-on-a-chip, called “libva-request”. [..] MPV is already using this lib to decode FullHD MP4 movies on my PinePhone with next to zero frame drops. The amount of power consumption has dropped significantly, too. It’s possible to watch a full-length movie without running out of juice. The PinePhone is using 3.6 Watts when all CPU cores are running, which results in approximately two hours until the battery is drained. With the help of the GPU this is no longer the case, as the power consumption got down to around 2 Watts, doubling the life time of a full battery charge."_ - [2] 
 
+
+[1] - Lecture: Is there hope for Linux on smartphones?, 2020-08-20, https://youtu.be/jdl1x3DkMEg?t=1256 \
+[2] - https://communityblog.fedoraproject.org/matrix-video-calls-pinephone/, 2021-03-11 \
+[3] - https://xnux.eu/devices/feature/cedrus-pp.html, (older blog post)
 
 ### Browsing
 
 tl;dr video is laggy, stream and play locally if possible. Desktop browsers such as firefox are of course clunky to use.
+
+There is no hw video acceleration in browsers, someone on IRC said this (I'm paraphrasing);
+> Firefox will never have hardware acceleration unless we can convince the developers to (1.) lower webrender requirements and (2.) support the legacy openGL renderer. And libva-v4l2-request remains dead.
 
 **Firefox** is "OK", but takes like 5 seconds to start. Video performance is bad, but you can run 360-480p moderately smoothly (maybe? check again with 3GB ram system). Some menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies, install addons etc. Firefox is too hungry to run videos effectively on 2GB system, might be better on 3GB version.
 How to handle bookmarks though, hard to understand/navigate?
