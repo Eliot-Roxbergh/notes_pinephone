@@ -4,12 +4,11 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 
 1. Sometimes sound stops working (both speakers and headphones). Why? _Sometimes_ it is fixed by rebooting, _sometimes_ it is fixed by issuing `systemctl --user restart pulseaudio`. Hardware issue, bad connection? Also sometimes playing music is buggy, and pauses etc. related?
 
-2. Sometimes when wake from suspend? And if you manually turn off mobile data or mobile network, often when turned on internet does not work. Sometimes no data, sometimes neither data or cellular. Setting Network gives error, "Cannot register modem: modem is c..." and changing Network Mode says "Transaction timed out".
-At least once, the Mobile Network menu disappeared, and reappeared, in settings probably restarting service, but still no internet.
-2b. (related or not?) Usually you can force 2G/3G/4G instead of using default, but sometimes not with error: "Setting allowed modes not supported.".
+2. Sometimes when wake from suspend? And if you manually turn off mobile data or mobile network, often when turned on internet does not work. Sometimes no data, sometimes neither data or cellular. Setting Network gives error, "Cannot register modem: modem is c..." and changing Network Mode says "Transaction timed out" _or_ "Setting allowed modes not supported". Restarting ModemManager or NetworkManager does not help. Is there a solution? (usually cellular looks to work "4G", but no internet)
 
-3. Wifi off switch doesn't _really_ work (pinephone rev 1.1)! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) \
-![Switches off internet 1](pics/wifi_switch_off.jpg)![Switches off internet 1](pics/wifi_switch_off_internet.jpg)
+3. Wifi off switch doesn't _really_ work! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) \
+![Switches off internet 1](pics/wifi_switch_off.jpg)![Switches off internet 1](pics/wifi_switch_off_internet.jpg) \
+(the ping is not 780 ms but like 30.780 ms, bad pic)
 
 ## Rare bugs
 
@@ -46,6 +45,7 @@ Probably give up and try to use "native" apps like Lollypop, vlc is made for des
 1. Fix build so it is packaged as .deb instead of binary. Or at least add a shortcut so it is easy to launch said binary (how?). (See seprate file on building signal)
 2. TODO try to collapse side menu with mouse?
 3. It is possible to send and receive pictures, but they look very small and blurry. Need to save them on disk to see clearly.
+4. With regular (virtual) keyboards capital letters seem to work, _except_ shift+c which removes the letter prior! This applies for multiple languages, but "terminal"  (virtual) keyboard works.
 
 #### Firefox
 
