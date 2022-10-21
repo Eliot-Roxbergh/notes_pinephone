@@ -19,15 +19,15 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 
 0. Sometimes blue light is blinking but I'm not sure why (I just think a lot of apps gives notifications that are not interesting)? And how can I configure it or remove notifications? Still it works, including for Signal-desktop notifications.
 1. Import/export contacts from SIM card? (contacts can be handled via .vcf file instead)
-2. How to get VoLTE to work, if it doesn't out of the box?
+2. How to get VoLTE to work, if it doesn't out of the box? (I didn't work for me)
 3. Add shortcut / key combination for screenshot?
 
 4. Watch videos in browser without lag, HW acceleration? \
 **Partial answer:** I think no hw acceleration in browsers since Mali400 MP2, it only supports GLES 2.0. Use local players if possible, like MPV. Edit, I think it's not as bad as I first thought, as long as there is enough ram, 360p video (incl. livestreams) should at least kind of work (with the downside that it uses a lot of battery due to no hw acc).
 
-6. Record videos at all (ffmpeg should work at least)? Have video calls (probably no)?
+6. Record videos? _(haven't seen any app/GUI but ffmpeg should work at least)_. Have video calls ? _(Theoretically possible, but probably not / not fast enough?)_
 7. How to improve GPS? (it almost worked but most often it seems completely off)
-8. Is it possible to turn on wifi HW switch during runtime and connect to wifi without reboot? Restart network service or something maybe? Can it be made convenient?
+8. Is it possible to turn on wifi HW switch during runtime and connect to wifi without reboot? ... Unload and load the kernel module? Probably bad for the hw? 
 9. How to reliably listen to music, especially while not draining battery too much? Playing music and pausing via lockscreen almost works (not too reliable? It pauses sometimes? See sound issue, maybe just hw issue).
 10. How does suspend work?
 
@@ -41,14 +41,16 @@ Probably give up and try to use "native" apps like Lollypop, vlc is made for des
 
 #### Signal-desktop
 
-0. Very often (when adding attachments and other pop ups!) the keyboard no long writes into signal text box, restart the app fixes it. **Very annoying!**
+It works but might be annoying.
+
+0. When adding attachments (or get other pop ups), the keyboard no long writes into signal text box, restart the app fixes it. **Very annoying!**
 1. Fix build so it is packaged as .deb instead of binary. Or at least add a shortcut so it is easy to launch said binary (how?). (See seprate file on building signal)
 2. TODO try to collapse side menu with mouse?
-3. It is possible to send and receive pictures, but they look very small and blurry. Need to save them on disk to see clearly.
-4. With regular (virtual) keyboards capital letters seem to work, _except_ shift+c which removes the letter prior! This applies for multiple languages, but "terminal"  (virtual) keyboard works.
+3. It is possible to send and receive pictures, but they look very small and blurry (when ui zoomed out max). Need to save them on disk to see clearly.
+4. With regular (virtual) keyboards capital letters seem to work, _except_ shift+c which removes the letter prior (like backspace)! This applies for multiple keyboard languages, but "terminal" (virtual) keyboard works.
 
 #### Firefox
 
-Bad UI for small screens, might reconsider.
+Bad UI for small screens, might reconsider. Consumes quite a lot of ram, but usable.
 
 1. How to change or list bookmarks? Such things are very unclear.
