@@ -246,6 +246,10 @@ It is possible to plug-in and remove headset during conversation, etc. All worki
 ~~[1] - https://wiki.postmarketos.org/wiki/PINE64_PinePhone_(pine64-pinephone)#VoLTE \
 [2] - https://wiki.mobian-project.org/doku.php?id=pinephone~~
 
+The modem settings (call volume, date and time, and more) is configurable if using modem sdk, see [1].
+
+[1] - https://github.com/the-modem-distro/pinephone_modem_sdk/blob/kirkstone/docs/SETTINGS.md
+
 #### Firmware
 
 I think it is recommended to install custom firmware SDK for the modem, see [2].
@@ -283,6 +287,10 @@ cd package
 
 #### Audio
 To increase call receive volume, /usr/share/alsa/ucm2/PinePhone/VoiceCall.conf
+
+See also [1].
+
+[1] - https://github.com/the-modem-distro/pinephone_modem_sdk/blob/kirkstone/docs/SETTINGS.md
 
 ### MMS
 
