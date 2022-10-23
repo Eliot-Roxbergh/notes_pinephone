@@ -194,18 +194,20 @@ Wifi was moderately fast at 4-5 MB/s (quick test), it works. However, wifi does 
 ## Internet, texts, calls, mms
 
 Sms, calls, and 2G 3G 4G worked out of the box for me. I (quickly) tried with Tre and Telia carrier networks in Sweden (2022-10). MMS needed manual configuration and data/MMS APN needs to be the same (so e.g. Telia doesn't work), MMS worked on Tre carrier.
-Calls over 4G (i.e. VoLTE) did not work out of the box for me, is there manual configuration for this needed?
+Calls over 4G (i.e. VoLTE) did not work out of the box for me, but worked instantly after installing Pinephone Modem SDK (see later section Firmware).
 
 ### General 
 
 Telia and Tre carriers (although Tre has no 2G support on their side ofc);
 Everything seems to work with the carriers tested, with three exceptions. 1. Calls doesn't work on 4G (see VoLTE). 2. 2G coverage is much worse than other phones it looks like (but 2G calls and data is supported). 3. MMS works, except for Telia which had two APNs (i.e. no support!).
 
-Compared to other phones, 4G 3G coverage is equivalent it looks like, however 2G coverage is quite a bit worse.
+Compared to other phones, 4G 3G coverage is similar it looks like, however 2G coverage is quite a bit worse.
 
-Quick speedtest on 4G with moderate/poor coverage, 8mbit/s.
+Quick speedtest on 4G with moderate coverage 11/11 mbit/s (35ms), although on subsequent runs I got 7/11 and 4/14 mbit/s.
+To compare, Iphone SE got 58/15 mbit/s (44ms).
 
-(TODO fill in new carriers on wiki pages)
+
+(TODO fill in carrier we tested on wiki pages below)
 
 https://wiki.pine64.org/wiki/PinePhone_Carrier_Support
 
@@ -219,6 +221,8 @@ tl;dr When tested, calls works on 2G and 3G. Texing works on all networks.
 Applies to carriers Tre (altough they have no 2G ofc) and Telia:
 Calls work very well on 3G. But it seems like it doesn't want to connect calls on 4G (VoLTE should, in general, be possible but might need to explore.. see [1] [2]), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre). 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe it was a coincidence?) there might be bad interference getting transmitted to the other party.
 
+EDIT: VoLTE (4G calls) worked afted installing modem SDK (see later section Firmware).
+
 
 Comment: When I tested 2G, hot swapping headset, I managed to crash mic? Regardless it did not work in calls, with headset or not before restart.
 
@@ -230,9 +234,37 @@ It is possible to plug-in and remove headset during conversation, etc. All worki
 
 #### Firmware
 
-For custom modem firmware look here, [1].
+I think it is recommended to install custom firmware SDK for the modem, see [2].
 
-[1] - https://github.com/the-modem-distro/pinephone_modem_sdk 
+In my case, by updating firmware and installing SDK I instantly got 4G calls (VoLTE) working which was broken before. It is also more open source and has more features.
+
+Basic steps as reference (what I did when testing):
+
+1. Update firmware to [ADSP Version 01.002.01.002](https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.002.01.002/update/NON-HLOS.ubi) or newer [1]. (This is only really necessary if the installed firmware if very old, but I just installed it regardless)
+
+2. Flash modem sdk
+
+```
+sudo apt install adb fastboot
+
+## 1 ##
+wget https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.002.01.002/update/NON-HLOS.ubi
+sudo echo -ne "AT+QFASTBOOT\r" > /dev/ttyUSB2
+sudo fastboot flash modem NON-HLOS.ubi && fastboot reboot
+
+## 2 ##
+wget https://github.com/the-modem-distro/pinephone_modem_sdk/releases/download/0.7.0/package.tar.gz #NOTE! Check if new versions available
+tar -xvzf package.tar.gz -C package
+cd package
+./flashall
+
+# Enter pin when prompted.
+# Give it a few minutes before giving up and reflashing or trying other firmware. (yes it is possible to restore old firmware if necessary [2])
+```
+
+[1] - Comment:  There are different versions of firmware available but this one (01.002.01.002) should be the most likely to work (see [3]). Still, it is possible to use the latest image ([ADSP Version 01.003.01.003.](https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.003.01.003/update/NON-HLOS.ubi)) to get some improvements (although in rare cases it introduces new issues [3]). \
+[2] - https://github.com/the-modem-distro/pinephone_modem_sdk \
+[3] - https://github.com/the-modem-distro/pinephone_modem_sdk/blob/kirkstone/docs/ADSP-CARRIERS.md
 
 #### Audio
 To increase call receive volume, /usr/share/alsa/ucm2/PinePhone/VoiceCall.conf
@@ -417,11 +449,14 @@ Offtopic: it is possible to change phone IMEI apparently [3].
 
 ## Components and Firmware
 
-Firmware and required apps are 100% open-source? And for instance, regarding Pinephone Pro, "_ppp-cam app itself will stay closed source_" [1]
+Firmware and required apps are, mostly, but not 100% open-source. And for instance, regarding Pinephone Pro, "_ppp-cam app itself will stay closed source_" (?) [1].
 
 To quote Wikipedia, "_The PinePhone aims to be fully open source in its drivers and bootloader. Despite this, due to the scarcity of open source components for cellular and wireless connectivity, the firmware for the Realtek RTL8723CS WiFi/Bluetooth, as well as the optional auto-focus firmware for the OmniVision OV5640 back camera, remain proprietary software. In order to mitigate potential threats to privacy, these components communicate with the rest of the system only over serial protocols, such as USB 2.0, I2S and SDIO, which do not allow direct memory access (DMA). Use of these protocols also permits them to be physically disconnected via kill switches_ [4]"
+
+It is possible (and probably recommended) to flash FOSS modem SDK, in which case _"0 binary blobs in the userspace. Only closed source running on the modem are TZ Kernel and ADSP firmware"_ [5]
 
 [1] - https://xnux.eu/log/#toc-2022-06-23-further-pinephone-pro-camera-development \
 [2] - https://wiki.mobian-project.org/doku.php?id=pinephone \
 [3] - https://forum.pine64.org/showthread.php?tid=14743 \
-[4] - original source: https://www.pine64.org/2020/01/24/setting-the-record-straight-pinephone-misconceptions
+[4] - original source: https://www.pine64.org/2020/01/24/setting-the-record-straight-pinephone-misconceptions \
+[5] - https://github.com/the-modem-distro/pinephone_modem_sdk
