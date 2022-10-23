@@ -207,18 +207,17 @@ Wifi was moderately fast at 4-5 MB/s (quick test), it works. However, wifi does 
 ## Internet, texts, calls, mms
 
 Sms, calls, and 2G 3G 4G worked out of the box for me. I (quickly) tried with Tre and Telia carrier networks in Sweden (2022-10). MMS needed manual configuration and data/MMS APN needs to be the same (so e.g. Telia doesn't work), MMS worked on Tre carrier.
-Calls over 4G (i.e. VoLTE) did not work out of the box for me, but worked instantly after installing Pinephone Modem SDK (see later section Firmware).
+Calls over 4G (i.e. VoLTE) did not work out of the box for me, but worked instantly (only on Fello, not on Hallon carrier) after installing Pinephone Modem SDK (see later section Firmware).
 
 ### General 
 
 Telia and Tre carriers (although Tre has no 2G support on their side ofc);
-Everything seems to work with the carriers tested, with three exceptions. 1. Calls doesn't work on 4G (see VoLTE). 2. 2G coverage is much worse than other phones it looks like (but 2G calls and data is supported). 3. MMS works, except for Telia which had two APNs (i.e. no support!).
+Everything seems to work with the carriers tested, with three exceptions. 1. Calls doesn't work on 4G (see VoLTE) for some carriers (Hallon does NOT work, Fello does work after firmware update). 2. 2G coverage is much worse than other phones it looks like (but 2G calls and data is supported). 3. MMS works, except for Telia which had two APNs (i.e. no support!).
 
 Compared to other phones, 4G 3G coverage is similar it looks like, however 2G coverage is quite a bit worse.
 
-Quick speedtest on 4G with moderate coverage 11/11 mbit/s (35ms), although on subsequent runs I got 7/11 and 4/14 mbit/s.
+Quick speedtest (three consecutive runs, https://bredbandskollen.se) on 4G with moderate coverage gave 4-11 mbps down and 11-14 mbps up, ~35ms. But! by updating firmware (ADSP) to 01.003.01.003 (from version prior, ...002) speeds were then improved to, 16-17 mbps down and 16 mbps up, ~35ms.
 To compare, Iphone SE got 58/15 mbit/s (44ms).
-
 
 (TODO fill in carrier we tested on wiki pages below)
 
