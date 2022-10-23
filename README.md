@@ -216,7 +216,7 @@ Everything seems to work with the carriers tested, with three exceptions. 1. Cal
 
 Compared to other phones, 4G 3G coverage is similar it looks like, however 2G coverage is quite a bit worse.
 
-Quick speedtest (three consecutive runs, https://bredbandskollen.se) on 4G with moderate coverage gave 4-11 mbps down and 11-14 mbps up, ~35ms. But! by updating firmware (ADSP) to 01.003.01.003 (from version prior, ...002) speeds were then improved to, 16-17 mbps down and 16 mbps up, ~35ms.
+(4G only), I tried to do speed test in browser but it is too inconsitent, Firefox is too slow? And/or 4G is very variable. Should get around 10mbps up and down (~35ms) regardless. Specifically, down has registered between 4-31 mbps and up ~11 mbps.
 To compare, Iphone SE got 58/15 mbit/s (44ms).
 
 (TODO fill in carrier we tested on wiki pages below)
@@ -274,7 +274,7 @@ cd package
 # Give it a few minutes before giving up and reflashing or trying other firmware. (yes it is possible to restore old firmware if necessary [2])
 ```
 
-[1] - Comment:  There are different versions of firmware available but this one (01.002.01.002) should be the most likely to work (see [3]). Still, it is possible to use the latest image ([ADSP Version 01.003.01.003.](https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.003.01.003/update/NON-HLOS.ubi)) to get some improvements (although in rare cases it introduces new issues [3]). \
+[1] - Comment:  There are different versions of firmware available but this one (01.002.01.002) should be the most likely to work (see [3]). Still, it is possible to use the latest image ([ADSP Version 01.003.01.003.](https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.003.01.003/update/NON-HLOS.ubi)) to get some improvements (although in rare cases it introduces new issues [3]). New version gave almost twice the 4G speed, and seemed to be more consistent, worked with Fello.\
 [2] - https://github.com/the-modem-distro/pinephone_modem_sdk \
 [3] - https://github.com/the-modem-distro/pinephone_modem_sdk/blob/kirkstone/docs/ADSP-CARRIERS.md
 
