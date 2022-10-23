@@ -47,3 +47,21 @@ Both versions tested, and works.
 Not checked logs for warnings or anything though.
 
 Tested 01.003.01.003 and it works for VoLTE.
+
+## Comviq (Tele2-based)
+
+Only one version tested, works
+
+### (modem sdk, ADSP Version 01.003.01.003)
+
+Works and same info msg as Fello, but warning about timezone is not present (Nice?).
+
+
+```
+sudo journalctl -u ModemManager
+
+info: Couldn't start network: QMI protocol error (14): 'CallFailed' \
+      reason ... pdn-ipv6-call-disallowed
+
+warn: couldn't load network timezone from the current network.
+```
