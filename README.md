@@ -69,7 +69,8 @@ It is nice with hardware switches if one wishes to turn off mic, back or front c
 | --------------- | --------------- | --------------- |--------------- |--------------- |--------------- |
 | Fello (/Telia based carriers) | Y | Y | Y | Y [1]| NO! [2] |
 | Hallon (/Tre based carriers) | Y | Y | Y | NO! [3] | Y |
-| Tele2 based carriers| ? | ? | ? | ? | ? | ? |
+| Tele2 based carriers| ? | ? | ? | ? | Should work |
+| Telenor based carriers| ? | ? | ? | ? | Should NOT work! [2] |
 
 [1] - After installing modem sdk \
 [2] - Because internet APN != mms APN \
