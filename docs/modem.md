@@ -2,11 +2,13 @@
 
 NOTE! If you change SIM cards and there is no internet, don't restart phone or restart modem. You need to turn off  "Mobile data" in settings, then turn it on again. Well this worked multiple times for me.
 
+## 2G,3G,4G (calls/internet) working on modem firmware versions
+
 | Swedish carrier | Stock (unknown version ADSP and no modem sdk) | ADSP Version 01.002.01.002 | ADSP Version 01.003.01.003 |
 | --------------- | --------------- | --------------- | --------------- |
 | Fello (/Telia based carriers) | Y, no VoLTE | Y | Y | 
 | Hallon (/Tre based carriers) | Y, no VoLTE | Y (VoLTE not tested) | Y |
-| Tele2 based carriers| ? | ? | ? |
+| Comviq (/Tele2 based carriers) | Not tested | Not tested | Y |
 | Telenor based carriers| ? | ? |  ? |
 
 ## Fello (Telia-based)
