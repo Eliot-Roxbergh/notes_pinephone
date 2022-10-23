@@ -68,13 +68,15 @@ It is nice with hardware switches if one wishes to turn off mic, back or front c
 | Swedish carrier | sms | 2G, 3G, and 4G internet | 2G and 3G calls | 4G calls (VoLTE) | mms |
 | --------------- | --------------- | --------------- |--------------- |--------------- |--------------- |
 | Fello (/Telia based carriers) | Y | Y | Y | Y [1]| NO! [2] |
-| Hallon (/Tre based carriers) | Y | Y | Y | NO! [3] | Y |
-| Tele2 based carriers| ? | ? | ? | ? | Should work |
-| Telenor based carriers| ? | ? | ? | ? | Should NOT work! [2] |
+| Hallon (/Tre based carriers) | Y | Y (carrier doesn't support 2G at all)| Y (carrier doesn't support 2G at all) | Y [1] | Y |
+| Comviq (/Tele2 based carriers) | Y | Y | Y | Y [3][4] | Y |
+| Telenor based carriers| ? | ? | ? | ? | NO! (should not work) [2] |
 
-[1] - After installing modem sdk \
+[1] - _Only_ after updating (ADSP) firmware and installing modem sdk (using firmware version 01.003.01.003) \
 [2] - Because internet APN != mms APN \
-[3] - Atleast doesn't work out of the box, I don't know (modem sdk made no difference)
+[3] - ONLY tested /w modem sdk and newest firmware version 01.003.01.003 \
+[4] - Seems to work well now. But first during tests, some calls were not connected (got text msg instead), or calls failed efter ~10s. Now after reboot it seems to work well. IDK, might be fine. \
+
 
 -----
 
@@ -207,12 +209,12 @@ Wifi was moderately fast at 4-5 MB/s (quick test), it works. However, wifi does 
 ## Internet, texts, calls, mms
 
 Sms, calls, and 2G 3G 4G worked out of the box for me. I (quickly) tried with Tre and Telia carrier networks in Sweden (2022-10). MMS needed manual configuration and data/MMS APN needs to be the same (so e.g. Telia doesn't work), MMS worked on Tre carrier.
-Calls over 4G (i.e. VoLTE) did not work out of the box for me, but worked instantly (only on Fello, not on Hallon carrier) after installing Pinephone Modem SDK (see later section Firmware).
+Calls over 4G (i.e. VoLTE) did not work out of the box for me, but worked instantly after installing Pinephone Modem SDK (see later section Firmware).
 
 ### General 
 
 Telia and Tre carriers (although Tre has no 2G support on their side ofc);
-Everything seems to work with the carriers tested, with three exceptions. 1. Calls doesn't work on 4G (see VoLTE) for some carriers (Hallon does NOT work, Fello does work after firmware update). 2. 2G coverage is much worse than other phones it looks like (but 2G calls and data is supported). 3. MMS works, except for Telia which had two APNs (i.e. no support!).
+Everything seems to work with the carriers tested, with three exceptions. 1. To get VoLTE (calls on 4G) working (on Fello and Hallon carriers), it was needed to get (ADSP) firmware update and install modem sdk. 2. 2G coverage is much worse than other phones it looks like (but 2G calls and data is supported). 3. MMS works, except for Telia which had two APNs (i.e. no support!).
 
 Compared to other phones, 4G 3G coverage is similar it looks like, however 2G coverage is quite a bit worse.
 
@@ -231,28 +233,28 @@ https://wiki.pine64.org/wiki/PinePhone_APN_Settings
 tl;dr When tested, calls works on 2G and 3G. Texing works on all networks.
 
 Applies to carriers Tre (altough they have no 2G ofc) and Telia:
-Calls work very well on 3G. But it seems like it doesn't want to connect calls on 4G (VoLTE should, in general, be possible but might need to explore.. see [1] [2]), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre). 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe it was a coincidence?) there might be bad interference getting transmitted to the other party.
+Calls work very well on 3G. ~~But it seems like it doesn't want to connect calls on 4G (VoLTE should, in general, be possible but might need to explore.. see [1] [2]), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre).~~ 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe it was a coincidence?) there might be bad interference getting transmitted to the other party.
 
-EDIT: VoLTE (4G calls) worked with Fello carrier afted installing modem SDK (see later section Firmware). Hallon carrier does still not work.
+EDIT: VoLTE (4G calls) worked with Fello and Hallon carriers afted installing modem SDK (see later section Firmware).
 
 
-Comment: When I tested 2G, hot swapping headset, I managed to crash mic? Regardless it did not work in calls, with headset or not before restart.
+Comment: When I tested 2G, hot swapping headset, I managed to crash mic? Regardless it did not work in calls, with headset or not before restart. This happened only once.
 
 Received and transmitted sound is generally good.
 It is possible to plug-in and remove headset during conversation, etc. All working well, (except for that one time during call that all mics stopped working... remained even after connecting a headset and also after redialing).
 
-[1] - https://wiki.postmarketos.org/wiki/PINE64_PinePhone_(pine64-pinephone)#VoLTE \
-[2] - https://wiki.mobian-project.org/doku.php?id=pinephone
+~~[1] - https://wiki.postmarketos.org/wiki/PINE64_PinePhone_(pine64-pinephone)#VoLTE \
+[2] - https://wiki.mobian-project.org/doku.php?id=pinephone~~
 
 #### Firmware
 
 I think it is recommended to install custom firmware SDK for the modem, see [2].
 
-In my case, by updating firmware and installing SDK I instantly got 4G calls (VoLTE) working for Fello (carrier) which was broken before. It is also more open source and has more features.
+In my case, by updating firmware and installing SDK I instantly got 4G calls (VoLTE) working for Fello and Hallon (carriers) which was broken before. It is also more open source and has more features.
 
 Basic steps as reference (what I did when testing):
 
-1. Update firmware to [ADSP Version 01.002.01.002](https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.002.01.002/update/NON-HLOS.ubi) or newer [1]. (This is only really necessary if the installed firmware if very old, but I just installed it regardless)
+1. Update firmware to [ADSP Version 01.002.01.002](https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.002.01.002/update/NON-HLOS.ubi) or newer. I used the latest however ([Version 01.003.01.003.](https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.003.01.003/update/NON-HLOS.ubi)) and it worked [1]. (Updating firmware is only really necessary if the installed firmware if very old, but I just installed it regardless)
 
 2. Flash modem sdk
 
@@ -260,7 +262,8 @@ Basic steps as reference (what I did when testing):
 sudo apt install adb fastboot
 
 ## 1 ##
-wget https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.002.01.002/update/NON-HLOS.ubi
+# Get latest firmware (01.003.01.003)
+wget https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.003.01.003/update/NON-HLOS.ubi
 sudo echo -ne "AT+QFASTBOOT\r" > /dev/ttyUSB2
 sudo fastboot flash modem NON-HLOS.ubi && fastboot reboot
 
@@ -274,7 +277,7 @@ cd package
 # Give it a few minutes before giving up and reflashing or trying other firmware. (yes it is possible to restore old firmware if necessary [2])
 ```
 
-[1] - Comment:  There are different versions of firmware available but this one (01.002.01.002) should be the most likely to work (see [3]). Still, it is possible to use the latest image ([ADSP Version 01.003.01.003.](https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.003.01.003/update/NON-HLOS.ubi)) to get some improvements (although in rare cases it introduces new issues [3]). New version gave almost twice the 4G speed, and seemed to be more consistent, worked with Fello.\
+[1] - Comment:  There are different versions of firmware available but this one (01.002.01.002) should be the most likely to work (see [3]). Still, it is possible to use the latest image ([ADSP Version 01.003.01.003.](https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.003.01.003/update/NON-HLOS.ubi)) to get some improvements (although in rare cases it introduces new issues [3]). I used the latest firmware version on Swedish carriers with no issues. \
 [2] - https://github.com/the-modem-distro/pinephone_modem_sdk \
 [3] - https://github.com/the-modem-distro/pinephone_modem_sdk/blob/kirkstone/docs/ADSP-CARRIERS.md
 
