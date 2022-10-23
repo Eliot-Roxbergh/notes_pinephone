@@ -73,7 +73,7 @@ It is nice with hardware switches if one wishes to turn off mic, back or front c
 
 [1] - After installing modem sdk \
 [2] - Because internet APN != mms APN \
-[3] - Atleast doesn't work out of the box, I don't know
+[3] - Atleast doesn't work out of the box, I don't know (modem sdk made no difference)
 
 -----
 
