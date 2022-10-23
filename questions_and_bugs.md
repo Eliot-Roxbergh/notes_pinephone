@@ -19,17 +19,18 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 
 0. Sometimes blue light is blinking but I'm not sure why (I just think a lot of apps gives notifications that are not interesting)? And how can I configure it or remove notifications? Still it works, including for Signal-desktop notifications.
 1. Import/export contacts from SIM card? (contacts can be handled via .vcf file instead)
-2. How to get VoLTE to work, if it doesn't out of the box? (I didn't work for me)
-3. Add shortcut / key combination for screenshot?
+2. ~~How to get VoLTE to work, if it doesn't out of the box? (I didn't work for me)~~ \
+**Answer:** For me, installing [Pinephone Modem SDK](https://github.com/the-modem-distro/pinephone_modem_sdk) solved 4G issues, see section in README.md
+4. Add shortcut / key combination for screenshot?
 
-4. Watch videos in browser without lag, HW acceleration? \
+5. ~~Watch videos in browser without lag, HW acceleration?~~ \
 **Partial answer:** I think no hw acceleration in browsers since Mali400 MP2, it only supports GLES 2.0. Use local players if possible, like MPV. Edit, I think it's not as bad as I first thought, as long as there is enough ram, 360p video (incl. livestreams) should at least kind of work (with the downside that it uses a lot of battery due to no hw acc).
 
 6. Record videos? _(haven't seen any app/GUI but ffmpeg should work at least)_. Have video calls ? _(Theoretically possible, but probably not / not fast enough?)_
 7. How to improve GPS? (it almost worked but most often it seems completely off)
-8. Is it possible to turn on wifi HW switch during runtime and connect to wifi without reboot? ... Unload and load the kernel module? Probably bad for the hw? 
+8. Is it possible to turn on wifi HW switch during runtime and connect to wifi without reboot? ... Unload and load the kernel module? Probably bad for the hw? Wifi killswitch doesn't work for me if I turn it off while system is running!!
 9. How to reliably listen to music, especially while not draining battery too much? Playing music and pausing via lockscreen almost works (not too reliable? It pauses sometimes? See sound issue, maybe just hw issue).
-10. How does suspend work?
+10. How does suspend work? e.g. Running cronjobs, systemd timers, checking Signal-desktop messages possible etc?
 
 ## Apps (that have issues)
 
