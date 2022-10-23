@@ -301,8 +301,9 @@ It started of being 50m wrong then it was 200m, 10km and now it's in dead. It do
 
 ## Alarm app (that works in suspend)
 
-Default alarm app does not work in suspend (lol!), so use this one instead. It did work when I tried it, but setting alarm takes a few seconds (have patience). The alarmed seemed to go off 5min early when I tried, some drift?
+Default alarm app does not work in suspend (lol!), so use this one instead. It did work when I tried it, but setting alarm takes a few seconds (have patience).
 Remember to increase the volume so you can actually hear it and wake up!
+Has worked well for me.
 
 Birdie: Go here on phone and just build: https://github.com/Dejvino/birdie [1].
 
