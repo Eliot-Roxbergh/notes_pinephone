@@ -24,7 +24,7 @@ VoLTE works with modem firmware, ADSP Version 01.002.01.002, and modem sdk.
 Reports somethings, such as
 
 ```
-info: Couldn't start network: QMI protocol error (14): 'CallFailed' \
+info: Couldn't start network: QMI protocol error (14): 'CallFailed'
       reason ... pdn-ipv6-call-disallowed
 
 warn: couldn't load network timezone from the current network.
@@ -35,7 +35,6 @@ warn: couldn't load network timezone from the current network.
 Works.
 
 Not checked logs for warnings or anything though.
-
 
 
 ## Hallon (Tre-based)
@@ -56,11 +55,10 @@ Only one version tested, works
 
 Works and same info msg as Fello, but warning about timezone is not present (Nice?).
 
-
 ```
 sudo journalctl -u ModemManager
 
-info: Couldn't start network: QMI protocol error (14): 'CallFailed' \
+info: Couldn't start network: QMI protocol error (14): 'CallFailed'
       reason ... pdn-ipv6-call-disallowed
 
 warn: couldn't load network timezone from the current network.
