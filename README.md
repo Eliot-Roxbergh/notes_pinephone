@@ -63,6 +63,18 @@ Battery time is good in suspend mode, and can take calls.
 
 It is nice with hardware switches if one wishes to turn off mic, back or front camera, etc.
 
+
+
+| Swedish carrier | sms | 2G, 3G, and 4G internet | 2G and 3G calls | 4G calls (VoLTE) | mms |
+| --------------- | --------------- | --------------- |--------------- |--------------- |--------------- |
+| Fello (/Telia based carriers) | Y | Y | Y | Y [1]| NO! [2] |
+| Hallon (/Tre based carriers) | Y | Y | Y | NO! [3] | Y |
+| Tele2 based carriers| ? | ? | ? | ? | ? | ? |
+
+[1] - After installing modem sdk \
+[2] - Because internet APN != mms APN \
+[3] - Atleast doesn't work out of the box, I don't know
+
 -----
 
 **Does it work as a smartphone**
@@ -221,7 +233,7 @@ tl;dr When tested, calls works on 2G and 3G. Texing works on all networks.
 Applies to carriers Tre (altough they have no 2G ofc) and Telia:
 Calls work very well on 3G. But it seems like it doesn't want to connect calls on 4G (VoLTE should, in general, be possible but might need to explore.. see [1] [2]), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre). 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe it was a coincidence?) there might be bad interference getting transmitted to the other party.
 
-EDIT: VoLTE (4G calls) worked afted installing modem SDK (see later section Firmware).
+EDIT: VoLTE (4G calls) worked with Fello carrier afted installing modem SDK (see later section Firmware). Hallon carrier does still not work.
 
 
 Comment: When I tested 2G, hot swapping headset, I managed to crash mic? Regardless it did not work in calls, with headset or not before restart.
@@ -236,7 +248,7 @@ It is possible to plug-in and remove headset during conversation, etc. All worki
 
 I think it is recommended to install custom firmware SDK for the modem, see [2].
 
-In my case, by updating firmware and installing SDK I instantly got 4G calls (VoLTE) working which was broken before. It is also more open source and has more features.
+In my case, by updating firmware and installing SDK I instantly got 4G calls (VoLTE) working for Fello (carrier) which was broken before. It is also more open source and has more features.
 
 Basic steps as reference (what I did when testing):
 
