@@ -4,7 +4,9 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 
 0. The mute button doesn't work in calls, they will still hear you! (After update of modem sdk or random?)
 
-1. ~~Sometimes sound stops working (both speakers and headphones). Why? _Sometimes_ it is fixed by rebooting, _sometimes_ it is fixed by issuing `systemctl --user restart pulseaudio`. Hardware issue, bad connection? Also sometimes playing music is buggy, and pauses etc. related?~~  Some issues are solved by using PipeWire instead of PulseAudio. Still, music often pauses or interrupts when headphone cord is pulled a little, this is annoying.
+1. **i)** Sometimes sound stops working (both speakers and headphones). Why? _Sometimes_ it is fixed by rebooting, _sometimes_ it is fixed by issuing `systemctl --user restart pulseaudio`. Hardware issue, bad connection.. unlikely? \
+**ii)** music often pauses or interrupts when headphone cord is pulled a little, this is annoying. \
+**Comment:** PipeWire did not fix these issues (but I guess it didn't hurt)
 
 2. ~~Sometimes when wake from suspend? And if you manually turn off mobile data or mobile network, often when turned on internet does not work. Sometimes no data, sometimes neither data or cellular. Setting Network gives error, "Cannot register modem: modem is c..." and changing Network Mode says "Transaction timed out" _or_ "Setting allowed modes not supported". Restarting ModemManager or NetworkManager does not help. Is there a solution? (usually cellular looks to work "4G", but no internet)~~ Should be ok with modem sdk and new firmware. Although, sometimes cellular shows coverage but a red exclamation mark. Go to mobile network in settings and turn off and on mobile internet (but not whole mobile network).
 
