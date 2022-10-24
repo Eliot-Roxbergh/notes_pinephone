@@ -425,16 +425,16 @@ sudo apt install -y telegram-desktop
 
 ### Music / Sound
 
-Playing music works OK, can pause etc. on lock screen. Not sure how to achieve very long battery time (like more than 4-5h?) while using it as music player, as it then must not enter suspend mode.
+Playing music works OK, can pause etc. on lock screen. In flight mode with music, it seemed to use approximately 15% battery an hour (with no other services running), so it is not terrible. It does not seem to enter suspend while music is playing, at least the music doesn't stop.
 
-
-**VLC** works but half the UI frozen, not made for phone.
+**VLC** works but UI not made for phone.
 
 The distro comes with **Lollypop** which at first didn't find any music, but seems to work now. No major complaints. It is a bit odd, and not sure how different music categories work. What I do; Set active folder in settings and go to "Recently added albums", sometimes it doesn't refresh and you need to go in and out of this "Recently added albums".
 
 #### PipeWire
 
-If sound latency problems or issues, maybe try PipeWire. It did NOT help my sound issues, I think, (i.e. sometimes no sound & need to restart sound service, and music stops when headphone cable is pulled a little .. bad connector?)... annoying issues.
+If sound latency problems or issues, maybe try PipeWire. It did NOT help my sound issues, at least not a lot.
+(that is, firstly, that sometimes no sound, especially when just rebooted, and need to restart PulseAudio/reboot. Secondly, music often stops when headphone cable is pulled a little .. ~~bad connector?~~ one boot it worked 100% for hours so unsure the reason, must be software or issue with hw on boot?)... regardless annoying issues.
 
 It is easy to do; simply enable PipeWire, disable PulseAudio, and reboot the system.
 
