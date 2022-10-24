@@ -3,7 +3,7 @@
 I recommend this, (steps are explained in README.md)
 
 1. Modem: update firmware and get modem sdk. Without this VoLTE did not work for me. (Also more features, probably less energy used etc.)
-2. Sound: Sound was buggy for me, get PipeWire (TODO did it solve all problems?).
+2. Sound: ~~Sound was buggy for me, get PipeWire~~ I still have sound issues.
 3. MMS: Get a carrier that has data APN same as mms APN. Then set mms APN in the sms app's settings.
 4. Alarm: Get Birdie so alarms work in suspend (default app does not!).
 
