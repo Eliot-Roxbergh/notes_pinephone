@@ -434,9 +434,9 @@ The distro comes with **Lollypop** which at first didn't find any music, but see
 
 #### PipeWire
 
-If sound latency problems or speakers stop working try: https://pipewire.org/.
-However, still music stops when headphone cable is pulled a little (annoying!) .. bad connector?
-By simply enabling PipeWire, disabling PulseAudio, and rebooting the system - it just worked for me, see below. And sound issues are mostly fixed.
+If sound latency problems or issues, maybe try PipeWire. It did NOT help my sound issues, I think, (i.e. sometimes no sound & need to restart sound service, and music stops when headphone cable is pulled a little .. bad connector?)... annoying issues.
+
+It is easy to do; simply enable PipeWire, disable PulseAudio, and reboot the system.
 
 Install and use PipeWire, Maybe this should be configured further (but then again PipeWire was installed by default, and used in some placed due to Wayland? It only needed to be enabled instead of PulseAudio globally as well.)
 
