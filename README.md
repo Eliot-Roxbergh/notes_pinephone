@@ -18,7 +18,7 @@ I still have some questions and issues, see [questions_and_bugs.md](questions_an
 
 **Why Pinephone?**
 
-- It should work as a phone (calls, sms, mms). Also internet, wifi, and a poor camera. Maybe even GPS works (no promises!).
+- It should work as a phone (calls, sms, mms). Also internet, wifi, and a poor camera. Maybe even GPS works (it should work but might not be very precise).
 
 - Regular free software, such as GNU/Linux on a phone. Easy to use with the same programs as on desktop Linux. You are root and have full control. Easy to script and customize (if you have time), make changes and push patches upstream. Regular features, such as full disk encryption is available.
 
@@ -320,7 +320,10 @@ systemctl --user start mmsd-tng
 
 ## GPS
 
-It started of being 50m wrong then it was 200m, 10km and now it's in dead. It does give some kind of location in apps and firefox, but not sure how to fix.
+~~It started of being 50m wrong then it was 200m, 10km and now it's in dead.~~ It does give location in apps and firefox.
+After updated firmware and modem-sdk, GPS works. Note that it will take a while until GPS is moderately accurate.
+When I used GPS, accuracy was very bad around 100m.
+
 
 ## Alarm app (that works in suspend)
 
@@ -431,8 +434,8 @@ The distro comes with **Lollypop** which at first didn't find any music, but see
 
 #### PipeWire
 
-If sound latency problems, or if music spontaneously pauses/plays/interrupts, try: https://pipewire.org/.
-(However, still music stops when headphone cable is pulled a little .. maybe no fix for this?)
+If sound latency problems or speakers stop working try: https://pipewire.org/.
+However, still music stops when headphone cable is pulled a little (annoying!) .. bad connector?
 By simply enabling PipeWire, disabling PulseAudio, and rebooting the system - it just worked for me, see below. And sound issues are mostly fixed.
 
 Install and use PipeWire, Maybe this should be configured further (but then again PipeWire was installed by default, and used in some placed due to Wayland? It only needed to be enabled instead of PulseAudio globally as well.)
