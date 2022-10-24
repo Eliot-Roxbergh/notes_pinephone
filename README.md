@@ -427,9 +427,35 @@ Playing music works OK, can pause etc. on lock screen. Not sure how to achieve v
 
 **VLC** works but half the UI frozen, not made for phone.
 
-The distro comes with **Lollypop** which at first didn't find any music, but seems to work now. No complaints.
+The distro comes with **Lollypop** which at first didn't find any music, but seems to work now. No major complaints. It is a bit odd, and not sure how different music categories work. What I do; Set active folder in settings and go to "Recently added albums", sometimes it doesn't refresh and you need to go in and out of this "Recently added albums".
 
-If sound latency problems, maybe try: https://pipewire.org/
+#### PipeWire
+
+If sound latency problems, or if music spontaneously pauses/plays/interrupts, try: https://pipewire.org/.
+By simply enabling PipeWire, disabling PulseAudio, and rebooting the system - it just worked for me.
+
+Install and use PipeWire, Maybe this should be configured further (but then again PipeWire was installed by default, and used in some placed due to Wayland? It only needed to be enabled instead of PulseAudio globally as well.)
+
+
+```
+sudo apt install pipewire -y
+
+## Then follow instructions from https://wiki.debian.org/PipeWire#For_PulseAudio (included below) ##
+
+# Check for new service files with:
+systemctl --user daemon-reload
+# Disable and stop the PulseAudio service with:
+systemctl --user --now disable pulseaudio.service pulseaudio.socket
+# Enable and start the new pipewire-pulse service with:
+systemctl --user --now enable pipewire pipewire-pulse
+
+# You can check which server is in use by, as your regular user, running:
+LANG=C pactl info | grep '^Server Name
+# Either it says e.g. "PulseAudio", and when enabled something like "PulseAudio (On PipeWire 0.3.59)"
+
+# Please reboot the system
+```
+
 
 ### Video
 
