@@ -12,11 +12,14 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 
 3. Wifi off switch doesn't _really_ work! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) \
 ![Switches off internet 1](pics/wifi_switch_off.jpg)![Switches off internet 1](pics/wifi_switch_off_internet.jpg) \
-(the ping is not 780 ms but like 30.780 ms, bad pic)
+(the ping is not 780 ms but like 30.780 ms, bad pic) \
+**Edit:**  My wifi is completely broken now, ops. Hardware switch being the likely culprit (not suppose to use while on).
 
 4. Issue making calls on bad coverage? Try more 4G calls. Call quality is not perfect with some weird noise, but no major issues.
 
-5. Sometimes/rarily (?) it seems dead, cannot wake from suspend or screen blank? Maybe when it's doing a lot in the background? Sometimes it is resolved by waiting a minute, but when working again all apps are killed. Perhaps Wayland just crashed?
+5. Sometimes screen seems dead, when waking from suspend the screen is blank! You can still hear the sound from the volume buttons, for example. ~~Maybe when it's doing a lot in the background?~~ Sometimes it is resolved by waiting a minute, but when working again all apps are killed. Or that you don't notice anything, but all apps are just closed after unlocking screen. Perhaps Wayland just crashed?
+
+6. When calling, sometimes voicemails have no sound (this time using 4G, VoLTE, if relevant), i.e. you get a tone but when connected it's all silent. Calls in general seem to work.
 
 ## Rare bugs
 
