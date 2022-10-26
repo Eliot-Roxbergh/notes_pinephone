@@ -60,6 +60,7 @@ Note the differences between releases HW [3], e.g. v1.1 discharges even when tur
 For me it worked with SMS, MMS, calls with minor configuration. (MMS only works with carriers who has same the data APN and MMS APN).
 
 Battery time is good in suspend mode, and can take calls.
+In general it seems to accept calls, wake from suspend. Downside is somewhat bad 2G and 4G call quality when it comes to sound.
 
 It is nice with hardware switches if one wishes to turn off mic, back or front camera, etc.
 
@@ -235,12 +236,12 @@ tl;dr When tested, calls works on 2G and 3G. Texing works on all networks.
 Applies to carriers Tre (altough they have no 2G ofc) and Telia:
 Calls work very well on 3G. ~~But it seems like it doesn't want to connect calls on 4G (VoLTE should, in general, be possible but might need to explore.. see [1] [2]), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre).~~ 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe it was a coincidence?) there might be bad interference getting transmitted to the other party.
 
-EDIT: VoLTE (4G calls) worked with Fello and Hallon carriers afted installing modem SDK (see later section Firmware).
+EDIT: VoLTE (4G calls) worked with Fello, Hallon and Comviq carriers afted installing modem SDK (see later section Firmware).
 
 
 Comment: When I tested 2G, hot swapping headset, I managed to crash mic? Regardless it did not work in calls, with headset or not before restart. This happened only once.
 
-Received and transmitted sound is generally good.
+Received and transmitted sound is generally good (3G).
 It is possible to plug-in and remove headset during conversation, etc. All working well, (except for that one time during call that all mics stopped working... remained even after connecting a headset and also after redialing).
 
 ~~[1] - https://wiki.postmarketos.org/wiki/PINE64_PinePhone_(pine64-pinephone)#VoLTE \
@@ -321,8 +322,8 @@ systemctl --user start mmsd-tng
 ## GPS
 
 ~~It started of being 50m wrong then it was 200m, 10km and now it's in dead.~~ It does give location in apps and firefox.
-After updated firmware and modem-sdk, GPS works. Note that it will take a while until GPS is moderately accurate.
-When I used GPS, accuracy was very bad around 100m.
+After updated firmware and modem-sdk, GPS works. ~~Note that it could take a while until GPS is moderately accurate.~~
+When I used GPS, accuracy was very bad around 100m (50-150m according to OpenStreetMaps), it did not improve if I had it on for longer. But needs to be investigated more.
 
 
 ## Alarm app (that works in suspend)
