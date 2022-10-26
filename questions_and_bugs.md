@@ -2,6 +2,23 @@
 
 Note this is for my current test phone which is old revision 1.1 Braveheart!
 
+## Bug summary
+- mute doesn't work on calls (anymore?)
+- at boot, cellular network is off, although it is on in settings GUI. Need to turn Mobile Data off and on again
+- upower reports 3 batteries instead of 2 when using Pinephone (hardware) keyboard.
+- Virtual keyboard, except for "terminal" other keyboard interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C.
+- Sound sometimes completely dead, sound cutting of sometimes when moving 3.5mm cord. TODO wait and see if it works. Note, not as bad as it sounds.
+
+#### Pinephone specific
+
+- wifi hw switch doesn't work when device is already on.
+- LED is sometimes blinking but unclear why, where is notification?
+- Screen sometimes blank and/or applications are gone when trying to wake it. Sound still works.
+- Calling issues, screen blanks often (easy fix?), somewhat poor 4G call sound, calling someone's voice mail sometimes quiet.
+- Camera is sometimes not discovered 
+
+## Bugs extended
+
 0. The mute button doesn't work in calls, they will still hear you! (After update of modem sdk or random?)
 
 1. **i)** Sometimes sound stops working (both speakers and headphones). Why? _Sometimes_ it is fixed by rebooting, _sometimes_ it is fixed by issuing `systemctl --user restart pulseaudio`. Hardware issue, bad connection.. unlikely? \
@@ -15,7 +32,7 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 (the ping is not 780 ms but like 30.780 ms, bad pic) \
 **Edit:**  My wifi is completely broken now, ops. Hardware switch being the likely culprit (not suppose to use while on).
 
-4. Issue making calls on bad coverage? Try more 4G calls. Call quality is not perfect with some weird noise, but no major issues.
+4. Bad sound quality on 4G, it's OK but a lot of digital background noise. Acceptable but minor pain in the ears
 
 5. Sometimes screen seems dead, when waking from suspend the screen is blank! You can still hear the sound from the volume buttons, for example. ~~Maybe when it's doing a lot in the background?~~ Sometimes it is resolved by waiting a minute, but when working again all apps are killed. Or that you don't notice anything, but all apps are just closed after unlocking screen. Perhaps Wayland just crashed?
 
