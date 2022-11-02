@@ -289,6 +289,12 @@ cd package
 #### Audio
 To increase call receive volume, /usr/share/alsa/ucm2/PinePhone/VoiceCall.conf
 
+```
+# change in the file to (e.g.) the below (https://github.com/the-modem-distro/pinephone_modem_sdk/issues/7#issuecomment-888979024)
+cset "name='DAC Playback Volume' 100%"
+cset "name='AIF1 DA0 Playback Volume' 90%"
+```
+
 See also [1].
 
 [1] - https://github.com/the-modem-distro/pinephone_modem_sdk/blob/kirkstone/docs/SETTINGS.md
@@ -312,6 +318,7 @@ MMS general links: https://wiki.mobian-project.org/doku.php?id=mms https://forum
 ```
 ### Debug
 systemctl --user status mmsd-tng
+#(make sure data apn is correctly set as well)
 
 ### Modify settings (or do it directly in Chatty)
 systemctl --user stop mmsd-tng
@@ -437,7 +444,7 @@ The distro comes with **Lollypop** which at first didn't find any music, but see
 If sound latency problems or issues, maybe try PipeWire. It did NOT help my sound issues, at least not a lot.
 (that is, firstly, that sometimes no sound, especially when just rebooted, and need to restart PulseAudio/reboot. Secondly, music often stops when headphone cable is pulled a little .. ~~bad connector?~~ one boot it worked 100% for hours so unsure the reason, must be software or issue with hw on boot?)... regardless annoying issues.
 
-It is easy to do; simply enable PipeWire, disable PulseAudio, and reboot the system.
+It is easy to do; simply enable PipeWire, disable PulseAudio, and reboot the system (below).
 
 Install and use PipeWire, Maybe this should be configured further (but then again PipeWire was installed by default, and used in some placed due to Wayland? It only needed to be enabled instead of PulseAudio globally as well.)
 
@@ -455,7 +462,7 @@ systemctl --user --now disable pulseaudio.service pulseaudio.socket
 systemctl --user --now enable pipewire pipewire-pulse
 
 # You can check which server is in use by, as your regular user, running:
-LANG=C pactl info | grep '^Server Name
+LANG=C pactl info | grep '^Server Name'
 # Either it says e.g. "PulseAudio", and when enabled something like "PulseAudio (On PipeWire 0.3.59)"
 
 # Please reboot the system
