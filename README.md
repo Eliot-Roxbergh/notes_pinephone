@@ -231,13 +231,14 @@ https://wiki.pine64.org/wiki/PinePhone_APN_Settings
 
 ### Calls and SMS
 
-tl;dr When tested, calls works on 2G and 3G. Texing works on all networks.
+tl;dr When tested, calls works on 2G and 3G. Texing works on all networks. 4G calls should work (otherwise try newer firmware). Call quality is OK with headset on 3G and 4G, otherwise risk of echo.
+
 
 Applies to carriers Tre (altough they have no 2G ofc) and Telia:
 Calls work very well on 3G. ~~But it seems like it doesn't want to connect calls on 4G (VoLTE should, in general, be possible but might need to explore.. see [1] [2]), either a text is received for the missed call (Telia) or it says for caller that you're "busy" (!) (Tre).~~ 2G works, although there is some (not too loud) constant interference on the speakers, also in case of bad coverage (or maybe it was a coincidence?) there might be bad interference getting transmitted to the other party.
 
 EDIT: VoLTE (4G calls) worked with Fello, Hallon and Comviq carriers afted installing modem SDK (see later section Firmware).
-
+EDIT: I use VoLTE but echo seems reoccuring when using regular phone call (also calling with speaker phone is terrible), I use headset which works.
 
 Comment: When I tested 2G, hot swapping headset, I managed to crash mic? Regardless it did not work in calls, with headset or not before restart. This happened only once.
 
@@ -305,7 +306,7 @@ See also [1].
 
 tl;dr In general is supported, go to chatty (default sms app phosh) and set settings manually. If it doesn't work make sure Mobile Data APN is same as MMS APN (and supported by carrier).
 
-Works on most carriers, but need to set settings manually. For instance, works in Sweden with Tre, does not work with Telia.
+Works on most carriers, but need to set mms settings manually. For instance, works in Sweden with Tre, does not work with Telia. Also double check data APN so it is what it should.
 
 Telia does not work, why? Well because -> _"Currently there is no easy solution for sending or receiving MMS if carrier has two APNs (one for data and for MMS). There are some workarounds but most likely best one is to not use MMS at all before things get"_
         The issue is here https://gitlab.com/kop316/mmsd/-/issues/5
