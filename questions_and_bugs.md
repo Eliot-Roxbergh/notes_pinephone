@@ -1,26 +1,26 @@
 # Bugs:
 
-Note this is for my current test phone which is old revision 1.1 Braveheart!
+Most of this was for my test phone which is old revision 1.1 Braveheart! But revision ~1.2, 3GB version, seem to have mainly the same issues (although it should now work with USB-C and no power drain when turned off) 
 
 ## Bug summary
 
 #### General
 - mute doesn't work on calls (at least not anymore?)
-- Phone calls; Some minor electrical noise is a minor annoyance. Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can output echo, headphones works the best.
+- Phone calls; Some minor electrical noise is a minor annoyance. Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can echo a too (!), headphones works well.
 - at boot, cellular network is off, although it is on in settings GUI. Need to turn Mobile Data off and on again.
 - upower reports 3 batteries instead of 2 when using Pinephone (hardware) keyboard.
 - Virtual keyboard, except for "terminal" other keyboard interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C.
-- Sound sometimes completely dead, sound cutting of sometimes when moving 3.5mm cord. TODO wait and see if it works. Note, it usually works ok but ...
+- **VERY ANNOYING!** Sound sometimes completely dead, also sound cutting of sometimes when moving 3.5mm cord. TODO wait, test, and see if it works. Note, it usually works ok but ...
 
 #### Pinephone specific
 
 - Sometimes (!) on very low brightness setting screen blinks and can even be completely dead!
-- wifi hw switch doesn't work when device is already on.
+- **What?** wifi hw switch doesn't work when device is already on.
 - LED is sometimes blinking but unclear why, where is notification?
-- Screen sometimes blank and/or applications are gone when trying to wake it. Sound still works.
+- **VERY ANNOYING!** Screen sometimes blank (and/or more rarely applications are gone when trying to wake it). Sound still works.
 - Calling issues, screen blanks often (easy fix?), somewhat poor 4G call sound, calling someone's voice mail sometimes quiet.
 - Camera is sometimes not discovered 
-- USBC usually works (phone rev 1.2), can use the phone as a computer (HDMI screen, USB peripherals etc.). Although it is amazingly slow in 1440p. However, sometimes USBC stops working and I needed to reboot and remove battery. ~~Is this related to using the attachable Pine keyboard?~~ To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?).
+- USB-C usually works (phone rev 1.2), but sometimes it doesn't detect the (USB, HDMI, ..) devices, you can use the phone as a computer (HDMI screen, USB peripherals etc.). Although it is amazingly slow in 1440p. However, sometimes USB-C stops working and I needed to reboot and remove battery. ~~Is this related to using the attachable Pine keyboard?~~ To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?). I think the problem is the same regardless if Pine keyboard is attached or not.
 
 ## Bugs extended
 
@@ -35,13 +35,13 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 3. Wifi off switch doesn't _really_ work! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) \
 ![Switches off internet 1](pics/wifi_switch_off.jpg)![Switches off internet 1](pics/wifi_switch_off_internet.jpg) \
 (the ping is not 780 ms but like 30.780 ms, bad pic) \
-**Edit:**  My wifi is completely broken now, ops. Hardware switch being the likely culprit (not suppose to use while on).
+**Edit:**  ~~My wifi is completely broken now, ops. Hardware switch being the likely culprit (not suppose to use while on).~~ Edit: wifi works again, idk.
 
 4. Bad sound quality on 4G, it's OK but a lot (but not too loud) of digital background noise. Acceptable but minor pain in the ears. Echo possible when not using headphones.
 
 5. Sometimes screen seems dead, when waking from suspend the screen is blank! You can still hear the sound from the volume buttons, for example. ~~Maybe when it's doing a lot in the background?~~ Sometimes it is resolved by waiting a minute, but when working again all apps are killed. Or that you don't notice anything, but all apps are just closed after unlocking screen. Perhaps Wayland just crashed?
 
-6. When calling, sometimes voicemails have no sound (this time using 4G, VoLTE, if relevant), i.e. you get a tone but when connected it's all silent. Calls in general seem to work.
+6. When calling, sometimes/some voicemails have no sound (this time using 4G, VoLTE, if relevant), i.e. you get a tone but when connected it's all silent. Calls in general seem to work.
 
 ## Rare bugs
 
@@ -65,7 +65,7 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 **TODO:** see e.g. https://wiki.mobian-project.org/doku.php?id=location#setup-gpsd, https://wiki.pine64.org/wiki/PinePhone#GPS_/_GNSS, https://wiki.mobian-project.org/doku.php?id=location
 9. Is it possible to turn on wifi HW switch during runtime and connect to wifi without reboot? ... Unload and load the kernel module? Probably bad for the hw? Wifi killswitch doesn't work for me if I turn it off while system is running!!
 10. How to reliably listen to music, especially while not draining battery too much? ~~Playing music and pausing via lockscreen almost works (not too reliable? It pauses sometimes? See sound issue, maybe just hw issue).~~ (For last part, use PipeWire)
-11. How does suspend work? e.g. Running cronjobs, systemd timers, checking Signal-desktop messages possible etc?
+11. How does suspend work? e.g. Running cronjobs, systemd timers, checking Signal-desktop messages possible etc? (Sure it's just regular 'systemctl suspend'?)
 
 ## Apps (that have issues)
 
@@ -79,9 +79,9 @@ Probably give up and try to use "native" apps like Lollypop, vlc is made for des
 
 It works but might be annoying.
 
-0. When adding attachments (or get other pop ups), the keyboard no long writes into signal text box, restart the app fixes it. **Very annoying!**
+0. **VERY ANNOYING!** When adding attachments (or get other pop ups), the keyboard no long writes into signal text box, restart the app fixes it.
 1. Fix build so it is packaged as .deb instead of binary. Or at least add a shortcut so it is easy to launch said binary (how?). (See seprate file on building signal)
-2. TODO try to collapse side menu with mouse?
+2. ~~TODO try to collapse side menu with mouse?~~ It's possible to collapse side menu with mouse which makes it easier to use.
 3. It is possible to send and receive pictures, but they look very small and blurry (when ui zoomed out max). Need to save them on disk to see clearly.
 4. With regular (virtual) keyboards capital letters seem to work, _except_ shift+c which removes the letter prior (like backspace)! This applies for multiple keyboard languages, but "terminal" (virtual) keyboard works.
 
