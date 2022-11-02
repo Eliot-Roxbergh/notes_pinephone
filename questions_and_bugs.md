@@ -3,19 +3,24 @@
 Note this is for my current test phone which is old revision 1.1 Braveheart!
 
 ## Bug summary
-- mute doesn't work on calls (anymore?)
-- at boot, cellular network is off, although it is on in settings GUI. Need to turn Mobile Data off and on again
+
+#### General
+- mute doesn't work on calls (at least not anymore?)
+- Phone calls; Some minor electrical noise is a minor annoyance. Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can output echo, headphones works the best.
+- at boot, cellular network is off, although it is on in settings GUI. Need to turn Mobile Data off and on again.
 - upower reports 3 batteries instead of 2 when using Pinephone (hardware) keyboard.
 - Virtual keyboard, except for "terminal" other keyboard interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C.
-- Sound sometimes completely dead, sound cutting of sometimes when moving 3.5mm cord. TODO wait and see if it works. Note, not as bad as it sounds.
+- Sound sometimes completely dead, sound cutting of sometimes when moving 3.5mm cord. TODO wait and see if it works. Note, it usually works ok but ...
 
 #### Pinephone specific
 
+- Sometimes (!) on very low brightness setting screen blinks and can even be completely dead!
 - wifi hw switch doesn't work when device is already on.
 - LED is sometimes blinking but unclear why, where is notification?
 - Screen sometimes blank and/or applications are gone when trying to wake it. Sound still works.
 - Calling issues, screen blanks often (easy fix?), somewhat poor 4G call sound, calling someone's voice mail sometimes quiet.
 - Camera is sometimes not discovered 
+- USBC usually works, can use the phone as a computer (HDMI screen, USB peripherals etc.). Although it is amazingly slow in 1440p. However, sometimes USBC stops working and I needed to reboot and remove battery. Is this related to using the attachable Pine keyboard?
 
 ## Bugs extended
 
@@ -32,7 +37,7 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 (the ping is not 780 ms but like 30.780 ms, bad pic) \
 **Edit:**  My wifi is completely broken now, ops. Hardware switch being the likely culprit (not suppose to use while on).
 
-4. Bad sound quality on 4G, it's OK but a lot of digital background noise. Acceptable but minor pain in the ears
+4. Bad sound quality on 4G, it's OK but a lot (but not too loud) of digital background noise. Acceptable but minor pain in the ears. Echo possible when not using headphones.
 
 5. Sometimes screen seems dead, when waking from suspend the screen is blank! You can still hear the sound from the volume buttons, for example. ~~Maybe when it's doing a lot in the background?~~ Sometimes it is resolved by waiting a minute, but when working again all apps are killed. Or that you don't notice anything, but all apps are just closed after unlocking screen. Perhaps Wayland just crashed?
 
@@ -40,7 +45,7 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 
 ## Rare bugs
 
-1. Very rarely on new boot the top drag-down menu doesn't work. Fixed by locking phone.
+1. Very rarely on new boot the top drag-down menu doesn't work. Fixed by locking phone. Also lower drag-down menu usually bugs when turning phone to landscape mode and having the menu up, lock phone or close the menu in portrait mode.
 
 
 # Feature Questions/Requests
