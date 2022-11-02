@@ -20,7 +20,7 @@ Note this is for my current test phone which is old revision 1.1 Braveheart!
 - Screen sometimes blank and/or applications are gone when trying to wake it. Sound still works.
 - Calling issues, screen blanks often (easy fix?), somewhat poor 4G call sound, calling someone's voice mail sometimes quiet.
 - Camera is sometimes not discovered 
-- USBC usually works, can use the phone as a computer (HDMI screen, USB peripherals etc.). Although it is amazingly slow in 1440p. However, sometimes USBC stops working and I needed to reboot and remove battery. Is this related to using the attachable Pine keyboard?
+- USBC usually works (phone rev 1.2), can use the phone as a computer (HDMI screen, USB peripherals etc.). Although it is amazingly slow in 1440p. However, sometimes USBC stops working and I needed to reboot and remove battery. ~~Is this related to using the attachable Pine keyboard?~~ To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?).
 
 ## Bugs extended
 
