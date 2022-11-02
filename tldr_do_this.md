@@ -13,7 +13,7 @@ I recommend to do this (**steps are usually explained in README.md**)
 
 0. Other possible recommendations: https://github.com/the-modem-distro/pinephone_modem_sdk/blob/kirkstone/docs/SETTINGS.md
 1. Signal-desktop is not officially available but can e.g. be built manually. It is not optimized for phone though. TODO improve?
-2. Increase call volume from speakers, it is moderately low.
+2. ~~Increase call volume from speakers, it is moderately low.~~ Bad idea, the speakers already cause echo!!
 3. Video decoding is kind of slow, install mpv and watch/stream locally. `sudo apt install -y mpv yt-dlp`
 4. Enable suspend while charging to charge much faster, and/or get a PD 15W+ charger
 
