@@ -268,13 +268,15 @@ sudo apt install adb fastboot
 
 ## 1 ##
 # Get latest firmware (01.003.01.003)
+sudo su
+echo -ne "AT+QFASTBOOT\r" > /dev/ttyUSB2
+exit
 wget https://github.com/Biktorgj/quectel_eg25_recovery/raw/EG25GGBR07A08M2G_01.003.01.003/update/NON-HLOS.ubi
-sudo echo -ne "AT+QFASTBOOT\r" > /dev/ttyUSB2
 sudo fastboot flash modem NON-HLOS.ubi && fastboot reboot
 
 ## 2 ##
 wget https://github.com/the-modem-distro/pinephone_modem_sdk/releases/download/0.7.0/package.tar.gz #NOTE! Check if new versions available
-tar -xvzf package.tar.gz -C package
+mkdir package; tar -xvzf package.tar.gz -C package
 cd package
 ./flashall
 
