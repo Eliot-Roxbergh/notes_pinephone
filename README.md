@@ -290,7 +290,11 @@ cd package
 [3] - https://github.com/the-modem-distro/pinephone_modem_sdk/blob/kirkstone/docs/ADSP-CARRIERS.md
 
 #### Audio
-To increase call receive volume, /usr/share/alsa/ucm2/PinePhone/VoiceCall.conf
+
+#### Increase call volume
+**NOTE:** This was a bad idea for me since VoLTE calls already can echo a lot for the person on the other side! Also headphones are already quite loud.
+
+To increase call receive volume, change in /usr/share/alsa/ucm2/PinePhone/VoiceCall.conf
 
 ```
 # change in the file to (e.g.) the below (https://github.com/the-modem-distro/pinephone_modem_sdk/issues/7#issuecomment-888979024)
