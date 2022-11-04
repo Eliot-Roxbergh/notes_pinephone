@@ -22,6 +22,20 @@ Most of this was for my test phone which is old revision 1.1 Braveheart! But rev
 - Camera is sometimes not discovered 
 - USB-C usually works (phone rev 1.2), but sometimes it doesn't detect the (USB, HDMI, ..) devices, you can use the phone as a computer (HDMI screen, USB peripherals etc.). Although it is amazingly slow in 1440p. However, sometimes USB-C stops working and I needed to reboot and remove battery. ~~Is this related to using the attachable Pine keyboard?~~ To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?). I think the problem is the same regardless if Pine keyboard is attached or not.
 
+#### Pinephone Keyboard specific
+
+The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's a keyboard. Nice.
+
+- _(fixable [1])_ The layout is peculiar, specifically it is very annoying to write with Swedish layout (öä).
+- _(fixable [1])_ The special buttons to write symbols such as `|` `-` `_` stopped working, probably related to keyboard choosen in OS?
+- _(battery detection)_ It reports 1-2 extra batteries (`upower -d` or settings) which decreases the calculated battery percentage (100%+100%+0%+0% = 50% battery left).
+- _(battery detection)_ In general the phone does not detect the size of the batteries, so it ignores that the keyboard battery is twice the size as the internal.
+- _(battery detection)_ Sometimes it loses contact (?) and reports keyboard battery as 0%
+
+[1] - afaik you can reprogram the firmware in the keyboard (https://xnux.eu/log/#044) and do really what you'd want. Also you can change the keyboard mapping in OS.
+
+
+
 ## Bugs extended
 
 0. The mute button doesn't work in calls, they will still hear you! (After update of modem sdk or random?)
