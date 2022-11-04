@@ -22,7 +22,7 @@ I still have some questions and issues, see [questions_and_bugs.md](questions_an
 
 - Regular free software, such as GNU/Linux on a phone. Easy to use with the same programs as on desktop Linux. You are root and have full control. Easy to script and customize (if you have time), make changes and push patches upstream. Regular features, such as full disk encryption is available.
 
-- With USB-C it can be attached to external peripherals (e.g. keyboard, mouse), ethernet, and screen - making the phone also usable as a slower desktop, laptop or tablet computer. In this manner (or via SSH) you can also more easily configure and debug the phone.
+- With USB-C it can be attached to external peripherals (e.g. keyboard, mouse), ethernet, and screen - making the phone also usable as a slower desktop, laptop or tablet computer (the graphics are very sluggish). In this manner (or via SSH) you can also more easily configure and debug the phone.
 
 - Kill switches.
 
@@ -44,7 +44,7 @@ The phone works and only costs 199$ (total to Sweden 270$, incl. VAT and shippin
 Only purchase if you have some Linux experience.
 
 If you buy used or on sale, make sure to get the latest board revision (currently 1.2b).
-Note the differences between releases HW [3], e.g. v1.1 discharges even when turned off ([4]) and I think it cannot use USB-C hubs? In case you have an older version you probably want to buy the most recent mainboard in the pine64 store [5], to replace it and get rid of these problems (and to get 3GB ram from 2GB).
+Note the differences between releases HW [3], e.g. v1.1 discharges even when turned off ([4]) and it cannot use USB-C hubs w/o hardware hack. In case you have an older version you probably want to buy the most recent mainboard in the pine64 store [5], to replace it and get rid of these problems (and to get 3GB ram from 2GB).
 
 [1] - https://pine64.com/product/pinephone-beta-edition-with-convergence-package/ \
 [2] - https://pine64.com/product/pinephone-pinephone-pro-keyboard-case/ \
@@ -57,13 +57,14 @@ Note the differences between releases HW [3], e.g. v1.1 discharges even when tur
 
 **Does it work as a phone**
 
-For me it worked with SMS, MMS, calls with minor configuration. (MMS only works with carriers who has same the data APN and MMS APN).
+For me it worked with SMS, MMS and calls after with minor configuration. (MMS only works with carriers who has same the data APN and MMS APN).
 
-Battery time is good in suspend mode, and can take calls.
-In general it seems to accept calls, wake from suspend. Downside is somewhat bad 2G and 4G call quality when it comes to sound.
+Battery time is good in suspend mode, and wakes on sms or call.
+In general it seems to accept calls, wake from suspend. Downside is somewhat bad 2G and 4G call quality when it comes to sound. Echo issues, but (3G and) 4G calls are OK with headphones.
 
 It is nice with hardware switches if one wishes to turn off mic, back or front camera, etc.
 
+I have had issues that sometimes the screen won't wake from suspend, or audio temporarily stops working which can be annoying for a phone.
 
 
 | Swedish carrier | sms | 2G, 3G, and 4G internet | 2G and 3G calls | 4G calls (VoLTE) | mms |
@@ -84,20 +85,23 @@ It is nice with hardware switches if one wishes to turn off mic, back or front c
 **Does it work as a smartphone**
 
 (Desktop) Apps often work OK but of course it is a bit cumbersome compared to a smartphone, most apps are not made for a phone.
+And some apps might work well in portrait mode but does not in landscape mode (screen orientation).
 It might be possible to run Android apps (but probably too bothersome and slow!) via software such as Waydroid or Anbox.
 
-It is slow! Let's say performance similar to Samsung S3, with the downside that apps are not optimized for it. Still it works for most regular browsing, chat apps, etc. Video streaming is VERY SLOW however, fullscreen 360p Youtube videos in Firefox is lagging but playable (I'm not sure if this can be improved with HW acceleration or something). The successor, Pinephone Pro, has much better performance, which might be a good upgrade once it has matured.
+It is slow! Let's say performance similar to Samsung S3, with the downside that apps are not optimized for it. Still it works for most regular browsing, chat apps, etc. Video streaming is VERY SLOW however, fullscreen 360p Youtube videos in Firefox playable (HW acceleration is not supported in browser yet, so it is not very effective), local files play fine in full 720p. The successor, Pinephone Pro, has much better performance, which _might_ be a good upgrade once it has matured.
 
 Camera is badish and cannot take videos (?). Still it works as a camera.
 
-Battery time is bad (1-2h of heavy use, 4-5h moderate use or listening to music), but is quite good in suspend mode: in which it turns off data and only wakes on calls or sms/mms. So battery time is quite good if you utilize suspend and use it as a phone, but during suspend you won't get any other notifications, nor able play music etc.
+Battery time is bad (1-2h of heavy use, 4-5h moderate use or listening to music), but is quite good in suspend mode: in which it turns off data and only wakes on calls or sms/mms. So battery time is quite good if you utilize suspend and use it as a phone, but during suspend you won't get any notifications from other apps like you would from a smartphone. Note, regular apps like timer and alarm won't work either in suspend: need to get special apps that wakes the phone from suspend with a timer (e.g. Birdie alarm app described later)!
 
 
 -----
 
 **Does it work as a computer**
 
-Probably (TODO). It should work to directly attach (USB-C hub) keyboard, mouse, and even HDMI screen, to utilize the phone as a desktop computer as well. Might be sufficient for lite work, browsing, reading, and coding.
+It is possible to directly attach (via USB-C hub) keyboard, mouse, and HDMI screen (etc.), to utilize the phone as a desktop computer as well. The graphics were extremely slow in 1440p, perhaps a lighter desktop environment is required or HW acceleration. Can of course do simple things such as writing in a text editor.
+
+I had some issues that after unplugging USB-C it would not redetect later, and required restart. (Have not debugged further)
 
 
 -----
@@ -110,14 +114,16 @@ Linux phone apps (with rating how well they fit on phone), https://linuxphoneapp
 
 # Install OS and bootloader
 
+**If screen is blank:** If the phone has no OS or bootloader. It is normal that the screen is completely blank, until you plug in a bootable sd-card and hold power+volume up (is this correct?), i.e. flash Tow-boot as described in step 1 below. It is also possible that the phone cannot charge if it has no OS, this is also normal (it only supports regular simple chargers that "implements BC1.2 spec correctly" according to IRC chat).
+
 Mobian (Bookworm) with Phosh (wayland), [1].
 
-Boot options, something like this (?);
+Boot options, I think it is like this;
 
 ```
 power+volume up -> bootloader
 power+volume down -> SD card
-power -> eMMC (sometimes SD card)
+power -> eMMC (sometimes SD card?)
 ```
 
 1. Flash bootloader if not present, Tow-boot [2]
@@ -153,6 +159,12 @@ When on, the phone charges somewhat slowly. Get a poweful charger, _"The PinePho
 I would say that the most convenient way of charging is to put the phone in suspend mode. That way you can still receive calls/sms and set alarms, while charing much faster (by using less power). Suspend when charging must be enabled in settings.
 
 By the way, _"You can use PinePhone without the battery inserted if you can provide enough power over USB port. Modem and WiFi and flash light are connected to the battery directly (almost) so these will not work without the battery inserted."_ [1]
+
+#### Keyboard
+
+By using the attachable keyboard you will get another 200% more battery capacity.
+
+[1] - https://pine64.com/product/pinephone-pinephone-pro-keyboard-case/
 
 #### Battery life
 
