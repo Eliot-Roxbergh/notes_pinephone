@@ -29,8 +29,8 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 - _(fixable [1])_ The layout is peculiar, specifically it is very annoying to write with Swedish layout (öä).
 - _(fixable [1])_ The special buttons to write symbols such as `|` `-` `_` stopped working, probably related to keyboard choosen in OS?
 - _(battery detection)_ It reports 1-2 extra batteries (`upower -d` or settings) which decreases the calculated battery percentage (100%+100%+0%+0% = 50% battery left).
-- _(battery detection)_ In general the phone does not detect the size of the batteries, so it ignores that the keyboard battery is twice the size as the internal.
-- _(battery detection)_ Sometimes it loses contact (?) and reports keyboard battery as 0%
+- _(battery detection)_ In general the phone does not detect the size of the batteries, so it ignores that the keyboard battery is twice the size as the internal when calculating remaining battery percentage.
+- _(battery detection)_ Sometimes it temporarily loses contact (or something) and reports keyboard battery as 0%. The keyboard still works however.
 
 [1] - afaik you can reprogram the firmware in the keyboard (https://xnux.eu/log/#044) and do really what you'd want. Also you can change the keyboard mapping in OS.
 
