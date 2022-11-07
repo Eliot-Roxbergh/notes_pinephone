@@ -11,6 +11,7 @@ Most of this was for my test phone which is old revision 1.1 Braveheart! But rev
 - upower reports 3 batteries instead of 2 when using Pinephone (hardware) keyboard.
 - Virtual keyboard, except for "terminal" other keyboard interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C.
 - **VERY ANNOYING!** Sound sometimes completely dead, also sound cutting of sometimes when moving 3.5mm cord. TODO wait, test, and see if it works. Note, it usually works ok but ...
+- Turning off wifi in settings and on again, does not find any wifi networks until system reboot.
 
 #### Pinephone specific
 
@@ -49,7 +50,6 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 3. Wifi off switch doesn't _really_ work! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) \
 ![Switches off internet 1](pics/wifi_switch_off.jpg)![Switches off internet 1](pics/wifi_switch_off_internet.jpg) \
 (the ping is not 780 ms but like 30.780 ms, bad pic) \
-**Edit:**  ~~My wifi is completely broken now, ops. Hardware switch being the likely culprit (not suppose to use while on).~~ Edit: wifi works again, idk.
 
 4. Bad sound quality on 4G, it's OK but a lot (but not too loud) of digital background noise. Acceptable but minor pain in the ears. Echo possible when not using headphones.
 
