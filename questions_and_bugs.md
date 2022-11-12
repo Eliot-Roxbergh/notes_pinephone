@@ -5,12 +5,13 @@ Most of this was for my test phone which is old revision 1.1 Braveheart! But rev
 ## Bug summary
 
 #### General
-- mute doesn't work on calls (at least not anymore?)
+- mute doesn't work on calls\
+**issue up:** it is only for SIP calls (i.e. on 3G and 4G?) -> https://gitlab.gnome.org/GNOME/calls/-/issues/395
 - Phone calls; Some minor electrical noise is a minor annoyance. Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can echo a lot too (!), headphones works well.
 - at boot, cellular network is off, although it is on in settings GUI. Need to turn Mobile Data off and on again.
 - upower reports 3 batteries instead of 2 when using Pinephone (hardware) keyboard.
 - Virtual keyboard, except for "terminal" other keyboard interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C.
-- **VERY ANNOYING!** Sound sometimes completely dead, also sound cutting of sometimes when moving 3.5mm cord. TODO wait, test, and see if it works. Note, it usually works ok but ...
+- **VERY ANNOYING!** Sound sometimes completely dead, also sound cutting of sometimes when moving 3.5mm cord. TODO wait, test, and see if it works. Note, it usually works ok but ... **TODO** add/check here https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues.
 - Turning off wifi in settings and on again, does not find any wifi networks until system reboot.
 
 #### Pinephone specific
