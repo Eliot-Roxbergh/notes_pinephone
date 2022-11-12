@@ -203,6 +203,10 @@ Can try custom kernel [2].
 #### Photos
 Taking photos works OK. Front camera is OK, but has a _very_ yellow hue. Back camera is decent if you compare to a phone from like 2012 (I would say it's maybe on par with Samsung S3 for instance. It is better in bad lighting, _but_ sometimes it cannot focus at all also no zoom. And the resulting photo is slightly bigger than the default camera app lets on), so it is almost acceptable perhaps (and the flash works). For back camera, the image in camera app looks very unsaturated (weak colors) but the resulting photo is OK.
 
+For discussion on the camera, and for examples, see for instance this blog series [1].
+
+[1] - https://blog.brixit.nl/pinephone-camera-pt5/
+
 #### Videos
 Taking videos is basically _not_ supported in software.
 What I've heard is that you can record videos in **ffmpeg** (terminal program).
