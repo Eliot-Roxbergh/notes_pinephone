@@ -445,6 +445,17 @@ SIGNAL_ENV=production yarn build:electron --arm64 --linux --dir --config.directo
 
 ```
 
+#### Install
+
+If .deb just do something like, `sudo apt install ./signal-desktop.deb`
+
+If .deb not available, transfer folder with binary into phone. Should maybe make it so it's not writable by user?
+Then make a desktop shortcut, here is an example,
+
+0. `mkdir -p ~/.local/share/applications/` && `mkdir -p ~/.local/share/icons/`
+1. `cp /usr/share/applications/*birdie.desktop ~/.local/share/applications/signal.desktop`
+2. Change shortcut to match (mainly set path to binary), `vim ~/.local/share/applications/signal.desktop`
+3. Get shortcut image, download from internet and save as, `~/.local/share/icons/signal.png`
 
 ### Telegram-desktop
 
