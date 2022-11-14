@@ -2,12 +2,12 @@
 
 Most of this was for my test phone which is old revision 1.1 Braveheart! But revision ~1.2, 3GB version, seem to have mainly the same issues (although it should now work with USB-C and no power drain when turned off) 
 
-## Bug summary
+## Bugs
 
 #### General
-- mute doesn't work on calls\
+- mute doesn't work on calls!! \
 **issue up:** it is only for SIP calls (i.e. on 3G and 4G?) -> https://gitlab.gnome.org/GNOME/calls/-/issues/395
-- Phone calls; Some minor electrical noise is a minor annoyance. Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can echo a lot too (!), headphones works well.
+- Phone calls; Some minor electrical noise is a minor annoyance (I mostly use 4G). Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can echo a lot too (!), headphones works well.
 - at boot, cellular network is off, although it is on in settings GUI. Need to turn Mobile Data off and on again.
 - upower reports 3 batteries instead of 2 when using Pinephone (hardware) keyboard.
 - Virtual keyboard, except for "terminal" other keyboard interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C.
@@ -16,9 +16,9 @@ Most of this was for my test phone which is old revision 1.1 Braveheart! But rev
 
 #### Pinephone specific
 
-- Sometimes (!) on very low brightness setting screen blinks and can even be completely dead!
-- **What?** wifi hw switch doesn't work when device is already on.
-- LED is sometimes blinking but unclear why, where is notification?
+- Somewhat rarely; on low and moderate brightness settings, screen blinks and can even be completely black! Due to low battery? Random?
+- **What?!** wifi hw switch doesn't work when device is already on (i.e. wifi is always "on").
+- LED is often blinking but unclear why, where is notification? Also sometimes I get notification which just says it should enter suspend now?
 - **VERY ANNOYING!** Screen sometimes blank (and/or more rarely applications are gone when trying to wake it). Sound still works.
 - Calling issues, screen blanks often (easy fix?), somewhat poor 4G call sound, calling someone's voice mail sometimes quiet.
 - Camera is sometimes not discovered 
@@ -37,30 +37,30 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 [1] - afaik you can reprogram the firmware in the keyboard (https://xnux.eu/log/#044) and do really what you'd want. Also you can change the keyboard mapping in OS.
 
 
+#### Rare bugs
 
-## Bugs extended
+0. When calling, sometimes/some (?) voicemails have no sound (this time using 4G, VoLTE, if relevant), i.e. you get a tone but when connected it's all silent. Calls in general seem to work.
+1. Like once, on new boot the top drag-down menu didn't work. Fixed by locking phone. Also lower drag-down menu usually bugs when turning phone to landscape mode and having the menu up, lock phone or close the menu in portrait mode.
+2. When I answered a call the phone continued to vibrate and then the whole system crashed (rebooted).
+3. Once I left it on charge and when I came back it was completely turned off.
 
-0. The mute button doesn't work in calls, they will still hear you! (After update of modem sdk or random?)
+
+## Bugs - extended notes
 
 1. **i)** Sometimes sound stops working (both speakers and headphones). Why? _Sometimes_ it is fixed by rebooting, _sometimes_ it is fixed by issuing `systemctl --user restart pulseaudio`. Hardware issue, bad connection.. unlikely? \
-**ii)** music often pauses or interrupts when headphone cord is pulled a little, this is annoying. _**Edit:** Now it just worked perfectly for 2h, also ok power drop 15% per hour listening to music in flight mode._ \
-**Comment:** PipeWire did not fix these issues (but I guess it didn't hurt)
+**ii)** ~~music often pauses or interrupts when headphone cord is pulled a little, this is annoying. _**Edit:** Now it just worked perfectly for 2h, also ok power drop 15% per hour listening to music in flight mode._~~ \
+**Comment:** ~~PipeWire did not fix these issues (but I guess it didn't hurt)~~. It has worked lately (rev 1.2, nov 2022), keep an eye on it.
 
-2. ~~Sometimes when wake from suspend? And if you manually turn off mobile data or mobile network, often when turned on internet does not work. Sometimes no data, sometimes neither data or cellular. Setting Network gives error, "Cannot register modem: modem is c..." and changing Network Mode says "Transaction timed out" _or_ "Setting allowed modes not supported". Restarting ModemManager or NetworkManager does not help. Is there a solution? (usually cellular looks to work "4G", but no internet)~~ Should be ok with modem sdk and new firmware. Although, sometimes cellular shows coverage but a red exclamation mark. Go to mobile network in settings and turn off and on mobile internet (but not whole mobile network).
+2. ~~Sometimes when wake from suspend? And if you manually turn off mobile data or mobile network, often when turned on internet does not work. Sometimes no data, sometimes neither data or cellular. Setting Network gives error, "Cannot register modem: modem is c..." and changing Network Mode says "Transaction timed out" _or_ "Setting allowed modes not supported". Restarting ModemManager or NetworkManager does not help. Is there a solution? (usually cellular looks to work "4G", but no internet)~~ Mostly fixed with modem sdk and new firmware. Still sometimes, modem disappears completely when waking from suspend (and similar problems?).
 
-3. Wifi off switch doesn't _really_ work! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) \
+3. Wifi off switch ("killswitch") doesn't _really_ work! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) \
 ![Switches off internet 1](pics/wifi_switch_off.jpg)![Switches off internet 1](pics/wifi_switch_off_internet.jpg) \
 (the ping is not 780 ms but like 30.780 ms, bad pic) \
 
-4. Bad sound quality on 4G, it's OK but a lot (but not too loud) of digital background noise. Acceptable but minor pain in the ears. Echo possible when not using headphones.
+4. Bad sound quality on 4G, it's OK but a lot (but not too loud) of digital background noise. Acceptable but minor pain in the ears. Echo likely when not using headphones.
 
 5. Sometimes screen seems dead, when waking from suspend the screen is blank! You can still hear the sound from the volume buttons, for example. ~~Maybe when it's doing a lot in the background?~~ Sometimes it is resolved by waiting a minute, but when working again all apps are killed. Or that you don't notice anything, but all apps are just closed after unlocking screen. Perhaps Wayland just crashed?
 
-6. When calling, sometimes/some voicemails have no sound (this time using 4G, VoLTE, if relevant), i.e. you get a tone but when connected it's all silent. Calls in general seem to work.
-
-## Rare bugs
-
-1. Very rarely on new boot the top drag-down menu doesn't work. Fixed by locking phone. Also lower drag-down menu usually bugs when turning phone to landscape mode and having the menu up, lock phone or close the menu in portrait mode.
 
 
 # Feature Questions/Requests
@@ -81,6 +81,7 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 9. Is it possible to turn on wifi HW switch during runtime and connect to wifi without reboot? ... Unload and load the kernel module? Probably bad for the hw? Wifi killswitch doesn't work for me if I turn it off while system is running!!
 10. How to reliably listen to music, especially while not draining battery too much? ~~Playing music and pausing via lockscreen almost works (not too reliable? It pauses sometimes? See sound issue, maybe just hw issue).~~ (For last part, use PipeWire)
 11. How does suspend work? e.g. Running cronjobs, systemd timers, checking Signal-desktop messages possible etc? (Sure it's just regular 'systemctl suspend'?)
+12. Connecting phone to external "highres" monitor (e.g. 1080p, 1440p) is so damn slow! Should have hw acc or no?
 
 ## Apps (that have issues)
 
