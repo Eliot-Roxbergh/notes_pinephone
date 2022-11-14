@@ -3,13 +3,13 @@
 Some notes on Pinephone installation, apps and use. But I have not used this device a lot!
 
 There are of course many distributions and desktop environments to choose from.
-Here I used Mobian (Bookworm) with Phosh since most things just worked (like sms and camera), I had some problems with other distros but was a while ago now.
+Here I used Mobian (Bookworm) with Phosh since most things just worked (like sms and camera), I had some problems with other distros but it was a while ago now.
 
 For development status of Pinephone etc. see [1]
 
 There is also a more powerful version Pinephone Pro, however now ~Q4 2022 it is not usable as a daily phone [2].
 
-I still have some questions and issues, see [questions_and_bugs.md](questions_and_bugs.md)
+**There are still many bugs with the Pinephone, see my comments -> [questions_and_bugs.md](questions_and_bugs.md)**
 
 [1] - https://xnux.eu/devices/pine64-pinephone.html \
 [2] - https://wiki.pine64.org/wiki/PinePhone_Pro#State_of_the_software 
