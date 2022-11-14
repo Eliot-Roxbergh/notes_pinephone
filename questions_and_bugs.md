@@ -11,7 +11,7 @@ Most of this was for my test phone which is old revision 1.1 Braveheart! But rev
 - at boot, cellular network is off, although it is on in settings GUI. Need to turn Mobile Data off and on again.
 - upower reports 3 batteries instead of 2 when using Pinephone (hardware) keyboard.
 - Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).
-- **VERY ANNOYING!** Sound sometimes completely dead, also sound cutting of sometimes when moving 3.5mm cord. TODO wait, test, and see if it works. Note, it usually works ok but ... **TODO** add/check here https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues. (when trying to play sound it then fails with "Failed to create sink input: sink is suspended")
+- **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) **TODO** add/check here https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues. (when trying to play sound it then fails with _"Failed to create sink input: sink is suspended"_)
 - Turning off wifi in settings and on again, does not find any wifi networks until system reboot.
 
 #### Pinephone specific
@@ -47,7 +47,7 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 
 ## Bugs - extended notes
 
-1. **i)** Sometimes sound stops working (both speakers and headphones). Why? _Sometimes_ it is fixed by rebooting, _sometimes_ it is fixed by issuing `systemctl --user restart pulseaudio`. Hardware issue, bad connection.. unlikely? \
+1. **i)** Sometimes sound stops working (both speakers and headphones). Why? _Sometimes_ it is fixed by rebooting, _sometimes_ it is fixed by issuing `systemctl --user restart pulseaudio`. Hardware issue or bad connection seems unlikely. Pulseaudio fails with: _"Failed to create sink input: sink is suspended"_ \
 **ii)** ~~music often pauses or interrupts when headphone cord is pulled a little, this is annoying. _**Edit:** Now it just worked perfectly for 2h, also ok power drop 15% per hour listening to music in flight mode._~~ \
 **Comment:** PipeWire did not fix these issues (but I guess it didn't hurt) \
 **Comment:** ii) has worked lately (rev 1.2, nov 2022), keep an eye on it. i) remains!
