@@ -4,7 +4,7 @@ Most of this was for my test phone which is old revision 1.1 Braveheart! But rev
 
 ## Bugs
 
-#### General
+#### General (GNOME / apps / asorted)
 - mute doesn't work on calls!! \
 **issue up:** it is only for SIP calls (i.e. on 3G and 4G?) -> https://gitlab.gnome.org/GNOME/calls/-/issues/395
 - Phone calls; Some minor electrical noise is a minor annoyance (I mostly use 4G). Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can echo a lot too (!), headphones works well.
@@ -13,6 +13,7 @@ Most of this was for my test phone which is old revision 1.1 Braveheart! But rev
 - Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).
 - **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) **TODO** add/check here https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues. (when trying to play sound it then fails with _"Failed to create sink input: sink is suspended"_)
 - Turning off wifi in settings and on again, does not find any wifi networks until system reboot.
+- Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
 
 #### Pinephone specific
 
