@@ -49,7 +49,8 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 
 1. **i)** Sometimes sound stops working (both speakers and headphones). Why? _Sometimes_ it is fixed by rebooting, _sometimes_ it is fixed by issuing `systemctl --user restart pulseaudio`. Hardware issue, bad connection.. unlikely? \
 **ii)** ~~music often pauses or interrupts when headphone cord is pulled a little, this is annoying. _**Edit:** Now it just worked perfectly for 2h, also ok power drop 15% per hour listening to music in flight mode._~~ \
-**Comment:** ~~PipeWire did not fix these issues (but I guess it didn't hurt)~~. It has worked lately (rev 1.2, nov 2022), keep an eye on it.
+**Comment:** PipeWire did not fix these issues (but I guess it didn't hurt) \
+**Comment:** ii) has worked lately (rev 1.2, nov 2022), keep an eye on it. i) remains!
 
 2. ~~Sometimes when wake from suspend? And if you manually turn off mobile data or mobile network, often when turned on internet does not work. Sometimes no data, sometimes neither data or cellular. Setting Network gives error, "Cannot register modem: modem is c..." and changing Network Mode says "Transaction timed out" _or_ "Setting allowed modes not supported". Restarting ModemManager or NetworkManager does not help. Is there a solution? (usually cellular looks to work "4G", but no internet)~~ Mostly fixed with modem sdk and new firmware. Still sometimes, modem disappears completely when waking from suspend (and similar problems?).
 
