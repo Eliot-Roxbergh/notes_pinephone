@@ -14,6 +14,8 @@ Most of this was for my test phone which is old revision 1.1 Braveheart! But rev
 - **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) **TODO** add/check here https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues. (when trying to play sound it then fails with _"Failed to create sink input: sink is suspended"_)
 - Turning off wifi in settings and on again, does not find any wifi networks until system reboot.
 - Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
+- After pairing Bluetooth headphones, how to play sound there and not speakers?
+- Ringtone plays from headphones if connected, this is LOUD. Dangerous??
 
 #### Pinephone specific
 
@@ -67,7 +69,6 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 
 # Feature Questions/Requests
 
-0. Sometimes blue light is blinking but I'm not sure why (I see no notifications on screen)! Still it works, including for Signal-desktop notifications.
 1. Import/export contacts from SIM card? (contacts can be handled via .vcf file instead)
 2. ~~How to get VoLTE to work, if it doesn't out of the box? (I didn't work for me)~~ \
 **Answer:** For me, installing [Pinephone Modem SDK](https://github.com/the-modem-distro/pinephone_modem_sdk) solved 4G issues, see section in README.md
