@@ -21,11 +21,12 @@ Latest Mobian Phosh was used, starting from 2022-10.
 8. After pairing Bluetooth headphones, how to play sound there and not speakers?
 9. Ringtone plays from headphones if connected, this is LOUD. Dangerous??
 10. During calls, the screen blanks often (easy fixable?). **Comment:** This issue is not so bad anymore, keep an eye on it.
+11. I couldn't copy phone number from contacts, ctrl+c / copy did not work? Is it even possible to copy a contact nr and share via SMS?
 
 #### Pinephone specific
 
-9. Phone calls; Some minor electrical noise is a minor annoyance (I mostly use 4G). Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can echo a lot too (!), headphones works well.
-11. ~~on low and moderate brightness settings, screen blinks and can even be completely black! Due to low battery? Random?~~ \
+11. Phone calls; Some minor electrical noise is a minor annoyance (I mostly use 4G). Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can echo a lot too (!), headphones works well.
+12. ~~on low and moderate brightness settings, screen blinks and can even be completely black! Due to low battery? Random?~~ \
 **Fixed:** This has not happened again on rev 1.2?
 13. **What?!** wifi hw switch doesn't work when device is already on (i.e. wifi is always "on"). Maybe _only_ on rev 1.1, and not 1.2, from what I've quickly tested.
 14. **VERY ANNOYING!** Screen sometimes blank (and/or more rarely applications are gone when trying to wake it). Sound still works.
