@@ -2,6 +2,8 @@
 
 Tested with revision 1.1 Braveheart and revision 1.2 3GB. They seem to have the same issues however (if not mentioned below). (To clarify, of course, with rev 1.1, USB-C did not work at all and power drain when turned off. But this is well known and not mentioned below).
 
+Latest Mobian Phosh was used, starting from 2022-10.
+
 ## Bugs
 
 #### General (GNOME / apps / asorted)
@@ -13,7 +15,7 @@ Tested with revision 1.1 Braveheart and revision 1.2 3GB. They seem to have the 
 2. at boot, cellular network is off, although it is on in settings GUI. Need to manually turn Mobile Data off and on again.
 3. Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).
 4. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play sound it then fails with _"Failed to create sink input: sink is suspended"_)
-5. Turning off wifi in settings and on again, does not find any wifi networks until system reboot.
+5. Turning off wifi in settings and on again, does not find any wifi networks until system reboot. This happens everytime.
 6. LED is often blinking but unclear why, where is notification? Also sometimes I get notification which just says it should enter suspend now?
 7. Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
 8. After pairing Bluetooth headphones, how to play sound there and not speakers?
