@@ -114,7 +114,7 @@ Linux phone apps (with rating how well they fit on phone), https://linuxphoneapp
 
 # Install OS and bootloader
 
-**If screen is blank:** If the phone has no OS or bootloader. It is normal that the screen is completely blank, until you plug in a bootable sd-card and hold power+volume up (is this correct?), i.e. flash Tow-boot as described in step 1 below. It is also possible that the phone cannot charge if it has no OS, this is also normal (it only supports regular simple chargers that "implements BC1.2 spec correctly" according to IRC chat).
+**If screen is blank:** If the phone has no OS or bootloader. It is normal that the screen is completely blank, until you plug in a bootable sd-card and hold power+volume up (is this correct?), i.e. flash Tow-boot as described in step 1 below. It is also possible that the phone cannot charge if it has no OS, this is also normal (it only supports regular simple chargers that "implements BC1.2 spec correctly" according to IRC chat). Note, if you cannot boot sd card, make sure that the sd card is in the sd-card slot and not in the sim-card slot it "fits" in both.
 
 Mobian (Bookworm) with Phosh (wayland), [1].
 
