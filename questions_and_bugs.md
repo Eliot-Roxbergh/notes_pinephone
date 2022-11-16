@@ -15,7 +15,7 @@ Latest Mobian Phosh was used, starting from 2022-10.
 2. at boot, cellular network is off, although it is on in settings GUI. Need to manually turn Mobile Data off and on again.
 3. Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).
 4. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play sound it then fails with _"Failed to create sink input: sink is suspended"_)
-5. Turning off wifi in settings and on again, does not find any wifi networks until system reboot. This happens everytime.
+5. Turning off wifi in settings and on again, does not find any wifi networks until system reboot. This seem to happen everytime.
 6. LED is often blinking but unclear why, where is notification? Also sometimes I get notification which just says it should enter suspend now?
 7. Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
 8. After pairing Bluetooth headphones, how to play sound there and not speakers?
@@ -27,7 +27,7 @@ Latest Mobian Phosh was used, starting from 2022-10.
 9. Phone calls; Some minor electrical noise is a minor annoyance (I mostly use 4G). Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can echo a lot too (!), headphones works well.
 11. ~~on low and moderate brightness settings, screen blinks and can even be completely black! Due to low battery? Random?~~ \
 **Fixed:** This has not happened again on rev 1.2?
-13. **What?!** wifi hw switch doesn't work when device is already on (i.e. wifi is always "on").
+13. **What?!** wifi hw switch doesn't work when device is already on (i.e. wifi is always "on"). Maybe _only_ on rev 1.1, and not 1.2, from what I've quickly tested.
 14. **VERY ANNOYING!** Screen sometimes blank (and/or more rarely applications are gone when trying to wake it). Sound still works.
 15. **ANNOYING** Like 50% of the time, the camera is not discovered and need to reboot. (_Could not open /dev/video2: No such device or address_)
 16. USB-C usually works (phone rev 1.2), but sometimes it doesn't detect the (USB, HDMI, ..) devices. Yes you can use the phone as a computer (HDMI screen, USB peripherals etc.). Although it is amazingly slow in 1440p. However, the clear bug here is that sometimes USB-C stops working and I needed to reboot and remove battery. ~~Is this related to using the attachable Pine keyboard?~~ To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?). I think the problem is the same regardless if Pine keyboard is attached or not.
