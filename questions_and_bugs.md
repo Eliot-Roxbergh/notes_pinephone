@@ -1,41 +1,45 @@
 # Bugs:
 
-Most of this was for my test phone which is old revision 1.1 Braveheart! But revision ~1.2, 3GB version, seem to have mainly the same issues (although it should now work with USB-C and no power drain when turned off) 
+Tested with revision 1.1 Braveheart and revision 1.2 3GB. They seem to have the same issues however (if not mentioned below). (To clarify, of course, with rev 1.1, USB-C did not work at all and power drain when turned off. But this is well known and not mentioned below).
 
 ## Bugs
 
 #### General (GNOME / apps / asorted)
-- mute doesn't work on calls!! \
+
+ **TODO** check or add issues for [Mobian](https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues) or for [GNOME](https://gitlab.gnome.org/GNOME) apps, for instance.
+
+1. mute doesn't work on calls!! \
 **issue up:** it is only for SIP calls (i.e. on 3G and 4G?) -> https://gitlab.gnome.org/GNOME/calls/-/issues/395
-- Phone calls; Some minor electrical noise is a minor annoyance (I mostly use 4G). Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can echo a lot too (!), headphones works well.
-- at boot, cellular network is off, although it is on in settings GUI. Need to turn Mobile Data off and on again.
-- upower reports 3 batteries instead of 2 when using Pinephone (hardware) keyboard.
-- Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).
-- **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) **TODO** add/check here https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues. (when trying to play sound it then fails with _"Failed to create sink input: sink is suspended"_)
-- Turning off wifi in settings and on again, does not find any wifi networks until system reboot.
-- Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
-- After pairing Bluetooth headphones, how to play sound there and not speakers?
-- Ringtone plays from headphones if connected, this is LOUD. Dangerous??
+2. at boot, cellular network is off, although it is on in settings GUI. Need to manually turn Mobile Data off and on again.
+3. Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).
+4. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play sound it then fails with _"Failed to create sink input: sink is suspended"_)
+5. Turning off wifi in settings and on again, does not find any wifi networks until system reboot.
+6. LED is often blinking but unclear why, where is notification? Also sometimes I get notification which just says it should enter suspend now?
+7. Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
+8. After pairing Bluetooth headphones, how to play sound there and not speakers?
+9. Ringtone plays from headphones if connected, this is LOUD. Dangerous??
+10. During calls, the screen blanks often (easy fixable?). **Comment:** This issue is not so bad anymore, keep an eye on it.
 
 #### Pinephone specific
 
-- ~~on low and moderate brightness settings, screen blinks and can even be completely black! Due to low battery? Random?~~ This has not happened again on rev 1.2?
-- **What?!** wifi hw switch doesn't work when device is already on (i.e. wifi is always "on").
-- LED is often blinking but unclear why, where is notification? Also sometimes I get notification which just says it should enter suspend now?
-- **VERY ANNOYING!** Screen sometimes blank (and/or more rarely applications are gone when trying to wake it). Sound still works.
-- Calling issues, screen blanks often (easy fix?), somewhat poor 4G call sound, calling someone's voice mail sometimes quiet.
-- **ANNOYING** Like 50% of the time, the camera is not discovered and need to reboot. (_Could not open /dev/video2: No such device or address_)
-- USB-C usually works (phone rev 1.2), but sometimes it doesn't detect the (USB, HDMI, ..) devices. Yes you can use the phone as a computer (HDMI screen, USB peripherals etc.). Although it is amazingly slow in 1440p. However, the clear bug here is that sometimes USB-C stops working and I needed to reboot and remove battery. ~~Is this related to using the attachable Pine keyboard?~~ To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?). I think the problem is the same regardless if Pine keyboard is attached or not.
+9. Phone calls; Some minor electrical noise is a minor annoyance (I mostly use 4G). Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can echo a lot too (!), headphones works well.
+11. ~~on low and moderate brightness settings, screen blinks and can even be completely black! Due to low battery? Random?~~ \
+**Fixed:** This has not happened again on rev 1.2?
+13. **What?!** wifi hw switch doesn't work when device is already on (i.e. wifi is always "on").
+14. **VERY ANNOYING!** Screen sometimes blank (and/or more rarely applications are gone when trying to wake it). Sound still works.
+15. **ANNOYING** Like 50% of the time, the camera is not discovered and need to reboot. (_Could not open /dev/video2: No such device or address_)
+16. USB-C usually works (phone rev 1.2), but sometimes it doesn't detect the (USB, HDMI, ..) devices. Yes you can use the phone as a computer (HDMI screen, USB peripherals etc.). Although it is amazingly slow in 1440p. However, the clear bug here is that sometimes USB-C stops working and I needed to reboot and remove battery. ~~Is this related to using the attachable Pine keyboard?~~ To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?). I think the problem is the same regardless if Pine keyboard is attached or not.
 
 #### Pinephone Keyboard specific
 
 The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's a keyboard. Nice.
 
-- _(fixable [1])_ The layout is peculiar, specifically it is very annoying to write with Swedish layout (öä).
-- _(fixable [1])_ The special buttons to write symbols such as `|` `-` `_` stopped working, probably related to keyboard choosen in OS?
-- _(battery detection)_ It reports 1-2 extra batteries (`upower -d` or settings) which decreases the calculated battery percentage (100%+100%+0%+0% = 50% battery left).
-- _(battery detection)_ In general the phone does not detect the size of the batteries, so it ignores that the keyboard battery is twice the size as the internal when calculating remaining battery percentage.
-- _(battery detection)_ Sometimes it temporarily loses contact (or something) and reports keyboard battery as 0%. The keyboard still works however.
+1. upower reports 3 batteries instead of 2 when using Pinephone (hardware) keyboard. Additionally, battery detection seems unstable, and sometimes reports keyboard as 0% power.
+2. _(fixable [1])_ The layout is peculiar, specifically it is very annoying to write with Swedish layout (öä).
+3. _(fixable [1])_ The special buttons to write symbols such as `|` `-` `_` stopped working, probably related to keyboard choosen in OS?
+4. _(battery detection)_ It reports 1-2 extra batteries (`upower -d` or settings) which decreases the calculated battery percentage (100%+100%+0%+0% = 50% battery left).
+5. _(battery detection)_ In general the phone does not detect the size of the batteries, so it ignores that the keyboard battery is twice the size as the internal when calculating remaining battery percentage.
+6. _(battery detection)_ Sometimes it temporarily loses contact (or something) and reports keyboard battery as 0%. The keyboard still works however.
 
 [1] - afaik you can reprogram the firmware in the keyboard (https://xnux.eu/log/#044) and do really what you'd want. Also you can change the keyboard mapping in OS.
 
@@ -44,8 +48,10 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 
 0. When calling, sometimes/some (?) voicemails have no sound (this time using 4G, VoLTE, if relevant), i.e. you get a tone but when connected it's all silent. Calls in general seem to work.
 1. Like once, on new boot the top drag-down menu didn't work. Fixed by locking phone. Also lower drag-down menu can bug when turning phone to landscape mode and having the menu up (it won't go away), to fix lock phone or close the menu in portrait mode (easy).
-2. When I answered a call the phone continued to vibrate and then the whole system crashed (rebooted).
-3. Once I left it on charge and when I came back it was completely turned off.
+2. At least two times [1]: I answered a call and the phone continued to vibrate and then the whole system crashed (rebooted).
+3. Once I left it on charge and when I came back it was completely turned off. [1]
+
+[1] - To be clear, this was 2022-11, rev 1.2.
 
 
 ## Bugs - extended notes
