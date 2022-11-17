@@ -10,6 +10,13 @@ Latest **Mobian Phosh** was used, starting from **2022-10**.
 
 ## Bugs
 
+Repetition of critical bugs (mentioned later):
+
+1. Sound stops working from nowhere, probably on resume from suspend
+2. Camera is gone 50% of the time (/dev/video2)
+3. Compositor (?) crashes, screen is black and need to force restart
+4. Also.. a few times it REBOOTED when I pressed answer call
+
 #### General (GNOME / apps / asorted)
 
  **TODO** check or add these issues where applicable (?), like [Mobian](https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues) or [GNOME](https://gitlab.gnome.org/GNOME) apps.
