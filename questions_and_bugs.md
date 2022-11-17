@@ -13,7 +13,7 @@ Latest Mobian Phosh was used, starting from 2022-10.
 1. mute doesn't work on calls!! \
 **issue up:** it is only for SIP calls (i.e. on 3G and 4G?) -> https://gitlab.gnome.org/GNOME/calls/-/issues/395
 2. at boot, cellular network is off, although it is on in settings GUI. Need to manually turn Mobile Data off and on again.
-3. Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).
+3. ~~Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).~~ **Edit:** This only applies for Signal-Desktop, not rest of apps! (mentioned again in Signal section below)
 4. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play sound it then fails with _"Failed to create sink input: sink is suspended"_)
 5. Turning off wifi in settings and on again, does not find any wifi networks until system reboot. This happens ~~everytime~~ sometimes (I don't understand when it works or when it does not work!).
 6. LED is often blinking but unclear why, where is notification? Also sometimes I get notification which just says it should enter suspend now?
@@ -110,10 +110,14 @@ Probably give up and try to use "native" apps like Lollypop, vlc is made for des
 It works but might be annoying.
 
 0. **VERY ANNOYING!** When adding attachments (or get other pop ups), the keyboard no long writes into signal text box, restart the app fixes it.
-1. Fix build so it is packaged as .deb instead of binary. Or at least add a shortcut so it is easy to launch said binary (how?). (See seprate file on building signal)
-2. ~~TODO try to collapse side menu with mouse?~~ It's possible to collapse side menu with mouse which makes it easier to use.
-3. It is possible to send and receive pictures, but they look very small and blurry (when ui zoomed out max). Need to save them on disk to see clearly.
-4. With regular (virtual) keyboards capital letters seem to work, _except_ shift+c which removes the letter prior (like backspace)! This applies for multiple keyboard languages, but "terminal" (virtual) keyboard works.
+1. With regular (virtual) keyboards capital letters seem to work, _except_ shift+c which removes the letter prior (like backspace)! This applies for multiple keyboard languages, but "terminal" (virtual) keyboard works.
+2. Fix build so it is packaged as .deb instead of binary, and make it work on other versions than the one tested. ~~Or at least add a shortcut so it is easy to launch said binary (how?)~~. \
+**Partial answer:** to add shortcut is explained in [README.md](https://github.com/Eliot-Roxbergh/notes_pinephone#install) (See separate file on building signal)
+4. ~~TODO try to collapse side menu with mouse?~~ \
+**Answer:** It's possible to collapse side menu with mouse (drag) which makes it easier to use, connect mouse via usb-c hub for instance.
+6. ~~It is possible to send and receive pictures, but they look very small and blurry (when ui zoomed out max). Need to save them on disk to see clearly.~~ \
+**Answer:** tap once to zoom in
+
 
 #### Firefox
 
