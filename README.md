@@ -7,7 +7,7 @@ Here I used Mobian (Bookworm) with Phosh since most things just worked (like sms
 
 For development status of Pinephone etc. see [1]
 
-There is also a more powerful version Pinephone Pro, however now ~Q4 2022 it is not usable as a daily phone [2].
+There is also a more powerful version Pinephone Pro, however now ~Q4 2022 it is not at all usable as a daily phone [2].
 
 **There are still many bugs with the Pinephone, see my comments -> [questions_and_bugs.md](questions_and_bugs.md)**
 
@@ -39,10 +39,9 @@ Except for the basic apps, the software is badly optimized for such a small scre
 
 **How to buy**
 
-The phone works and only costs 199$ (total to Sweden 270$, incl. VAT and shipping) (quad core, 3GB ram) [1]. There are also accessories like an attachable keyboard [2] as well as replacement parts and batteries.
+The phone works and only costs 199$ (total to Sweden 270$, incl. VAT and shipping) (quad core, 3GB ram) [1]. There are also accessories like an attachable keyboard [2] as well as replacement parts and batteries. In Sweden, similar replacement batteries can also be purchased here [6], price at time of writing is 200 SEK, these batteries are supposed to fit according to the Pine wiki.
 
-Only purchase if you have some Linux experience.
-
+Only purchase if you have some Linux experience (at least some initial configuration is necessary, and there are still bugs as mentioned here [7].
 If you buy used or on sale, make sure to get the latest board revision (currently 1.2b).
 Note the differences between releases HW [3], e.g. v1.1 discharges even when turned off ([4]) and it cannot use USB-C hubs w/o hardware hack. In case you have an older version you probably want to buy the most recent mainboard in the pine64 store [5], to replace it and get rid of these problems (and to get 3GB ram from 2GB).
 
@@ -50,8 +49,9 @@ Note the differences between releases HW [3], e.g. v1.1 discharges even when tur
 [2] - https://pine64.com/product/pinephone-pinephone-pro-keyboard-case/ \
 [3] - https://wiki.pine64.org/wiki/PinePhone#Hardware_revisions \
 [4] - https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix \
-[5] - https://pine64.com/product/pinephone-community-edition-3gb-32gb-mainboard/
-
+[5] - https://pine64.com/product/pinephone-community-edition-3gb-32gb-mainboard/ \
+[6] - https://www.batterilagret.se/p3443/Samsung-Galaxy-J7 \
+[7] - https://github.com/Eliot-Roxbergh/notes_pinephone/blob/main/questions_and_bugs.md
 
 -----
 
@@ -208,7 +208,7 @@ For discussion on the camera, and for examples, see for instance this blog serie
 
 #### Videos
 Taking videos is basically _not_ supported in software.
-What I've heard is that you can record videos in **ffmpeg** (terminal program).
+What I've heard is that you can record videos in **ffmpeg** (terminal program).. with poor quality.
 
 They ([1]) mention streaming video in firefox is possible (although it is very slow with no hw video acc.).
 
@@ -234,7 +234,7 @@ Everything seems to work with the carriers tested, with three exceptions. 1. To 
 
 Compared to other phones, 4G 3G coverage is similar it looks like, however 2G coverage is quite a bit worse.
 
-(4G only), I tried to do speed test in browser but it is too inconsitent, Firefox is too slow? And/or 4G is very variable. Should get around 10mbps up and down (~35ms) regardless. Specifically, down has registered between 4-31 mbps and up ~11 mbps.
+(4G only), I tried to do speed test in browser but it is too inconsitent, Firefox is too slow (use CLI test instead)? And/or 4G is very variable. Should get around 10mbps up and down (~35ms) regardless. Specifically, down has registered between 4-31 mbps and up ~11 mbps.
 To compare, Iphone SE got 58/15 mbit/s (44ms).
 
 (TODO fill in carrier we tested on wiki pages below)
@@ -352,7 +352,8 @@ systemctl --user start mmsd-tng
 
 ~~It started of being 50m wrong then it was 200m, 10km and now it's in dead.~~ It does give location in apps and firefox.
 After updated firmware and modem-sdk, GPS works. ~~Note that it could take a while until GPS is moderately accurate.~~
-When I used GPS, accuracy was very bad around 100m (50-150m according to OpenStreetMaps), it did not improve if I had it on for longer. But needs to be investigated more.
+When I used GPS, accuracy was very bad around 100m (50-150m according to OpenStreetMaps), it did not improve if I had it on for longer. But needs to be investigated more. \
+**Update again:** IDK it seems like GPS is dead half the time, not sure when or why!
 
 
 ## Alarm app (that works in suspend)
@@ -411,7 +412,7 @@ Signal-desktop does not have official arm64 support, but you can build it from s
 Signal-desktop works ok, but not made for small screen: so zoom out via the menu and it _should_ be possible to contract the contact menu by dragging (maybe if you plug in mouse, it's literally 1 px). 
 Voice calls on signal work, but it did not detect the camera. Remember that if the phone is in suspend, Signal messages or calls will not be received (of course) until phone wakes up again. 
 
-Signal alerts are shown on lock screen, blue led flashing correctly. It is possible to send attachments such as images, usually it even works to modify (such as to crop or draw on) the picture before sending.
+Signal alerts are shown on lock screen, blue led flashing correctly. It is possible to send attachments such as images, usually it even works to modify (such as to crop or draw on) the picture before sending. You should hear Signal calls (as long as you're not in suspend).
 
 Build from source, can be difficult to compile, but latest beta (2022-10-11) was easy to build (I built on another arm64 device).
 Still I did NOT manage to build a .deb file, only the binary directly (TODO) ... but it works (need to create shortcut manually TODO). TODO try if it's easier on x86 (might not be though), considering build .deb file uses x86_32 dependency for some reason (First Docker link gave some sort of .deb, so should work on arm64!) .
@@ -466,7 +467,7 @@ sudo apt install -y telegram-desktop
 
 ### Music / Sound
 
-Playing music works OK, can pause etc. on lock screen. In flight mode with music, it seemed to use approximately 15% battery an hour (with no other services running), so it is not terrible. It does not seem to enter suspend while music is playing, at least the music doesn't stop.
+Playing music works OK, can pause etc. on lock screen. In "flight mode" (i.e. no cellular, wifi, or BT) with music, it _seemed_ to use approximately 15% battery an hour (with no other services running), so it is not terrible. It does not seem to enter suspend while music is playing, at least the music doesn't stop.
 
 **VLC** works but UI not made for phone.
 
@@ -506,9 +507,9 @@ LANG=C pactl info | grep '^Server Name'
 
 Hardware video acceleration not available in _any_ browser afaik. In general video decoding is done in SW [1], the issue (I think) is that Mali400 MP2 only supports GLES 2.0. More on HW acceleration see [2] [3].
 
-I think that for video watching in browser, best I have seen is (almost smooth) 30fps@480p, which was on **Angelbrowser** (firefox might be on par if you have enough ram). Outside the browser, mpv was able basically handle 30fps@1080p.
+I think that for video watching in browser, best I have seen is (almost smooth) 30fps@480p, which was on **Angelbrowser**. With firefox performing similarly if on 3G RAM system. Outside the browser, mpv was able basically handle 30fps@1080p.
  
-For **Firefox** it will probably work better with 3GB ram instead of 2GB, as Firefox watching Youtube takes almost all 2GB I had on system. Moreover, someone said that maybe video works better after you've installed mpv (more likely from some gstreamer dependency), I'm not sure.
+Someone said that maybe video works better after you've installed mpv (more likely from some gstreamer dependency), I'm not sure. Complete hearsay.
 
 However! **mpv** has hardware acceleration [2], so you can e.g. stream/download Youtube videos with yt-dlp with good performance. Specifically, with mpv, 30fps@1080p (VP9 encoding) video is OK and I got only ~8% dropped frames! \
 mpv: _"libva driver for the Allwinner system-on-a-chip, called “libva-request”. [..] MPV is already using this lib to decode FullHD MP4 movies on my PinePhone with next to zero frame drops. The amount of power consumption has dropped significantly, too. It’s possible to watch a full-length movie without running out of juice. The PinePhone is using 3.6 Watts when all CPU cores are running, which results in approximately two hours until the battery is drained. With the help of the GPU this is no longer the case, as the power consumption got down to around 2 Watts, doubling the life time of a full battery charge."_ - [2] 
@@ -520,15 +521,15 @@ mpv: _"libva driver for the Allwinner system-on-a-chip, called “libva-request�
 
 ### Browsing
 
-tl;dr video is laggy, stream and play locally if possible. Desktop browsers such as firefox are of course clunky to use.
+tl;dr video is laggy (but workable), stream and play locally if possible. Desktop browsers such as firefox are of course clunky to use.
 
 There is no hw video acceleration in browsers, someone on IRC said this (I'm paraphrasing);
 > Firefox will never have hardware acceleration unless we can convince the developers to (1.) lower webrender requirements and (2.) support the legacy openGL renderer. And libva-v4l2-request remains dead.
 
-**Firefox** is "OK", but takes like 5 seconds to start. Video performance is bad, but you can run 360-480p moderately smoothly (maybe? check again with 3GB ram system). Some menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies, install addons etc. Firefox is too hungry to run videos effectively on 2GB system, might be better on 3GB version.
+**Firefox** is "OK", but takes like 5 seconds to start. Firefox requires 3GB phone version to run, otherwise videos will have much lower framerate and some risk of total freeze due to too little RAM . Video performance is what it is, you can run 480p moderately smoothly. Some menus don't show and only flicker, but generally it is usable and e.g. possible to go into settings, clear cookies, install addons etc. 
 How to handle bookmarks though, hard to understand/navigate?
 
-**Angelbrowser** (`sudo apt install angelbrowser`), worked better in videos and works well on small screen. Video almost worked OK on 480p. Seems good, but I'm not too familiar with this browser.
+**Angelbrowser** (`sudo apt install angelbrowser`), faster and works well on small screen. Same, if not better video performance than firefox, worked OK in 480p. Seems good, but I'm not too familiar with this browser.
 
 # Security
 
