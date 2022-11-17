@@ -39,10 +39,7 @@ Latest **Mobian Phosh** was used, starting from **2022-10**.
 **Comment:** Seemingly only on rev 1.1 and not 1.2, but I do not trust it!
 17. **VERY ANNOYING!** Screen sometimes blank (and/or more rarely applications are gone when trying to wake it). Sound still works.
 18. **ANNOYING** Like 50% of the time, the camera is not discovered and need to reboot. (_Could not open /dev/video2: No such device or address_)
-19. You can use the phone as a desktop computer (HDMI screen, USB peripherals etc.) via USB-C dock, but.. \
-**i)** It is amazingly slow in 1440p, completely unusable really. \
-**Partial answer:** it is **supposedly better in GTK4:** someone said that Phosh uses GTK3, so use e.g. sxmo (GTK4) to utilize hw acc in UI components. \
-**ii)** USB-C usually works (phone rev 1.2), but sometimes it doesn't detect the (USB, HDMI, ..) devices. Specifically, USB-C stopped working and I needed to reboot and remove battery. To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?). \
+19. You can use the phone as a desktop computer (HDMI screen, USB peripherals etc.) via USB-C dock. USB-C usually works (phone rev 1.2), but sometimes it doesn't detect the (USB, HDMI, ..) devices. Specifically, USB-C stopped working and I needed to reboot and remove battery. To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?). \
 **TODO check if this is only when Pine Keyboard is attached as this is known issue (?)**.
 21. Somewhat often (<=50%), GPS does not work at all. When it does work it has low accuracy (mentioned later).
 
@@ -99,14 +96,17 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 5. ~~Watch videos in browser without lag, HW acceleration?~~ \
 **Partial answer:** I think no hw acceleration in browsers since Mali400 MP2, it only supports GLES 2.0. Use local players if possible, like MPV. Edit, I think it's not as bad as I first thought, as long as there is enough ram, 360p video (incl. livestreams) should at least kind of work (with the downside that it uses a lot of battery due to no hw acc).
 
-6. Record videos? _(haven't seen any app/GUI but ffmpeg should work at least)_. Have video calls ? _(Theoretically possible, but probably not / not fast enough?)_
-7. How to improve GPS? Is GPS working or using IP geolocation (https://wiki.gnome.org/Apps/Maps/Geolocation)? \
+6. Record videos? 
+**Partial answer:** haven't seen any app/GUI but ffmpeg should work at least. Yes, ffmpeg should work but it is supposedly bad quality). **I guess you can't have video calls?**
+8. How to improve GPS? Is GPS working or using IP geolocation (https://wiki.gnome.org/Apps/Maps/Geolocation)? \
 **Status:** I usually get 50-150m accuracy with new firmware and modem sdk. But not better. \
 **TODO:** see e.g. https://wiki.mobian-project.org/doku.php?id=location#setup-gpsd, https://wiki.pine64.org/wiki/PinePhone#GPS_/_GNSS, https://wiki.mobian-project.org/doku.php?id=location
 9. Is it possible to turn on wifi HW switch during runtime and connect to wifi without reboot? ... Unload and load the kernel module? Probably bad for the hw? Wifi killswitch doesn't work for me if I turn it off while system is running!!
-10. How to reliably listen to music, especially while not draining battery too much? ~~Playing music and pausing via lockscreen almost works (not too reliable? It pauses sometimes? See sound issue, maybe just hw issue).~~ (For last part, use PipeWire)
-11. How does suspend work? e.g. Running cronjobs, systemd timers, checking Signal-desktop messages possible etc? (Sure it's just regular 'systemctl suspend'?)
-12. Connecting phone to external "highres" monitor (e.g. 1080p, 1440p) is so damn slow! Should have hw acc or no?
+10. ~~How to reliably listen to music, especially while not draining battery too much?~~ Whatever it works OK. \
+~~Playing music and pausing via lockscreen almost works (not too reliable? It pauses sometimes? See sound issue, maybe just hw issue).~~ (For last part, use PipeWire)
+12. How does suspend work? e.g. Running cronjobs, systemd timers, watch-dog checking Signal-desktop messages possible etc? (Sure it's just regular 'systemctl suspend'?)
+13. Connecting phone to external "highres" monitor (e.g. 1080p, 1440p) is so damn slow! Completely unusable really. Should have hw acc or no? \
+**Partial answer:** there is supposedly hw acc with GTK4 but not with GTK3. Someone suggested that Phosh uses GTK3, so use e.g. sxmo (GTK4) to utilize hw acc in UI components. (But still it will probably be slow?) \
 
 # Apps (that have issues)
 
@@ -117,7 +117,7 @@ It works but might be annoying.
 0. **VERY ANNOYING!** When adding attachments (or get other pop ups), the keyboard no long writes into signal text box, restart the app fixes it.
 1. With regular (virtual) keyboards capital letters seem to work, _except_ shift+c which removes the letter prior (like backspace)! This applies for multiple keyboard languages, but "terminal" (virtual) keyboard works.
 2. It's a bit difficult to build Signal-Desktop. TODO, fix build so it is packaged as .deb instead of binary, and make it work on other versions than the one tested. ~~Or at least add a shortcut so it is easy to launch said binary (how?)~~. \
-**Partial answer:** to add shortcut is explained in [README.md](https://github.com/Eliot-Roxbergh/notes_pinephone#install) (See separate file on building signal)
+**Partial answer:** to add shortcut is explained in [README.md](https://github.com/Eliot-Roxbergh/notes_pinephone#install) (look there for how to build Signal)
 4. ~~TODO try to collapse side menu with mouse?~~ \
 **Answer:** It's possible to collapse side menu with mouse (drag) which makes it easier to use, connect mouse via usb-c hub for instance.
 6. ~~It is possible to send and receive pictures, but they look very small and blurry (when ui zoomed out max). Need to save them on disk to see clearly.~~ \
