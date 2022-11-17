@@ -1,8 +1,10 @@
 # Bugs:
 
-Tested with revision 1.1 Braveheart and revision 1.2 3GB. They seem to have the same issues however (if not mentioned below). (To clarify, of course, with rev 1.1, USB-C did not work at all and power drain when turned off. But this is well known and not mentioned below).
+Comments after 3 weeks full-time use.
 
-Latest Mobian Phosh was used, starting from 2022-10.
+Tested first with revision 1.1 Braveheart, and lately **revision 1.2 3GB**. They seem to have the same issues however (if not mentioned otherwise). Also well-known issues with old rev 1.1 are not mentioned here (as they can be read about on that hardware revision page in wiki): such as USB-C did not work at all and power drain when turned off.
+
+Latest **Mobian Phosh** was used, starting from **2022-10**.
 
 ## Bugs
 
@@ -54,7 +56,7 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 0. When calling, sometimes/some (?) voicemails have no sound (this time using 4G, VoLTE, if relevant), i.e. you get a tone but when connected it's all silent. Calls in general seem to work.
 1. Like once, on new boot the top drag-down menu didn't work. Fixed by locking phone. Also lower drag-down menu can bug when turning phone to landscape mode and having the menu up (it won't go away), to fix lock phone or close the menu in portrait mode (easy).
 2. At least two times [1]: I answered a call and the phone continued to vibrate and then the whole system crashed (rebooted).
-3. Once I left it on charge and when I came back it was completely turned off. [1]
+3. At least once it has just rebooted suddently. And once I left it on charge and when I came back it was completely turned off. [1]
 
 [1] - To be clear, this was 2022-11, rev 1.2.
 
