@@ -19,8 +19,8 @@ Latest Mobian Phosh was used, starting from 2022-10.
 6. LED is often blinking but unclear why, where is notification? Also sometimes I get notification which just says it should enter suspend now?
 7. Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
 8. After pairing Bluetooth headphones, how to play sound there and not speakers?
-9. **Warning:** Ringtone plays from headphones if connected, this is LOUD. Alarm and other apps might also be loud!!!
-10. During calls, the screen blanks often (easy fixable?). **Comment:** This issue is not so bad anymore, keep an eye on it.
+9. **Warning:** Ringtone plays from headphones if connected, this is can be loud (depending on current volume setting). Alarm and other apps might also be loud!!! Can be annoying while you're in a call.
+10. During calls, the screen blanks often (easy fixable?). **Comment:** This issue is not _that_ bad anymore, keep an eye on it (I think I've seen this mentioned somewhere).
 11. I couldn't copy phone number from contacts, ctrl+c / copy did not work? Is it even possible to copy a contact nr and share via SMS?
 12. Minor annoyance: there is some kind of airplane mode in settings (unclear if it actually does something or just reaction to wifi+BT off), with it, cellular network is still on but you can't access the settings. Just turn it off and then manually turn of BT and wifi .. again.
 
