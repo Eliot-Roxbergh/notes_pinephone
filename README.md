@@ -99,10 +99,9 @@ Battery time is bad (1-2h of heavy use, 4-5h moderate use or listening to music)
 
 **Does it work as a computer**
 
-It is possible to directly attach (via USB-C hub) keyboard, mouse, and HDMI screen (etc.), to utilize the phone as a desktop computer as well. The graphics were extremely slow in 1440p, perhaps a lighter desktop environment is required or HW acceleration. Can of course do simple things such as writing in a text editor.
-
-I had some issues that after unplugging USB-C it would not redetect later, and required restart. (Have not debugged further)
-
+It is possible to directly attach (via USB-C hub) keyboard, mouse, and HDMI screen (etc.), to utilize the phone as a desktop computer as well. The graphics were extremely slow in 1440p (unusable). Can of course (if patient) do simple things such as writing in a text editor.
+However! Probably a GTK4 desktop environment should work better (HW acc) and/or something lighter.
+But do not expect miracles.
 
 -----
 
