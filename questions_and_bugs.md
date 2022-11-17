@@ -99,12 +99,6 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 
 ## Apps (that have issues)
 
-#### VLC
-Works to play music, even while phone is locked/screen off, and controlling music via lockscreen works as well (but other apps also work). 
-Probably give up and try to use "native" apps like Lollypop, vlc is made for desktop.
-
-1. Bad UI for phone, but it works
-
 #### Signal-desktop
 
 It works but might be annoying.
@@ -118,11 +112,18 @@ It works but might be annoying.
 6. ~~It is possible to send and receive pictures, but they look very small and blurry (when ui zoomed out max). Need to save them on disk to see clearly.~~ \
 **Answer:** tap once to zoom in
 
+#### Just more comments
 
-#### Firefox
+##### Firefox
 
 Bad UI for small screens, might reconsider. Consumes quite a lot of ram, but usable.
 
 Is there a phone configuration, or similar, available? Otherwise cannot really recommend.
 
 1. How to change or list bookmarks? Such things are very unclear.
+
+##### VLC
+Works to play music, even while phone is locked/screen off, and controlling music via lockscreen works as well (but other apps also work). 
+Probably give up and try to use "native" apps like Lollypop, vlc is made for desktop.
+
+1. Bad UI for phone, but it works
