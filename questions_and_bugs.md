@@ -8,7 +8,7 @@ Latest Mobian Phosh was used, starting from 2022-10.
 
 #### General (GNOME / apps / asorted)
 
- **TODO** check or add issues for [Mobian](https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues) or for [GNOME](https://gitlab.gnome.org/GNOME) apps, for instance.
+ **TODO** check or add these issues where applicable (?), like [Mobian](https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues) or [GNOME](https://gitlab.gnome.org/GNOME) apps.
 
 1. mute doesn't work on calls!! \
 **issue up:** it is only for SIP calls (i.e. on 3G and 4G?) -> https://gitlab.gnome.org/GNOME/calls/-/issues/395
@@ -22,7 +22,7 @@ Latest Mobian Phosh was used, starting from 2022-10.
 9. **Warning:** Ringtone plays from headphones if connected, this is can be loud (depending on current volume setting). Alarm and other apps might also be loud!!! Can be annoying while you're in a call.
 10. During calls, the screen blanks often (easy fixable?). **Comment:** This issue is not _that_ bad anymore, keep an eye on it (I think I've seen this mentioned somewhere).
 11. I couldn't copy phone number from contacts, ctrl+c / copy did not work? Is it even possible to copy a contact nr and share via SMS?
-12. Minor annoyance: there is some kind of airplane mode in settings (unclear if it actually does something or just reaction to wifi+BT off), with it, cellular network is still on but you can't access the settings. Just turn it off and then manually turn of BT and wifi .. again.
+12. Minor annoyance: there is some kind of airplane mode in settings (unclear if it actually does something or just reaction to wifi+BT off), with it, cellular network is still on but you can't access the settings. Just turn it off and then manually turn off BT and wifi .. again.
 
 #### Pinephone specific
 
@@ -97,33 +97,17 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 11. How does suspend work? e.g. Running cronjobs, systemd timers, checking Signal-desktop messages possible etc? (Sure it's just regular 'systemctl suspend'?)
 12. Connecting phone to external "highres" monitor (e.g. 1080p, 1440p) is so damn slow! Should have hw acc or no?
 
-## Apps (that have issues)
+# Apps (that have issues)
 
-#### Signal-desktop
+## Signal-desktop
 
 It works but might be annoying.
 
 0. **VERY ANNOYING!** When adding attachments (or get other pop ups), the keyboard no long writes into signal text box, restart the app fixes it.
 1. With regular (virtual) keyboards capital letters seem to work, _except_ shift+c which removes the letter prior (like backspace)! This applies for multiple keyboard languages, but "terminal" (virtual) keyboard works.
-2. Fix build so it is packaged as .deb instead of binary, and make it work on other versions than the one tested. ~~Or at least add a shortcut so it is easy to launch said binary (how?)~~. \
+2. It's a bit difficult to build Signal-Desktop. TODO, fix build so it is packaged as .deb instead of binary, and make it work on other versions than the one tested. ~~Or at least add a shortcut so it is easy to launch said binary (how?)~~. \
 **Partial answer:** to add shortcut is explained in [README.md](https://github.com/Eliot-Roxbergh/notes_pinephone#install) (See separate file on building signal)
 4. ~~TODO try to collapse side menu with mouse?~~ \
 **Answer:** It's possible to collapse side menu with mouse (drag) which makes it easier to use, connect mouse via usb-c hub for instance.
 6. ~~It is possible to send and receive pictures, but they look very small and blurry (when ui zoomed out max). Need to save them on disk to see clearly.~~ \
 **Answer:** tap once to zoom in
-
-#### Just more comments
-
-##### Firefox
-
-Bad UI for small screens, might reconsider. Consumes quite a lot of ram, but usable.
-
-Is there a phone configuration, or similar, available? Otherwise cannot really recommend.
-
-1. How to change or list bookmarks? Such things are very unclear.
-
-##### VLC
-Works to play music, even while phone is locked/screen off, and controlling music via lockscreen works as well (but other apps also work). 
-Probably give up and try to use "native" apps like Lollypop, vlc is made for desktop.
-
-1. Bad UI for phone, but it works
