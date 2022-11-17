@@ -13,7 +13,7 @@ Latest **Mobian Phosh** was used, starting from **2022-10**.
 Repetition of critical bugs (mentioned later):
 
 1. Sound stops working from nowhere, probably on resume from suspend
-2. Camera is gone 50% of the time (/dev/video2)
+2. Camera is gone 50% of the time
 3. Compositor (?) crashes, screen is black and need to force restart
 4. Also.. a few times it REBOOTED when I pressed answer call
 
@@ -45,7 +45,7 @@ Repetition of critical bugs (mentioned later):
 15. ~~**What?!** wifi hw switch doesn't work when device is already on (i.e. wifi is always "on").~~ (mentioned more below) \
 **Comment:** Seemingly only on rev 1.1 and not 1.2, but I do not trust it!
 17. **VERY ANNOYING!** Screen sometimes blank (and/or more rarely applications are gone when trying to wake it). Sound still works.
-18. **ANNOYING** Like 50% of the time, the camera is not discovered and need to reboot. (_Could not open /dev/video2: No such device or address_)
+18. **ANNOYING** Like 50% of the time, the camera is not discovered and need to reboot. Megapixel app says says that "_Could not open /dev/video2: No such device or address_" (sometimes it says /dev/video1 instead).
 19. You can use the phone as a desktop computer (HDMI screen, USB peripherals etc.) via USB-C dock. USB-C usually works (phone rev 1.2), but sometimes it doesn't detect the (USB, HDMI, ..) devices. Specifically, USB-C stopped working and I needed to reboot and remove battery. To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?). \
 **TODO check if this is only when Pine Keyboard is attached as this is known issue (?)**.
 21. Somewhat often (<=50%), GPS does not work at all. When it does work it has low accuracy (mentioned later).
