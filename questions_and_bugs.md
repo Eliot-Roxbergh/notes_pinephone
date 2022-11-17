@@ -6,18 +6,20 @@ Tested first with revision 1.1 Braveheart, and lately **revision 1.2 3GB**. They
 
 Latest **Mobian Phosh** was used, starting from **2022-10**.
 
+(In general, everything works: calls, sms, mms, data, wifi, ...)
+
 ## Bugs
 
 #### General (GNOME / apps / asorted)
 
  **TODO** check or add these issues where applicable (?), like [Mobian](https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues) or [GNOME](https://gitlab.gnome.org/GNOME) apps.
 
-1. mute doesn't work on calls!! \
+1. mute doesn't work in calls!! \
 **issue up:** it is only for SIP calls (i.e. on 3G and 4G?) -> https://gitlab.gnome.org/GNOME/calls/-/issues/395
 2. at boot, cellular network is off, although it is on in settings GUI. Need to manually turn Mobile Data off and on again.
 3. ~~Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).~~ \
 **Edit:** This only applies for Signal-Desktop, not rest of apps! (mentioned again in Signal section below)
-5. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play sound it then fails with _"Failed to create sink input: sink is suspended"_)
+5. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play a sound it then fails with _"Failed to create sink input: sink is suspended"_)
 6. Turning off wifi in settings and on again, does not find any wifi networks until system reboot. This happens ~~everytime~~ sometimes (I don't understand when it works or when it does not work!). Also sometimes it can see wifi networks but not able to connect? Just reboot the phone..
 7. LED is often blinking but unclear why, where is notification? Also sometimes I get notification which just says it should enter suspend now?
 8. Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
