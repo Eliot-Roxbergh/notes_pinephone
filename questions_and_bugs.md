@@ -27,7 +27,7 @@ Repetition of critical bugs (mentioned later):
 3. ~~Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).~~ \
 **Edit:** This only applies for Signal-Desktop, not rest of apps! (mentioned again in Signal section below)
 5. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play a sound it then says _"Failed to create sink input: sink is suspended"_) \
-~~**Test 1:**  use Pipewire globally (as mentioned in README.md)~~ -> No did not fix this issue
+~~**Test 1:**  use Pipewire globally (as mentioned in README.md)~~ -> No did not fix this issue \
 **Test 2:** `sudo apt remove wireplumber` (and revert change from above), this should use pipewire-media-session (recommendation from IRC). -> testing...
 7. Turning off wifi in settings and on again, does not find any wifi networks until system reboot. This happens ~~everytime~~ sometimes (I don't understand when it works or when it does not work!). Also sometimes it can see wifi networks but not able to connect? Just reboot the phone..
 8. LED is often blinking but unclear why, where is notification? **I think the issue is** that you get a notification which just says something like "entering suspend".
