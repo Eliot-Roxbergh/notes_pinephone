@@ -88,11 +88,11 @@ I have had issues that sometimes the screen won't wake from suspend, or audio te
 And some apps might work well in portrait mode but does not in landscape mode (screen orientation).
 It might be possible to run Android apps (but probably too bothersome and slow!) via software such as Waydroid or Anbox.
 
-It is slow! Let's say performance similar to Samsung S3, with the downside that apps are not optimized for it. Still it works for most regular browsing, chat apps, etc. Video streaming is VERY SLOW however, fullscreen 360p Youtube videos in Firefox playable (HW acceleration is not supported in browser yet, so it is not very effective), local files play fine in full 720p. The successor, Pinephone Pro, has much better performance, which _might_ be a good upgrade once it has matured.
+It is slow! Let's say performance similar to Samsung S3, with the downside that apps are not optimized for it. Still it works for most regular browsing, chat apps, etc. Video streaming is slow however, fullscreen 480p Youtube videos in Firefox playable (HW acceleration is not supported in browser yet, so it is not very effective), local files play fine in full 720p (should use HW acceleration). The successor, Pinephone Pro, has much better performance, which _might_ be a good upgrade once it has matured.
 
 Camera is badish and cannot take videos (?). Still it works as a camera.
 
-Battery time is bad (1-2h of heavy use, 4-5h moderate use or listening to music), but is quite good in suspend mode: in which it turns off data and only wakes on calls or sms/mms. So battery time is quite good if you utilize suspend and use it as a phone, but during suspend you won't get any notifications from other apps like you would from a smartphone. Note, regular apps like timer and alarm won't work either in suspend: need to get special apps that wakes the phone from suspend with a timer (e.g. Birdie alarm app described later)!
+Battery time is bad when in use (1-2h of heavy use, 4-5h moderate use or listening to music), but is quite good in suspend mode: in which it turns off data and only wakes on calls or sms/mms. So battery time is quite good if you utilize suspend and use it as a phone, but during suspend you won't get any notifications from other apps like you would from a smartphone. Note, regular apps like timer and alarm won't work either in suspend: need to get special apps that wakes the phone from suspend with a timer (e.g. Birdie alarm app described later)!
 
 
 -----
@@ -113,7 +113,7 @@ Linux phone apps (with rating how well they fit on phone), https://linuxphoneapp
 
 # Install OS and bootloader
 
-**If screen is blank:** If the phone has no OS or bootloader. It is normal that the screen is completely blank, until you plug in a bootable sd-card and hold power+volume up (is this correct?), i.e. flash Tow-boot as described in step 1 below. It is also possible that the phone cannot charge if it has no OS, this is also normal (it only supports regular simple chargers that "implements BC1.2 spec correctly" according to IRC chat). Note, if you cannot boot sd card, make sure that the sd card is in the sd-card slot and not in the sim-card slot it "fits" in both.
+**If screen is blank:** If the phone has no OS or bootloader. It is normal that the screen is completely blank, until you plug in a bootable sd-card and hold power+volume up (is this correct?), i.e. flash Tow-boot as described in step 1 below. It is also possible that the phone cannot charge if it has no OS, this is also normal (it only supports regular simple chargers that "implements BC1.2 spec correctly" according to IRC chat). Note, if you cannot boot sd card, make sure that the sd card is in the sd-card slot and not in the sim-card slot, it "fits" in both.
 
 Mobian (Bookworm) with Phosh (wayland), [1].
 
