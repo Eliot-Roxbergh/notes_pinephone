@@ -26,13 +26,15 @@ Repetition of critical bugs (mentioned later):
 2. at boot, cellular network is off, although it is on in settings GUI. Need to manually turn Mobile Data off and on again.
 3. ~~Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).~~ \
 **Edit:** This only applies for Signal-Desktop, not rest of apps! (mentioned again in Signal section below)
-5. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play a sound it then fails with _"Failed to create sink input: sink is suspended"_)
-6. Turning off wifi in settings and on again, does not find any wifi networks until system reboot. This happens ~~everytime~~ sometimes (I don't understand when it works or when it does not work!). Also sometimes it can see wifi networks but not able to connect? Just reboot the phone..
-7. LED is often blinking but unclear why, where is notification? **I think the issue is** that you get a notification which just says something like "entering suspend".
-8. Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
-9. After pairing Bluetooth headphones, how to play sound there and not speakers?
-10. **Warning:** Ringtone plays from headphones if connected, this is can be loud (depending on current volume setting). Alarm and other apps might also be loud!!! At the least, it can be annoying while you're in a call.
-11. ~~During calls, the screen blanks often (easy fixable?).~~ \
+5. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play a sound it then says _"Failed to create sink input: sink is suspended"_) \
+~~**Test 1:**  use Pipewire globally (as mentioned in README.md)~~ -> No did not fix this issue
+**Test 2:** `sudo apt remove wireplumber` (and revert change from above), this should use pipewire-media-session (recommendation from IRC). -> testing...
+7. Turning off wifi in settings and on again, does not find any wifi networks until system reboot. This happens ~~everytime~~ sometimes (I don't understand when it works or when it does not work!). Also sometimes it can see wifi networks but not able to connect? Just reboot the phone..
+8. LED is often blinking but unclear why, where is notification? **I think the issue is** that you get a notification which just says something like "entering suspend".
+9. Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
+10. After pairing Bluetooth headphones, how to play sound there and not speakers?
+11. **Warning:** Ringtone plays from headphones if connected, this is can be loud (depending on current volume setting). Alarm and other apps might also be loud!!! At the least, it can be annoying while you're in a call.
+12. ~~During calls, the screen blanks often (easy fixable?).~~ \
 **Comment:** This issue is not _that_ bad anymore, keep an eye on it (I think I've seen this mentioned somewhere).
 12. I couldn't copy phone number from contacts, ctrl+c / copy did not work? Is it even possible to copy a contact nr and share via SMS?
 13. Minor annoyance: there is some kind of airplane mode in settings (unclear if it actually does something or just reaction to wifi+BT off), with it, cellular network is still on but you can't access the settings. Just turn it off and then manually turn off BT and wifi .. again.
