@@ -1,12 +1,12 @@
 # Bugs:
 
-Comments after 3 weeks full-time use.
+Comments after 3 weeks full-time use. 
+In general, everything works: calls, sms, mms, data, wifi, ... but here are the issues.
 
 Tested first with revision 1.1 Braveheart, and lately **revision 1.2 3GB**. They seem to have the same issues however (if not mentioned otherwise). Also well-known issues with old rev 1.1 are not mentioned here (as they can be read about on that hardware revision page in wiki): such as USB-C did not work at all and power drain when turned off.
 
-Latest **Mobian Phosh** was used, starting from **2022-10**.
+Latest **Mobian Phosh** was used, starting from **2022-10**. With modem firmware ADSP 01.003.01.003 and Pinephone Modem SDK.
 
-(In general, everything works: calls, sms, mms, data, wifi, ...)
 
 ## Bugs
 
@@ -72,8 +72,9 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 1. Like once, on new boot the top drag-down menu didn't work. Fixed by locking phone. Also lower drag-down menu can bug when turning phone to landscape mode and having the menu up (it won't go away), to fix lock phone or close the menu in portrait mode (easy).
 2. At least two times [1]: I answered a call and the phone continued to vibrate and then the whole system crashed (rebooted).
 3. At least once it has just rebooted suddently. And once I left it on charge and when I came back it was completely turned off. [1]
+4. At least twice, modem was dead on wake from suspend, although it could have occured earlier of course. [1]
 
-[1] - To be clear, this was 2022-11, rev 1.2.
+[1] - To be clear, this was 2022-11, rev 1.2. (pinephone-modem-sdk and ADSP 01.003.01.003)
 
 
 ## Bugs - extended notes
