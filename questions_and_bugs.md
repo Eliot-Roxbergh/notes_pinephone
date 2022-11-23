@@ -28,9 +28,9 @@ Repetition of critical bugs (mentioned later):
 **Edit:** This only applies for Signal-Desktop, not rest of apps! (mentioned again in Signal section below)
 5. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play a sound it then says _"Failed to create sink input: sink is suspended"_) \
 ~~**Test 1:**  use Pipewire globally (as mentioned in README.md)~~ -> No did not fix this issue \
-**Test 2:** `sudo apt remove wireplumber` (and revert change from above), this should use pipewire-media-session (recommendation from IRC). -> seems to work right now, but with a downside: for some reason it is not possible to change the volume in phone calls anymore (this is not necessarily a big deal but wtf).
+~~**Test 2:** `sudo apt remove wireplumber` (and revert change from above), this should use pipewire-media-session (recommendation from IRC).~~ -> No, similarily it might stop working, although now when it doesn't work the volume bar is not visible at all (why?) this at least makes it easier to know when it's not working. However, with a downside: for some reason it is not possible to change the volume in phone calls anymore (this is not necessarily a big deal but wtf).
 7. Turning off wifi in settings and on again, does not find any wifi networks until system reboot. This happens ~~everytime~~ sometimes (I don't understand when it works or when it does not work!). Also sometimes it can see wifi networks but not able to connect? Just reboot the phone..
-8. LED is often blinking but unclear why, where is notification? **I think the issue is** that you get a notification which just says something like "entering suspend".
+8. LED is often blinking but unclear why, where is notification? **I think the issue is** that you get a notification which just says something like "entering suspend". The issue is mentioned again in next section with a picture example.
 9. Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
 10. After pairing Bluetooth headphones, how to play sound there and not speakers?
 11. **Warning:** Ringtone plays from headphones if connected, this is can be loud (depending on current volume setting). Alarm and other apps might also be loud!!! At the least, it can be annoying while you're in a call.
@@ -86,15 +86,20 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 
 2. ~~Sometimes when wake from suspend? And if you manually turn off mobile data or mobile network, often when turned on internet does not work. Sometimes no data, sometimes neither data or cellular. Setting Network gives error, "Cannot register modem: modem is c..." and changing Network Mode says "Transaction timed out" _or_ "Setting allowed modes not supported". Restarting ModemManager or NetworkManager does not help. Is there a solution? (usually cellular looks to work "4G", but no internet)~~ Mostly fixed with modem sdk and new firmware. Still sometimes, modem disappears completely when waking from suspend (and similar problems?).
 
-3. **Only on rev 1.1 I think? Still very strange!**. Wifi off switch ("killswitch") doesn't _really_ work! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) \
-![Switches off internet 1](pics/wifi_switch_off.jpg)![Switches off internet 1](pics/wifi_switch_off_internet.jpg) \
-(the ping is not 780 ms but like 30.780 ms, bad pic) \
+3. **Only on rev 1.1 I think? Still very strange!**. Wifi off switch ("killswitch") doesn't _really_ work! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) [1]
 
 4. Bad sound quality on 4G, it's OK but a lot (but not too loud) of digital background noise. Acceptable but minor pain in the ears. Echo likely when not using headphones.
 
 5. Sometimes screen seems dead, when waking from suspend the screen is blank! You can still hear the sound from the volume buttons, for example. ~~Maybe when it's doing a lot in the background?~~ Sometimes it is resolved by waiting a minute, but when working again all apps are killed. Or that you don't notice anything, but all apps are just closed after unlocking screen. Perhaps Wayland just crashed?
 
+6. Notification light sometimes blink randomly when off, and you may also see a notification on the screen. [2]
 
+[1] - \
+![Switches off internet 1](pics/wifi_switch_off.jpg)![Switches off internet 1](pics/wifi_switch_off_internet.jpg) \
+(the ping is not 780 ms but like 30.780 ms, bad pic)
+
+[2] - \
+![Automatic suspend](pics/automatic-suspend.jpg)
 
 # Feature Questions/Requests
 
