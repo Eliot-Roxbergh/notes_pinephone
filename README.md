@@ -39,7 +39,7 @@ Except for the basic apps, the software is badly optimized for such a small scre
 
 **How to buy**
 
-The phone works and only costs 199$ (total to Sweden 270$, incl. VAT and shipping) (quad core, 3GB ram) [1]. There are also accessories like an attachable keyboard [2] as well as replacement parts and batteries. In Sweden, similar replacement batteries can also be purchased here [6], price at time of writing is 200 SEK, these batteries are supposed to fit according to the Pine wiki.
+The phone works and only costs 199$ (total to Sweden 270$, incl. VAT and shipping) (quad core, 3GB ram) [1]. There are also accessories like an attachable keyboard [2] as well as replacement parts and batteries. In Sweden, replacement batteries can also be purchased here [6], price at time of writing is 200 SEK (~20$), these batteries fit [8] (part numbers can be found on the Pine wiki).
 
 Only purchase if you have some Linux experience (at least some initial configuration is necessary, and there are still bugs as mentioned here [7].
 If you buy used or on sale, make sure to get the latest board revision (currently 1.2b).
@@ -51,7 +51,8 @@ Note the differences between releases HW [3], e.g. v1.1 discharges even when tur
 [4] - https://wiki.pine64.org/wiki/PinePhone_1.1_VBUS_power_usage_Hardware_Fix \
 [5] - https://pine64.com/product/pinephone-community-edition-3gb-32gb-mainboard/ \
 [6] - https://www.batterilagret.se/p3443/Samsung-Galaxy-J7 \
-[7] - https://github.com/Eliot-Roxbergh/notes_pinephone/blob/main/questions_and_bugs.md
+[7] - https://github.com/Eliot-Roxbergh/notes_pinephone/blob/main/questions_and_bugs.md \
+[8] - These J7 batteries fit, although you need to remove a small plastic detail for them to fit: no problem. The replacement battery I purchased[6], had similar battery life as the stock Pinephone battery (nothing special)
 
 -----
 
