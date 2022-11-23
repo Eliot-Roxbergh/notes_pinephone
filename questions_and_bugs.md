@@ -29,13 +29,15 @@ Repetition of critical bugs (mentioned later):
 5. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play a sound it then says _"Failed to create sink input: sink is suspended"_) \
 ~~**Test 1:**  use Pipewire globally (as mentioned in README.md)~~ -> No did not fix this issue \
 ~~**Test 2:** `sudo apt remove wireplumber` (and revert change from above), this should use pipewire-media-session (recommendation from IRC).~~ -> No, similarily it might stop working, although now when it doesn't work the volume bar is not visible at all (why?) this at least makes it easier to know when it's not working. However, with a downside: for some reason it is not possible to change the volume in phone calls anymore (this is not necessarily a big deal but wtf). \
-**Further issue:** Sometimes when doing a warm reboot to fix the issue, the phone cannot boot: it vibrates with blinking red light and gives up. Cold start boots.
+**Further issue:** Sometimes when doing a warm reboot to fix the issue, the phone cannot boot: it vibrates with blinking red light and gives up. Cold start boots. \
+**Issue up:** https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues/21
 7. Turning off wifi in settings and on again, does not find any wifi networks until system reboot. This happens ~~everytime~~ sometimes (I don't understand when it works or when it does not work!). Also sometimes it can see wifi networks but not able to connect? Just reboot the phone..
-8. LED is often blinking but unclear why, where is notification? **I think the issue is** that you get a notification which just says something like "entering suspend". The issue is mentioned again in next section with a picture example.
-9. Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
-10. After pairing Bluetooth headphones, how to play sound there and not speakers?
-11. **Warning:** Ringtone plays from headphones if connected, this is can be loud (depending on current volume setting). Alarm and other apps might also be loud!!! At the least, it can be annoying while you're in a call.
-12. ~~During calls, the screen blanks often (easy fixable?).~~ \
+8. LED is often blinking but unclear why, where is notification? **I think the issue is** that you get a notification which just says something like "entering suspend". The issue is mentioned again in next section with a picture example. \
+**issue up:**: I added here https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues/20
+10. Notifications doesn't keep time: if you get a notification and suspend for X hours, it will just say you just got a notification 1m (or w-e) ago on screen. i.e., suspended time is not counted.
+11. After pairing Bluetooth headphones, how to play sound there and not speakers?
+12. **Warning:** Ringtone plays from headphones if connected, this is can be loud (depending on current volume setting). Alarm and other apps might also be loud!!! At the least, it can be annoying while you're in a call.
+13. ~~During calls, the screen blanks often (easy fixable?).~~ \
 **Comment:** This issue is not _that_ bad anymore, keep an eye on it (I think I've seen this mentioned somewhere).
 12. I couldn't copy phone number from contacts, ctrl+c / copy did not work? Is it even possible to copy a contact nr and share via SMS?
 13. Minor annoyance: there is some kind of airplane mode in settings (unclear if it actually does something or just reaction to wifi+BT off), with it, cellular network is still on but you can't access the settings. Just turn it off and then manually turn off BT and wifi .. again.
@@ -47,9 +49,10 @@ Repetition of critical bugs (mentioned later):
 **Fixed:** This has not happened again on rev 1.2?
 15. ~~**What?!** wifi hw switch doesn't work when device is already on (i.e. wifi is always "on").~~ (mentioned more below) \
 **Comment:** Seemingly only on rev 1.1 and not 1.2, but I do not trust it!
-17. **VERY ANNOYING!** Screen sometimes blank (and/or more rarely applications are gone when trying to wake it). Sound still works.
-18. **ANNOYING** Like 50% of the time, the camera is not discovered and need to reboot. Megapixel app says says that "_Could not open /dev/video2: No such device or address_" (sometimes it says /dev/video1 instead).
-19. You can use the phone as a desktop computer (HDMI screen, USB peripherals etc.) via USB-C dock. USB-C usually works (phone rev 1.2), but sometimes it doesn't detect the (USB, HDMI, ..) devices. Specifically, USB-C stopped working and I needed to reboot and remove battery. To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?). \
+17. **VERY ANNOYING!** Screen sometimes blank (and/or more rarely applications are gone when trying to wake it). Sound still works. \
+**Issue up:** https://salsa.debian.org/Mobian-team/devices/pinephone-support/-/issues/22
+19. **ANNOYING** Like 50% of the time, the camera is not discovered and need to reboot. Megapixel app says says that "_Could not open /dev/video2: No such device or address_" (sometimes it says /dev/video1 instead).
+20. You can use the phone as a desktop computer (HDMI screen, USB peripherals etc.) via USB-C dock. USB-C usually works (phone rev 1.2), but sometimes it doesn't detect the (USB, HDMI, ..) devices. Specifically, USB-C stopped working and I needed to reboot and remove battery. To reproduce; connect USB periherals, disconnect and then reconnect the cable - in these cases usb seems to stop working until reboot (removal of battery necessary or coincidence?). \
 **TODO check if this is only when Pine Keyboard is attached as this is known issue (?)**.
 21. Somewhat often (<=50%), GPS does not work at all. When it does work it has low accuracy (mentioned later).
 
@@ -57,12 +60,11 @@ Repetition of critical bugs (mentioned later):
 
 The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's a keyboard. Nice.
 
-1. upower reports 3 batteries instead of 2 when using Pinephone (hardware) keyboard. Additionally, battery detection seems unstable, and sometimes reports keyboard as 0% power.
-2. _(fixable [1])_ The layout is peculiar, specifically it is very annoying to write with Swedish layout (öä).
-3. _(fixable [1])_ The special buttons to write symbols such as `|` `-` `_` stopped working, probably related to keyboard choosen in OS?
-4. _(battery detection)_ It reports 1-2 extra batteries (`upower -d` or settings) which decreases the calculated battery percentage (100%+100%+0%+0% = 50% battery left).
-5. _(battery detection)_ In general the phone does not detect the size of the batteries, so it ignores that the keyboard battery is twice the size as the internal when calculating remaining battery percentage.
-6. _(battery detection)_ Sometimes it temporarily loses contact (or something) and reports keyboard battery as 0%. The keyboard still works however.
+1. _(fixable [1])_ The layout is peculiar, specifically it is very annoying to write with Swedish layout (öä).
+2. _(fixable [1])_ The special buttons to write symbols such as `|` `-` `_` stopped working, probably related to keyboard choosen in OS?
+3. _(battery detection)_ upower reports 1-2 extra batteries (`upower -d` or settings) which decreases the calculated battery percentage (100%+100%+0%+0% = 50% battery left).  Additionally, battery detection seems unstable, and sometimes reports keyboard as 0% power.
+4. _(battery detection)_ In general the phone does not detect the size of the batteries, so it ignores that the keyboard battery is twice the size as the internal when calculating remaining battery percentage.
+5. _(battery detection)_ Sometimes it temporarily loses contact (or something) and reports keyboard battery as 0%. The keyboard still works however.
 
 [1] - afaik you can reprogram the firmware in the keyboard (https://xnux.eu/log/#044) and do really what you'd want. Also you can change the keyboard mapping in OS.
 
