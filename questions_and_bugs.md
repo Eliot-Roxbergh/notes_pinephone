@@ -24,8 +24,7 @@ Repetition of critical bugs (mentioned later):
 1. mute doesn't work in calls!! \
 **issue up:** it is only for SIP calls (i.e. on 3G and 4G?) -> https://gitlab.gnome.org/GNOME/calls/-/issues/395
 2. at boot, cellular network is off, although it is on in settings GUI. Need to manually turn Mobile Data off and on again.
-3. ~~Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!).~~ \
-**Edit:** This only applies for Signal-Desktop, not rest of apps! (mentioned again in Signal section below)
+3. _(Signal-Desktop)_  Virtual keyboard, except for "terminal" other keyboard layouts interpret some combinations as commands, e.g. SHIFT+c => backspace, not capital C (!). **Edit:**  This only applies for Signal-Desktop, not rest of apps! (mentioned again in Signal section below)
 5. **VERY ANNOYING!** Sound (input and output) is sometimes completely dead (need to restart phone or, sometimes, just Pulseaudio is enough) (when trying to play a sound it then says _"Failed to create sink input: sink is suspended"_) \
 ~~**Test 1:**  use Pipewire globally (as mentioned in README.md)~~ -> No did not fix this issue \
 ~~**Test 2:** `sudo apt remove wireplumber` (and revert change from above), this should use pipewire-media-session (recommendation from IRC).~~ -> No, similarily it might stop working, although now when it doesn't work the volume bar is not visible at all (why?) this at least makes it easier to know when it's not working. However, with a downside: for some reason it is not possible to change the volume in phone calls anymore (this is not necessarily a big deal but wtf). \
@@ -76,7 +75,7 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 2. At least two times [1]: I answered a call and the phone continued to vibrate and then the whole system crashed (rebooted).
 3. At least once it has just rebooted suddently. And once I left it on charge and when I came back it was completely turned off. [1]
 4. At least twice, modem was dead on wake from suspend, although it could have occured earlier of course. [1]
-
+5. _(Signal-Desktop)_ Sometimes when opening keyboard or writing fast (?) the keyboard, top bar and lower bar (i.e. phone UI) keeps crashing and restarting while Signal is up. Fix by lowering keyboard and switching windows, then back to Signal?
 [1] - To be clear, this was 2022-11, rev 1.2. (pinephone-modem-sdk and ADSP 01.003.01.003)
 
 
