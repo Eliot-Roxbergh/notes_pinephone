@@ -550,10 +550,16 @@ Firmware and required apps are, mostly, but not 100% open-source. And for instan
 
 To quote Wikipedia, "_The PinePhone aims to be fully open source in its drivers and bootloader. Despite this, due to the scarcity of open source components for cellular and wireless connectivity, the firmware for the Realtek RTL8723CS WiFi/Bluetooth, as well as the optional auto-focus firmware for the OmniVision OV5640 back camera, remain proprietary software. In order to mitigate potential threats to privacy, these components communicate with the rest of the system only over serial protocols, such as USB 2.0, I2S and SDIO, which do not allow direct memory access (DMA). Use of these protocols also permits them to be physically disconnected via kill switches_ [4]"
 
-It is possible (and probably recommended) to flash FOSS modem SDK, in which case _"0 binary blobs in the userspace. Only closed source running on the modem are TZ Kernel and ADSP firmware"_ [5]
+The modem is a _"Quectel EC25-G LTE modem is a Qualcomm’s MDM9207, with a single-core CPU and 256 MB"_, i.e. a second chip running (another) Linux OS. It is possible to modify the modem firmware - basically using this second Linux system in any way you'd want [6].
+Instead of the default firmware, it is beneficial to flash the FOSS project _modem SDK_, which provides additional features, stabilization improvements, and lower power usage.
+Additionally, it fixes the critical vulnerability CVE-2021-31698 (!) [7], which I don't know if (/when) fixed in the offical firmware.
+This FOSS firmware contains, _"0 binary blobs in the userspace. Only closed source running on the modem are TZ Kernel and ADSP firmware"_ [5].
+
 
 [1] - https://xnux.eu/log/#toc-2022-06-23-further-pinephone-pro-camera-development \
 [2] - https://wiki.mobian-project.org/doku.php?id=pinephone \
 [3] - https://forum.pine64.org/showthread.php?tid=14743 \
 [4] - original source: https://www.pine64.org/2020/01/24/setting-the-record-straight-pinephone-misconceptions \
-[5] - https://github.com/the-modem-distro/pinephone_modem_sdk
+[5] - https://github.com/the-modem-distro/pinephone_modem_sdk \
+[6] - https://hackaday.com/2022/07/12/open-firmware-for-pinephone-lte-modem-whats-up-with-that/ \
+[7] - https://hackaday.com/2021/12/16/pinephone-malware-surprises-users-raises-questions/
