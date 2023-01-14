@@ -45,7 +45,7 @@ Repetition of critical bugs (mentioned later):
 
 13. Phone calls; Some minor electrical noise is annoying (but usable), I mostly use 4G calls. Recommended to use headphones: Speaker phone is garbage (echo!), regular call is OK but can echo a lot too (!), headphones works well.
 14. ~~on low and moderate brightness settings, screen blinks and can even be completely black! Due to low battery? Random?~~ \
-**Fixed:** This has not happened again on rev 1.2?
+**Fixed:** ~~This has not happened again on rev 1.2?~~ This was fixed in 1.2! (explained here https://wiki.pine64.org/wiki/PinePhone_v1.2).. so it's all good now? 
 15. ~~**What?!** wifi hw switch doesn't work when device is already on (i.e. wifi is always "on").~~ (mentioned more below) \
 **Comment:** Seemingly only on rev 1.1 and not 1.2, but I do not trust it!
 17. **VERY ANNOYING!** Screen sometimes blank (and/or more rarely applications are gone when trying to wake it). Sound still works. \
@@ -88,7 +88,7 @@ The attachable keyboard adds roughtly 3x (+200%, 6000mAh) battery life and it's 
 
 2. ~~Sometimes when wake from suspend? And if you manually turn off mobile data or mobile network, often when turned on internet does not work. Sometimes no data, sometimes neither data or cellular. Setting Network gives error, "Cannot register modem: modem is c..." and changing Network Mode says "Transaction timed out" _or_ "Setting allowed modes not supported". Restarting ModemManager or NetworkManager does not help. Is there a solution? (usually cellular looks to work "4G", but no internet)~~ Mostly fixed with modem sdk and new firmware. Still sometimes, modem disappears completely when waking from suspend (and similar problems?).
 
-3. **Only on rev 1.1 I think? Still very strange!**. Wifi off switch ("killswitch") doesn't _really_ work! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) [1]
+3. ~~**Only on rev 1.1 I think? Still very strange!**~~. **Correction: fixed in 1.2 https://wiki.pine64.org/wiki/PinePhone_v1.2** Wifi off switch ("killswitch") doesn't _really_ work! If I turn it off when running, I still have internet (yes it was routing via wifi) and bluetooth. It worked to disable wifi before, as I recall, but now I tried twice and it just keeps going. If I turn it off before booting, it remains off however. (But evidently it still has connection and power?) [1]
 
 4. Bad sound quality on 4G, it's OK but a lot (but not too loud) of digital background noise. Acceptable but minor pain in the ears. Echo likely when not using headphones.
 
