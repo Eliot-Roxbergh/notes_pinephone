@@ -221,7 +221,7 @@ Signal-desktop did not find the camera at all (but it seems like camera starts f
 Part of system UI, works.
 
 ## Wifi
-Wifi was moderately fast at 4-5 MB/s (quick test), it works. However, wifi does not seem to be automatically discovered after toggling wifi HW switch while phone is running.
+Wifi was moderately fast at 4-5 MB/s (quick test), it works. However, wifi does not seem to be automatically discovered after toggling wifi HW switch while phone is running (NOT recommended AFAIK).
 
 ## Internet, texts, calls, mms
 
