@@ -506,7 +506,7 @@ LANG=C pactl info | grep '^Server Name'
 
 ### Video
 
-Hardware video acceleration not available in _any_ browser afaik. In general video decoding is done in SW [1], the issue (I think) is that Mali400 MP2 only supports GLES 2.0. More on HW acceleration see [2] [3].
+Hardware video acceleration not available in _any_ browser afaik. In general video decoding is done in SW [1], the issue (I think) is that Mali400 MP2 only supports OpenGL ES (GLES) 2.0. More on HW acceleration see [2] [3].
 
 I think that for video watching in browser, best I have seen is (almost smooth) 30fps@480p, which was on **Angelbrowser**. With firefox performing similarly if on 3G RAM system. Outside the browser, mpv was able basically handle 30fps@1080p.
  
@@ -534,11 +534,13 @@ How to handle bookmarks though, hard to understand/navigate?
 
 # Security
 
-Pinephone has hw switches to disable mic / headphones / camera 1 / camera 2 / wifi / cellular modem.
+Pinephone has hw switches to disable mic / camera 1 / camera 2 / wifi+BT / cellular modem and to enable UART (headphones).
 
-Note that, in general, stock Linux does not have the same application sandboxing as e.g. Android. 
+(Is having UART exposed a security issue?)
 
-If you have the pin code, you're root... ops!
+Note that, stock Linux does not have the same application sandboxing/permissions as e.g. Android and Apple. This is quite risky! Users themselves need to set this up preferably (/w e.g. SELinux, AppArmor).
+
+By default you're root. Don't install random stuff with sudo! And thus, if someone have the pin code, they're root... ops!
 
 "_USB-OTG is very permissive . The MTP service currently has no security whatsoever; if the phone is plugged into a computer, even with disk encryption, the computer will have full R/W access to your /home dir, and full read access to /. See Services on how to disable and enable only when needed._" [2].
 
@@ -555,6 +557,7 @@ Instead of the default firmware, it is beneficial to flash the FOSS project _mod
 Additionally, it fixes the critical vulnerability CVE-2021-31698 (!) [7], which I don't know if (/when) fixed in the offical firmware.
 This FOSS firmware contains, _"0 binary blobs in the userspace. Only closed source running on the modem are TZ Kernel and ADSP firmware"_ [5].
 
+On phone revisions 1.1 and prior, wifi kill switch did not really work (mentioned again in [questions_and_bugs.md](questions_and_bugs.md)).
 
 [1] - https://xnux.eu/log/#toc-2022-06-23-further-pinephone-pro-camera-development \
 [2] - https://wiki.mobian-project.org/doku.php?id=pinephone \
